@@ -11,7 +11,7 @@ $: << File.expand_path('../lib', __FILE__)
 require 'dotenv'
 Dotenv.load
 
-Recurly.subdomain = ENV['KALEKRATE']
+Recurly.subdomain = ENV['RECURLY_SUBDOMAIN']
 Recurly.api_key = ENV['RECURLY_API_KEY']
 
 module KaleKrate
