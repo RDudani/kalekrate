@@ -57,10 +57,10 @@ module KaleKrate
               token_id: params['recurly-token']
             }
           }
-        redirect 'http://localhost:9292/minimal'
+        redirect '/minimal'
       rescue Recurly::Resource::Invalid, Recurly::API::ResponseError => e
         puts e
-        redirect 'http://localhost:9292/minimal'
+        redirect '/minimal'
       end
     end
 
@@ -69,9 +69,9 @@ module KaleKrate
         Recurly::Account.create! account_code: SecureRandom.uuid,
           billing_info: { token_id: params['recurly-token'] }
         puts params
-        # redirect 'http://localhost:9292/minimal'
+        # redirect '/minimal'
       rescue Recurly::Resource::Invalid, Recurly::API::ResponseError => e
-        redirect 'http://localhost:9292/minimal'
+        redirect '/minimal'
       end
     end
 
@@ -80,9 +80,9 @@ module KaleKrate
         account = Recurly::Account.find params[:account_code]
         account.billing_info = { token_id: params['recurly-token'] }
         account.save!
-        redirect 'http://localhost:9292/minimal'
+        redirect '/minimal'
       rescue Recurly::Resource::Invalid, Recurly::API::ResponseError => e
-        redirect 'http://localhost:9292/minimal'
+        redirect '/minimal'
       end
     end
 
