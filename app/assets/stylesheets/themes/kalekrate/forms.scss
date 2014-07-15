@@ -5,9 +5,16 @@
   background: url('/images/kalekrate/form-header-bg.png') top center no-repeat;
   height: 167px;
   position: relative;
+  @media (-webkit-min-device-pixel-ratio: 2), (-moz-min-device-pixel-ratio: 2) {
+    & {
+      background: url('/images/kalekrate/form-header-bg@2x.png') top center no-repeat;
+      background-size: 100%;
+    }
+  }
 
   h1 {
     @include irGraphic('/images/kalekrate/kalekrate-branding.png', 288px, 61px);
+    @include background-image-retina('/images/kalekrate/kalekrate-branding', 'png', 288px, 61px);
     @include verticalAlign();
 
     text-indent: -9999px;
@@ -19,7 +26,11 @@
 
 form {
   float: left;
-  padding: 20px 14px 25px 14px;
+  padding: 20px 14px 28px 14px;
+
+  @include mq($small) {
+    padding: 20px 26px 28px 26px;
+  }
 
   .row {
     width: 100%;
@@ -93,7 +104,7 @@ form {
     color: #FFFFFF;
     display: block;
     font-size: 20px;
-    line-height: 30px;
+    line-height: 24px;
     margin: 14px auto 0 auto;
     padding: 0 14px;
     width: 100%;
@@ -103,7 +114,7 @@ form {
       // float: left;
       @include verticalAlign();
       display: inline-block;
-      line-height: 30px;
+      line-height: 24px;
       text-align: left;
       margin: 0;
       width: 60%;
@@ -215,7 +226,7 @@ form {
 
   .form-input__error {
     & input {
-      border-color: red;
+      border-color: #F55649;
     }
   }
 

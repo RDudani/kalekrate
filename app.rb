@@ -3,6 +3,7 @@ Bundler.require
 
 require 'sinatra/base'
 require 'sinatra/assetpack'
+require 'sinatra/support'
 
 Bundler.setup :default
 $: << File.expand_path('../', __FILE__)
@@ -19,6 +20,8 @@ module KaleKrate
     set :root, File.dirname(__FILE__)
     set :environment, ENV['RACK_ENV'].to_sym
     register Sinatra::AssetPack
+    helpers Sinatra::HtmlHelpers
+    helpers Sinatra::CountryHelpers
 
     assets {
       serve '/css', from: 'app/assets/stylesheets'
@@ -43,6 +46,10 @@ module KaleKrate
 
     get '/minimal' do
       slim :minimal
+    end
+
+    get '/advanced' do
+      slim :advanced
     end
 
     post '/api/subscriptions/new' do
