@@ -88,7 +88,7 @@ form {
     @include mq($small) {
       @include verticalAlign();
       margin: 0;
-      right: 14px;
+      right: 26px;
     }
   }
 
@@ -104,9 +104,10 @@ form {
     color: #FFFFFF;
     display: block;
     font-size: 20px;
+    font-weight: 600;
     line-height: 24px;
     margin: 14px auto 0 auto;
-    padding: 0 14px;
+    padding: 0 25px;
     width: 100%;
     text-align: center;
 
@@ -181,7 +182,6 @@ form {
     @include border-radius(3px);
     display: inline-block;
     margin-bottom: 0; // For input.btn
-    font-weight: normal;
     text-align: center;
     vertical-align: middle;
     cursor: pointer;
@@ -194,7 +194,7 @@ form {
     outline: none;
     padding: 7px 14px;
     font-size: 18px;
-    font-weight: bold;
+    font-weight: 600;
     text-transform: uppercase;
     color: #ffffff;
     cursor: pointer;
@@ -208,6 +208,16 @@ form {
     -ms-transition: opacity 0.3s;
     -o-transition: opacity 0.3s;
     transition: opacity 0.3s;
+
+    &:active,
+    &:hover {
+      background: #EA9827;
+    }
+
+    &:active {
+      position: relative;
+      top: 1px;
+    }
   }
 
   .btn-submit {
@@ -285,7 +295,7 @@ form {
   strong {
     font: {
       size: 14px;
-      weight: bold;
+      weight: 600;
     }
   }
 
