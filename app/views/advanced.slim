@@ -83,9 +83,31 @@ body
           label for="cvv" CVC
           input type="text" data-recurly="cvv" id="cvv" name="cvv"
 
+      .row.customer-fields--address
         .form-input
-          label for="postal_code" Zip Code
+          label for="address" Address
+          input type="text" data-recurly="address" id="address" name="address"
+
+      .row.customer-fields--city
+        .form-input
+          label for="city" City
+          input type="text" data-recurly="city" id="city" name="city"
+
+      .row.customer-fields--card-details
+        .form-input.form-input__selection.customer-fields--card-expiry
+          label for="month" State
+          select data-recurly="month" id="month" name="month" autocomplete="off"
+            - (1..12).each do |m|
+              option value="#{m}" = m
+
+        .form-input.customer-fields--card-cvv
+          label for="postal_code" Zip
           input type="text" data-recurly="postal_code" id="postal_code" name="postal-code"
+
+        .form-input
+          label for="postal_code" Country
+          select id="country" name="country"
+            == select_options country_choices
 
       .row
         input type='submit' id="subscribe" class="btn-submit" value="Subscribe"
