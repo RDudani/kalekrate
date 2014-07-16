@@ -71,16 +71,16 @@ body
       .row.customer-fields--card-details
         .form-input.form-input__selection.customer-fields--card-expiry
           label for="month" Expiration
-          input type="text" data-recurly="month" id="month" name="month" placeholder="MM"
-          input type="text" data-recurly="year" id="year" name="year" placeholder="YY"
+          input type="text" data-recurly="month" id="month" name="month" placeholder="MM" maxlength="2"
+          input type="text" data-recurly="year" id="year" name="year" placeholder="YY" maxlength="2"
 
         .form-input.customer-fields--card-cvv
           label for="cvv" CVC
-          input type="text" data-recurly="cvv" id="cvv" name="cvv"
+          input type="text" data-recurly="cvv" id="cvv" name="cvv" maxlength="4"
 
         .form-input
           label for="postal_code" Zip Code
-          input type="text" data-recurly="postal_code" id="postal_code" name="postal-code"
+          input type="text" data-recurly="postal_code" id="postal_code" name="postal-code" maxlength="5"
 
       .row
         input type='submit' id="subscribe" class="btn-submit" value="Subscribe"
