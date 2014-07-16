@@ -58,14 +58,41 @@ label {
 
     &:nth-child(2) {
       padding-right: 14px;
-      width: 30%;
+      width: 25%;
     }
 
     &:nth-child(3) {
       width: 30%;
     }
+
+    @include mq($small) {
+      &:nth-child(1) {
+        padding-right: 14px;
+        width: 40%;
+      }
+
+      &:nth-child(2) {
+        padding-right: 14px;
+        width: 30%;
+      }
+
+      &:nth-child(3) {
+        width: 30%;
+      }
+    }
+  }
+}
+
+.customer-fields--card-expiry {
+  #month {
+    float: left;
+    width: 49%;
   }
 
+  #year {
+    float: right;
+    width: 49%;
+  }
 }
 
 .confirmation {
