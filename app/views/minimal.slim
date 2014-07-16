@@ -71,13 +71,8 @@ body
       .row.customer-fields--card-details
         .form-input.form-input__selection.customer-fields--card-expiry
           label for="month" Expiration
-          select data-recurly="month" id="month" name="month" autocomplete="off"
-            - (1..12).each do |m|
-              option value="#{m}" = m
-          | &nbsp;/&nbsp;
-          select data-recurly="year" id="year" name="year" autocomplete="off"
-            - (2014..2030).to_a.each do |y|
-              option value="#{y}" = y
+          input type="text" data-recurly="month" id="month" name="month" placeholder="MM"
+          input type="text" data-recurly="year" id="year" name="year" placeholder="YY"
 
         .form-input.customer-fields--card-cvv
           label for="cvv" CVC
@@ -123,6 +118,8 @@ javascript:
     // to tokenize the credit card information, then injects the token into the
     // data-recurly="token" field above
     recurly.token(form, function (err, token) {
+
+      console.log(err);
 
       if (err) {
         error(err);
