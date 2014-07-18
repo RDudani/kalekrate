@@ -88,7 +88,7 @@
     @include mq($small) {
       &:nth-child(1) {
         padding-right: 14px;
-        width: 40%;
+        width: 30%;
       }
 
       &:nth-child(2) {
@@ -97,20 +97,52 @@
       }
 
       &:nth-child(3) {
-        width: 30%;
+        width: 40%;
       }
     }
   }
 }
 
 .customer-fields--card-expiry {
-  #month {
-    float: left;
-    width: 49%;
+  [id="month"],
+  [id="year"] {
+   text-align: center;
+
+    &::-webkit-input-placeholder {
+       text-align: center;
+    }
+
+    &:-moz-placeholder { /* Firefox 18- */
+       text-align: center;
+    }
+
+     ::-moz-placeholder {  /* Firefox 19+ */
+       text-align: center;
+    }
+
+    &:-ms-input-placeholder {
+       text-align: center;
+    }
+
   }
 
-  #year {
-    float: right;
-    width: 49%;
+  [id="month"] {
+    @include border-top-right-radius(0px);
+    @include border-bottom-right-radius(0px);
+    float: left;
+    width: 50%;
+  }
+
+  [id="year"] {
+    @include border-top-left-radius(0px);
+    @include border-bottom-left-radius(0px);
+    float: left;
+    width: 50%;
+    margin-left: -1px;
+  }
+
+  [id="month"]:focus {
+    position: relative;
+    z-index: 10;
   }
 }
