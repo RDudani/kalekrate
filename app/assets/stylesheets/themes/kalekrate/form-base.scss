@@ -1,15 +1,76 @@
-::-webkit-input-placeholder {
-   line-height: 20px;
+@import 'variables';
+@import 'mixins';
+
+.form-header {
+  background: url('/images/kalekrate/form-header-bg.png') center no-repeat;
+  height: 167px;
+  position: relative;
+  background-size: cover;
+  @media (-webkit-min-device-pixel-ratio: 2), (-moz-min-device-pixel-ratio: 2) {
+    & {
+      background: url('/images/kalekrate/form-header-bg@2x.png') center no-repeat;
+      background-size: cover;
+    }
+  }
+
+  h1 {
+    @include irGraphic('/images/kalekrate/kalekrate-branding.png', 288px, 61px);
+    @include background-image-retina('/images/kalekrate/kalekrate-branding', 'png', 288px, 61px);
+    @include verticalAlign();
+
+    text-indent: -9999px;
+    margin-top: 0;
+    margin-bottom: 0;
+    width: 100%;
+  }
 }
 
-:-moz-placeholder { /* Firefox 18- */
-   line-height: 20px;
+form {
+  float: left;
+  padding: 20px 14px 28px 14px;
+  transition-delay: 0.2s;
+  transition: height 0.3s;
+
+  @include mq($small) {
+    padding: 20px 26px 28px 26px;
+  }
+
+  .row {
+    width: 100%;
+  }
 }
 
-::-moz-placeholder {  /* Firefox 19+ */
-   line-height: 20px;
+  .form__success {
+    display: none;
+  }
+
+.form-bar {
+  background-color: #91C11E;
+  border-bottom: 1px solid #86B11C;
+  position: relative;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 4px;
+  overflow: hidden;
 }
 
-:-ms-input-placeholder {
-   line-height: 20px;
+.customer-fields--name {
+  .form-input {
+    float: left;
+    width: 50%;
+
+    &:first-child {
+      padding-right: 7px;
+    }
+
+    &:last-child {
+      padding-left: 7px;
+    }
+  }
+}
+
+.customer-fields--card-number {
+  input[type='text'] {
+    padding: 5px 44px 5px 74px;
+  }
 }

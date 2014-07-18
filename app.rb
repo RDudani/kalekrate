@@ -4,10 +4,14 @@ Bundler.require
 require 'sinatra/base'
 require 'sinatra/assetpack'
 require 'sinatra/support'
+require 'sinatra/partial'
+
+require_relative 'helpers/init'
 
 Bundler.setup :default
 $: << File.expand_path('../', __FILE__)
 $: << File.expand_path('../lib', __FILE__)
+$: << File.expand_path('../helpers', __FILE__)
 
 require 'dotenv'
 Dotenv.load
@@ -17,25 +21,14 @@ Recurly.api_key = ENV['RECURLY_API_KEY']
 
 module KaleKrate
   class App < Sinatra::Base
+    register Sinatra::AssetPack
+    register Sinatra::Partial
+    register Sinatra::HtmlHelpers
+    register Sinatra::CountryHelpers
+
     set :root, File.dirname(__FILE__)
     set :environment, ENV['RACK_ENV'].to_sym
-    register Sinatra::AssetPack
-    helpers Sinatra::HtmlHelpers
-    helpers Sinatra::CountryHelpers
-
-    assets {
-      serve '/css', from: 'app/assets/stylesheets'
-
-      css :application, '/css/application.css', [
-        '/css/base.css',
-        '/css/forms.css',
-        '/css/themes/**/*'
-      ]
-
-      serve '/images', from: 'app/assets/images'
-    }
-
-    Sass.load_paths << File.join(root, 'app', 'assets', 'stylesheets')
+    set :partial_template_engine, :slim
 
     configure do
       set :port, 9001
@@ -43,6 +36,28 @@ module KaleKrate
       set :views, Proc.new { File.join(root, 'app', 'views') }
       set :slim, pretty: true
     end
+
+    Sass.load_paths << File.join(root, 'app', 'assets', 'stylesheets')
+    assets {
+      serve '/css', from: 'app/assets/stylesheets'
+
+      css :application, '/css/application.css', [
+        '/css/base.css',
+        '/css/forms.css'
+      ]
+
+      css :minimal, '/css/minimal.css', [
+        '/css/themes/kalekrate/form-base.css',
+        '/css/themes/kalekrate/form-minimal.css'
+      ]
+
+      css :advanced, '/css/advanced.css', [
+        '/css/themes/kalekrate/form-base.css',
+        '/css/themes/kalekrate/form-advanced.css'
+      ]
+
+      serve '/images', from: 'app/assets/images'
+    }
 
     get '/minimal' do
       slim :minimal

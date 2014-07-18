@@ -9,24 +9,15 @@ doctype html
   html.no-js lang="en"
 
 head
-  meta charset="utf-8"
-  meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"
   title = "Kale Krate"
-  meta name="description" content=""
-  meta name="author" content=""
-  meta name="keywords" content=""
-  meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
-  script src="https://js.recurly.com/v3/recurly.js"
-  script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"
-  link href="//fonts.googleapis.com/css?family=Open+Sans:400,700,600" rel="stylesheet" type="text/css"
+  == partial(:'shared/meta')
+  == partial(:'shared/scripts')
   == css :application
+  == css :advanced
 
 body
 
   .form
-    .form-header
-      h1 Kale Krate
-
     .form-bar
       .subscription-name-container
         strong.subscription-name Kale Lover's Crate
@@ -71,13 +62,8 @@ body
       .row.customer-fields--card-details
         .form-input.form-input__selection.customer-fields--card-expiry
           label for="month" Expiration
-          select data-recurly="month" id="month" name="month" autocomplete="off"
-            - (1..12).each do |m|
-              option value="#{m}" = m
-          | &nbsp;/&nbsp;
-          select data-recurly="year" id="year" name="year" autocomplete="off"
-            - (2014..2030).to_a.each do |y|
-              option value="#{y}" = y
+          input type="text" data-recurly="month" id="month" name="month" placeholder="MM" maxlength="2"
+          input type="text" data-recurly="year" id="year" name="year" placeholder="YY" maxlength="2"
 
         .form-input.customer-fields--card-cvv
           label for="cvv" CVC
@@ -93,21 +79,16 @@ body
           label for="city" City
           input type="text" data-recurly="city" id="city" name="city"
 
-      .row.customer-fields--card-details
-        .form-input.form-input__selection.customer-fields--card-expiry
-          label for="month" State
-          select data-recurly="month" id="month" name="month" autocomplete="off"
-            - (1..12).each do |m|
-              option value="#{m}" = m
 
         .form-input.customer-fields--card-cvv
           label for="postal_code" Zip
           input type="text" data-recurly="postal_code" id="postal_code" name="postal-code"
 
+      .row
         .form-input
           label for="postal_code" Country
           select id="country" name="country"
-            == select_options country_choices
+            == StatesList.to_options
 
       .row
         input type='submit' id="subscribe" class="btn-submit" value="Subscribe"

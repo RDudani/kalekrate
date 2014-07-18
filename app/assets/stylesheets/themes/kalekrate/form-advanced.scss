@@ -1,0 +1,26 @@
+@import 'variables';
+@import 'mixins';
+
+.customer-fields--card-expiry,
+.customer-fields--card-cvv {
+  width: 50%;
+  float: left;
+}
+
+.customer-fields--card-expiry {
+  padding-right: 7px;
+}
+
+.customer-fields--card-cvv {
+  padding-left: 7px;
+}
+
+#month {
+  float: left;
+  width: 49%;
+}
+
+#year {
+  float: right;
+  width: 49%;
+}
