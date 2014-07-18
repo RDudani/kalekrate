@@ -165,8 +165,30 @@ input[type='submit'] {
   left: 10px;
   bottom: 13px;
 
-  -webkit-transition: width 2s;
+  -ms-transform: scale(0,0); /* IE 9 */
+  -webkit-transform: scale(0,0); /* Chrome, Safari, Opera */
+  transform: scale(0,0);
+
+  -webkit-transition: scale 0.2s;
+  transition: scale 0.2s;
+
+  transform-origin: 50% 50%;
+  -webkit-transform-origin: 50% 50%;
 }
+
+  .icon-card__generic,
+  .icon-card__visa,
+  .icon-card__amex,
+  .icon-card__discover,
+  .icon-card__mastercard {
+    -ms-transform: scale(1,1); /* IE 9 */
+    -webkit-transform: scale(1,1); /* Chrome, Safari, Opera */
+    transform: scale(1,1);
+
+
+    -webkit-transition-delay: scale 0.2s;
+    transition-delay: scale 0.2s;
+  }
 
   .icon-card__generic {
     background: url('/images/icons/card-generic.png') top left no-repeat;
@@ -263,6 +285,7 @@ input[type='submit'] {
     color: #48626C;
     font-size: 18px;
     padding-top: 135px;
+    font-weight: 600;
     width: 100%;
     text-align: center;
     top: 55%;

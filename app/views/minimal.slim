@@ -163,10 +163,12 @@ javascript:
         $(number_field).addClass('form-input__error');
       }
 
-      if(card_type == 'default') {
+      if((card_type == 'default') || (card_type == 'unknown')) {
         $('.icon-card').addClass('icon-card__generic');
+        $('.icon-card').removeClass('icon-card__visa icon-card__mastercard icon-card__amex icon-card__visa discover');
       }
       else {
+        $('.icon-card').removeClass('icon-card__generic');
         $('.icon-card').addClass('icon-card__' + card_type);
       }
     });
