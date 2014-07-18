@@ -1,0 +1,116 @@
+@import 'variables';
+@import 'mixins';
+
+.subscription-name-container {
+  float: left;
+  width: 100%;
+  padding: 0;
+
+  @include mq($small) {
+    width: auto;
+    padding: 37px 0;
+  }
+}
+.subscription-pricing-container {
+  height: 100%;
+  float: right;
+  width: 100%;
+
+  @include mq($small) {
+    width: auto;
+  }
+}
+
+.subscription-pricing {
+  @include border-radius(5px);
+
+  background-color: #81AE17;
+  color: #E0F2BD;
+  display: inline-block;
+  padding: 8px 14px;
+  margin: 10px 0 20px 0;
+  position: relative;
+
+  @include mq($small) {
+    @include verticalAlign();
+    margin: 0;
+    right: 26px;
+  }
+}
+
+  .subscription-price {
+    font-size: 18px;
+  }
+
+  .subscription-frequency {
+    font-size: 14px;
+  }
+
+.subscription-name {
+  color: #FFFFFF;
+  display: block;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+  margin: 14px auto 0 auto;
+  padding: 0 25px;
+  width: 100%;
+  text-align: center;
+
+  @include mq($small) {
+    @include verticalAlign();
+    display: inline-block;
+    line-height: 24px;
+    text-align: left;
+    margin: 0;
+    width: 60%;
+  }
+}
+
+
+
+.customer-fields--card-details {
+  .form-input {
+    &:nth-child(1) {
+      padding-right: 14px;
+      width: 40%;
+    }
+
+    &:nth-child(2) {
+      padding-right: 14px;
+      width: 30%;
+    }
+
+    &:nth-child(3) {
+      width: 30%;
+    }
+
+    @include mq($small) {
+      &:nth-child(1) {
+        padding-right: 14px;
+        width: 40%;
+      }
+
+      &:nth-child(2) {
+        padding-right: 14px;
+        width: 30%;
+      }
+
+      &:nth-child(3) {
+        width: 30%;
+      }
+    }
+  }
+}
+
+.customer-fields--card-expiry {
+  #month {
+    float: left;
+    width: 49%;
+  }
+
+  #year {
+    float: right;
+    width: 49%;
+  }
+}

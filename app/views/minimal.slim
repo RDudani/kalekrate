@@ -9,17 +9,11 @@ doctype html
   html.no-js lang="en"
 
 head
-  meta charset="utf-8"
-  meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"
   title = "Kale Krate"
-  meta name="description" content=""
-  meta name="author" content=""
-  meta name="keywords" content=""
-  meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
-  script src="https://js.recurly.com/v3/recurly.js"
-  script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"
-  link href="//fonts.googleapis.com/css?family=Open+Sans:400,700,600" rel="stylesheet" type="text/css"
+  == partial(:'shared/meta')
+  == partial(:'shared/scripts')
   == css :application
+  == css :minimal
 
 body
 
@@ -48,33 +42,33 @@ body
           ul
 
       .row.customer-fields--name
-        .form-input
+        .form-input.form-input__first_name
           label for="first_name" First Name
           input type="text" data-recurly="first_name" id="first_name" name="first-name"
 
-        .form-input
+        .form-input.form-input__last_name
           label for="last_name" Last Name
           input type="text" data-recurly="last_name" id="last_name" name="last-name"
 
       .row.customer-fields--email
-        .form-input
+        .form-input.form-input__email
           label for="email" Email
           input type="text" data-recurly="email" id="email" name="email"
 
       .row.customer-fields--card-number
-        .form-input
+        .form-input.form-input__number
           label for="number" Credit Card Number
           input type="text" data-recurly="number" id="number" name="number"
           span.icon.icon-card.icon-card__generic
           span.icon.icon-lock
 
       .row.customer-fields--card-details
-        .form-input.form-input__selection.customer-fields--card-expiry
+        .form-input.form-input__selection.customer-fields--card-expiry.form-input__month.form-input__year
           label for="month" Expiration
           input type="text" data-recurly="month" id="month" name="month" placeholder="MM" maxlength="2"
           input type="text" data-recurly="year" id="year" name="year" placeholder="YY" maxlength="2"
 
-        .form-input.customer-fields--card-cvv
+        .form-input.customer-fields--card-cvv.form-input__cvv
           label for="cvv" CVC
           input type="text" data-recurly="cvv" id="cvv" name="cvv" maxlength="4"
 
@@ -183,7 +177,7 @@ javascript:
   // A simple error handling function to expose errors to the customer
   function error (err) {
     var errors_markup = $.map(err.fields, function (field) {
-      $('input[data-recurly=' + field + ']').addClass('error');
+      $('.form-input__' + field).addClass('form-input__error');
       return '<li class="form-errors--invalid-field">'+ error_fields[field] +'</li>';
     }).join('');
 

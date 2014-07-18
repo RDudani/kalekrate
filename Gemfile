@@ -2,7 +2,8 @@ source 'https://rubygems.org'
 
 # Framework
 gem 'sinatra', require: 'sinatra/base'
-gem 'sinatra-support', require: 'sinatra/support'
+gem 'sinatra-support'
+gem 'sinatra-partial', require: 'sinatra/partial'
 gem 'slim'
 
 # Assets
