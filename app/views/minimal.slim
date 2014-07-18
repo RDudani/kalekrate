@@ -34,8 +34,10 @@ body
       .confirmation-body
         h2.confirmation-messaging Thank you for subscribing!
 
+
     form method="post" action="/api/subscriptions/new"
       input type="hidden" data-recurly="token" name="recurly-token"
+
       .row
         .form-errors.form-errors__hidden
           strong Oops! The following fields appear to be invalid:
@@ -102,6 +104,7 @@ javascript:
     // Reset the errors display
     $('#errors').text('');
     $('input').removeClass('error');
+    $('.form-input').removeClass('form-input__error');
 
     // Disable the submit button
     $('.btn-submit').prop('disabled', true);
