@@ -7,7 +7,9 @@ var  invalid_fields = []
        postal_code: 'Postal Code',
        month: 'Expiration Month',
        year: 'Expiration Year',
-       cvv: 'CVV' }
+       cvv: 'CVV',
+       address: 'Street address',
+       city: 'City' }
 
 var invalid_fields = [];
 

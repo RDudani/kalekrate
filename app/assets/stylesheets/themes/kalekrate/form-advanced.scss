@@ -1,26 +1,44 @@
 @import 'variables';
 @import 'mixins';
 
-.customer-fields--card-expiry,
-.customer-fields--card-cvv {
-  width: 50%;
-  float: left;
+.form {
+  .row {
+    margin-bottom: 13px;
+  }
 }
 
-.customer-fields--card-expiry {
+.customer-fields--card-details {
+  .form-input {
+    float: left;
+
+    &:first-child {
+      padding-right: 7px;
+      width: 50%;
+    }
+
+    &:last-child {
+      padding-left: 7px;
+      width: 50%;
+    }
+  }
+}
+
+.form-input__city {
+  margin-bottom: 13px;
+}
+
+.form-input__state {
+  float: left;
   padding-right: 7px;
+  width: 70%;
+
+  & select {
+    width: 100%;
+  }
 }
 
-.customer-fields--card-cvv {
-  padding-left: 7px;
-}
-
-#month {
+.form-input__postal-code {
   float: left;
-  width: 49%;
-}
-
-#year {
-  float: right;
-  width: 49%;
+  padding-left: 7px;
+  width: 30%;
 }
