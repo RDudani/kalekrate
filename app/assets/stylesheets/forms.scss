@@ -105,9 +105,9 @@ input[type='submit'] {
   -o-transition: opacity 0.3s;
   transition: opacity 0.3s;
 
-  &:active,
-  &:hover {
-    background: #EA9827;
+  &:hover,
+  &:active {
+    background: #ffa408;
   }
 
   &:active {
@@ -115,6 +115,10 @@ input[type='submit'] {
     top: 1px;
   }
 }
+
+  .btn-submit {
+    margin-top: 20px;
+  }
 
 .form {
   background-color: #FAFAFA;
@@ -131,12 +135,6 @@ input[type='submit'] {
   }
 }
 
-
-
-  .btn-submit {
-    margin-top: 20px;
-  }
-
 .form-input {
   @include mq($medium) {
     width: inherit;
@@ -149,10 +147,11 @@ input[type='submit'] {
 
   .form-input__error {
     & label {
-      color: #F55649;
+      color: #e35256;
     }
     & input {
-      border-color: #F55649;
+      border-color: #e35256;
+      color: #802e31;
     }
   }
 
@@ -225,7 +224,7 @@ input[type='submit'] {
   @include border-radius(5px);
 
   color: #a94442;
-  background-color: #f2dede;
+  background-color: #fce3e4;
   border-color: #ebccd1;
   margin-bottom: 10px;
   padding: 20px;
