@@ -56,6 +56,12 @@ module KaleKrate
         '/css/themes/kalekrate/form-advanced.css'
       ]
 
+      serve '/js', from: 'app/assets/javascripts'
+
+      js :minimal_form, '/js', [
+        '/js/minimal_form.js'
+      ]
+
       serve '/images', from: 'app/assets/images'
     }
 
