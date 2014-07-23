@@ -26,8 +26,8 @@ module KaleKrate
     register Sinatra::HtmlHelpers
     register Sinatra::CountryHelpers
 
-    set :root, File.dirname(__FILE__)
-    set :environment, ENV['RACK_ENV'].to_sym
+    set :root, './'
+    set :environment, ENV['RACK_ENV'] #.to_sym
     set :partial_template_engine, :slim
 
     configure do
@@ -41,28 +41,28 @@ module KaleKrate
     assets {
       serve '/css', from: 'public/stylesheets'
 
-      css :application, '/css/application.css', [
+      css :application, [
         '/css/base.css',
         '/css/forms.css'
       ]
 
-      css :minimal, '/css/minimal.css', [
+      css :minimal, [
         '/css/themes/kalekrate/form-base.css',
         '/css/themes/kalekrate/form-minimal.css'
       ]
 
-      css :advanced, '/css/advanced.css', [
+      css :advanced, [
         '/css/themes/kalekrate/form-base.css',
         '/css/themes/kalekrate/form-advanced.css'
       ]
 
       serve '/js', from: 'public/javascripts'
 
-      js :minimal_form, '/js/minimal_form.js', [
+      js :minimal_form, [
         '/js/minimal_form.js'
       ]
 
-      js :advanced_form, '/js/advanced_form.js', [
+      js :advanced_form, [
         '/js/minimal_form.js',
         '/js/pricing.js'
       ]
