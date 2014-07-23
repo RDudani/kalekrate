@@ -58,11 +58,11 @@ module KaleKrate
 
       serve '/js', from: 'app/assets/javascripts'
 
-      js :minimal_form, '/js', [
+      js :minimal_form, '/js/minimal_form.js', [
         '/js/minimal_form.js'
       ]
 
-      js :advanced_form, '/js', [
+      js :advanced_form, '/js/advanced_form.js', [
         '/js/minimal_form.js',
         '/js/pricing.js'
       ]
