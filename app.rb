@@ -39,7 +39,7 @@ module KaleKrate
 
     Sass.load_paths << File.join(root, 'app', 'assets', 'stylesheets')
     assets {
-      serve '/css', from: 'app/assets/stylesheets'
+      serve '/css', from: 'public/stylesheets'
 
       css :application, '/css/application.css', [
         '/css/base.css',
@@ -56,7 +56,7 @@ module KaleKrate
         '/css/themes/kalekrate/form-advanced.css'
       ]
 
-      serve '/js', from: 'app/assets/javascripts'
+      serve '/js', from: 'public/javascripts'
 
       js :minimal_form, '/js/minimal_form.js', [
         '/js/minimal_form.js'
@@ -67,7 +67,7 @@ module KaleKrate
         '/js/pricing.js'
       ]
 
-      serve '/images', from: 'app/assets/images'
+      serve '/images', from: 'public/images'
     }
 
     get '/minimal' do
