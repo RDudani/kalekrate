@@ -26,8 +26,8 @@ module KaleKrate
     register Sinatra::HtmlHelpers
     register Sinatra::CountryHelpers
 
-    set :root, './'
-    set :environment, ENV['RACK_ENV'] #.to_sym
+    set :root, File.dirname(__FILE__)
+    set :environment, ENV['RACK_ENV'].to_sym
     set :partial_template_engine, :slim
 
     configure do
@@ -39,30 +39,31 @@ module KaleKrate
 
     Sass.load_paths << File.join(root, 'app', 'assets', 'stylesheets')
     assets {
+
       serve '/css', from: 'app/assets/stylesheets'
 
-      css :application, [
+      css :application, '/application.css', [
         '/css/base.css',
         '/css/forms.css'
       ]
 
-      css :minimal, [
+      css :minimal, '/minimal.css', [
         '/css/themes/kalekrate/form-base.css',
         '/css/themes/kalekrate/form-minimal.css'
       ]
 
-      css :advanced, [
+      css :advanced, '/advanced.css', [
         '/css/themes/kalekrate/form-base.css',
         '/css/themes/kalekrate/form-advanced.css'
       ]
 
       serve '/js', from: 'app/assets/javascripts'
 
-      js :minimal_form, [
+      js :minimal_form, '/minimal_form.js', [
         '/js/minimal_form.js'
       ]
 
-      js :advanced_form, [
+      js :advanced_form, '/advanced_form.js', [
         '/js/minimal_form.js',
         '/js/pricing.js'
       ]
@@ -76,6 +77,10 @@ module KaleKrate
 
     get '/advanced' do
       slim :advanced
+    end
+
+    get '/advanced-v2' do
+      slim :advanced_v2
     end
 
     post '/api/subscriptions/new' do

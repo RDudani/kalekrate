@@ -1,6 +1,6 @@
 $(document).ready(function() {
   var pricing = recurly.Pricing();
-  pricing.attach($('.form'));
+  pricing.attach($('form'));
 
 
   // Plans
@@ -8,6 +8,7 @@ $(document).ready(function() {
 
   function planHandler(plan) {
     console.log(plan);
+    $('.subscription-price').text(plan.price.USD.unit_amount);
   }
 
 

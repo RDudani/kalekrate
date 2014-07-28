@@ -26,13 +26,12 @@
 }
 
 form {
-  float: left;
-  padding: 20px 14px 28px 14px;
+  // padding: 20px 14px 28px 14px;
   transition-delay: 0.2s;
   transition: height 0.3s;
 
   @include mq($small) {
-    padding: 20px 26px 28px 26px;
+    // padding: 20px 26px 28px 26px;
   }
 
   .row {
