@@ -65,7 +65,9 @@ module KaleKrate
 
       js :advanced_form, '/advanced_form.js', [
         '/js/minimal_form.js',
-        '/js/pricing.js'
+        '/js/addons.js',
+        '/js/pricing.js',
+        '/js/handlebars-latest.js'
       ]
 
       serve '/images', from: 'app/assets/images'

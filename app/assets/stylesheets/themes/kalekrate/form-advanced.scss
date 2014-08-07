@@ -18,8 +18,17 @@
   }
 }
 
-.form-input__city {
-  margin-bottom: 13px;
+.section-title--addons,
+.section-title--billing {
+  color: #91C11E;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.section-title--addons {
+  margin-top: 32px;
+  margin-bottom: 0px;
+  padding: 0 25px;
 }
 
 .form-input__state {
@@ -63,6 +72,7 @@
 
 .addons-container {
   background-color: #FFFFFF;
+  border-bottom: 1px solid #D1DBDF;
   float: left;
   margin: 0;
   width: 100%;
@@ -84,6 +94,14 @@
     width: 100%;
     padding-bottom: 20px;
     position: relative;
+
+    &:first-child {
+      margin-top: 0px;
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
   }
 
     .addon-item--name {
@@ -154,9 +172,18 @@ form {
     overflow: hidden;
     width: 100%;
 
+    @include mq($small) {
+      border: 1px solid #D1DBDF;
+    }
+
     @include mq($large) {
       float: left;
       width: grid-width(8);
+    }
+
+    @include mq($xlarge) {
+      @include border-radius(5px);
+      @include box-shadow(0px 2px 0px #CCCCCC);
     }
   }
 
@@ -183,8 +210,11 @@ form {
     float: right;
     width: 100%;
 
-    @include mq($medium) {
+    @include mq($small) {
+      border: 1px solid #D1DBDF;
+    }
 
+    @include mq($medium) {
       width: 100%;
     }
 
@@ -194,6 +224,9 @@ form {
     }
 
     @include mq($xlarge) {
+      @include border-radius(5px);
+      @include box-shadow(0px 2px 0px #CCCCCC);
+
       width: grid-width(4);
       float: right;
     }
