@@ -30,13 +30,35 @@
   & select {
     width: 100%;
   }
+
+  @include mq($large) {
+    width: 30%;
+  }
 }
 
 .form-input__postal-code {
   float: left;
   padding-left: 7px;
   width: 30%;
+
+  @include mq($large) {
+    padding-right: 7px;
+    width: 20%;
+  }
 }
+
+.form-input__country {
+  width: 100%;
+
+  @include mq($large) {
+    width: 50%;
+    padding-left: 7px;
+  }
+}
+
+  [id="country"] {
+    width: 100%;
+  }
 
 
 .addons-container {
@@ -53,51 +75,47 @@
   }
 
   .addons-list--item {
-    float: left;
-    display: block;
-    position: relative;
-    width: 100%;
-    // min-height: 70px;
     border-bottom: 1px solid #EDEDED;
-    padding: 10px 0;
+    display: block;
+    float: left;
+    min-height: 30px;
+    max-height: 70px;
+    margin-top: 4px;
+    width: 100%;
+    padding-bottom: 20px;
+    position: relative;
   }
 
     .addon-item--name {
       font-size: 14px;
-      display: block;
       color: #48626C;
-      margin-top: 10px;
-      // line-height: 42px;
-    }
-
-    .addon-item--description {
-      color: #9B9B9B;
-      display: block;
-      font-size: 11px;
+      line-height: 66px;
     }
 
     .addon-item--pricing {
-      // float: right;
-      // position: absolute;
-      // top: 0;
-      // right: 0;
       @include verticalAlign();
       right: 0;
     }
+
+      input[data-recurly="addon"] {
+        width: 30px;
+        height: 30px;
+        padding: 0px 10px;
+      }
 
       .addon-item--price {
         color: #48626C;
         display: block;
         font-size: 14px;
         float: left;
-        line-height: 42px;
+        line-height: 32px;
       }
 
       .addon-item--quantity {
         text-align: center;
-        width: 40px;
         float: right;
         margin-left: 7px;
+        width: 30px;
       }
 
 form {
@@ -113,13 +131,20 @@ form {
   }
 
   @include mq($medium) {
-    width: grid-width(5);
+    width: grid-width(6);
   }
 
   @include mq($large) {
+    width: grid-width(8);
+  }
+
+  @include mq($xlarge) {
     width: grid-width(12);
   }
 
+  @include mq($xxlarge) {
+    width: grid-width(12);
+  }
 }
 
   .subscription-details-container {
@@ -158,7 +183,22 @@ form {
     float: right;
     width: 100%;
 
+    @include mq($medium) {
+
+      width: 100%;
+    }
+
     @include mq($large) {
+      float: right;
+      width: 100%;
+    }
+
+    @include mq($xlarge) {
+      width: grid-width(4);
+      float: right;
+    }
+
+    @include mq($xxlarge) {
       float: right;
       width: grid-width(4);
     }

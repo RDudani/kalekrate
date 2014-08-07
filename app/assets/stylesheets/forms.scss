@@ -65,6 +65,8 @@ select {
 }
 
 select {
+  margin: 10px 0;
+  
   &:-webkit-autofill {
     -webkit-appearance: menu;
   }
