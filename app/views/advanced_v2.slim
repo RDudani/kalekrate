@@ -44,7 +44,6 @@ body
             ul.addons-list
               li.addons-list--item
                 span.addon-item--name Salad Spinner
-                span.addon-item--description Progressive Collapsible Salad Spinner - White/Clear (5 Qt)
                 .addon-item--pricing
                   span.addon-item--price $9.99
                   .form-input.addon-item--quantity
@@ -59,7 +58,6 @@ body
 
               li.addons-list--item
                 span.addon-item--name Mixed Fruits
-                span.addon-item--description Raisins, cranberries, apricots
                 .addon-item--pricing
                   span.addon-item--price $3.00
                   .form-input.addon-item--quantity
@@ -113,6 +111,11 @@ body
 
             .form-input.form-input__postal-code
               input type="text" data-recurly="postal_code" id="postal_code" name="postal-code" class="form-input__required" placeholder="Zip Code"
+
+            .form-input.form-input__country
+              select data-recurly="country" id="country" name="country" class="form-input__required"
+                option Country
+                == StatesList.to_options
 
       .order-summary-container
         header.order-summary-title
