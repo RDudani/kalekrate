@@ -10,8 +10,9 @@ handlebar id="addon-template" type="text/x-handlebars-template"
           | {{name}}
         .addon-item--pricing
           span.addon-item--price
-            | $
-            | {{price}}
+            span data-recurly="currency_symbol"
+            span data-recurly="addon_price" data-recurly-addon='{{code}}'
+              | {{price}}
           .form-input.addon-item--quantity
             input type="text" data-recurly="addon" name="addon" data-recurly-addon='{{code}}' value="0" min="0"
       | {{/list}}
