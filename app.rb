@@ -63,6 +63,10 @@ module KaleKrate
       slim :minimal
     end
 
+    get '/minimal-full' do
+      slim :minimal
+    end
+
     get '/advanced' do
       slim :advanced
     end
