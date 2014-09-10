@@ -52,7 +52,9 @@ select {
     -moz-appearance:none;
     appearance:none;
     cursor:pointer;
-    height:40px
+    height:40px;
+    width:98%;
+    font-size:14px;
 }
 
 /* Targetting Webkit browsers only. FF will show the dropdown arrow with so much padding. */
@@ -63,7 +65,7 @@ select {
 .select-wrap {position:relative}
 .select-wrap:after {
     content:url('/images/icons/select-arrow.png');  
-    right:8px; top:2px;
+    right:8px; top:10px;
     padding:0 0 2px;
     border:0;
     position:absolute;
@@ -71,11 +73,12 @@ select {
 }
 .select-wrap:before {
     content:'';
-    right:5px; top:-4px;
-    width:20px; height:30px;
+    right:3px; top:2px;
+    width:26px; height:37px;
     position:absolute;
     pointer-events:none;
     display:block;
+    background: #fff;
 }
 
   .form__success {
