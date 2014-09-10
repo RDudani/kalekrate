@@ -91,17 +91,12 @@ body
             == StatesList.to_options
 
       .row
+        header.order-summary-title
+          h2 Order Summary
+
+      .row
         input type='submit' id="subscribe" class="btn-submit" value="Subscribe"
 
-        .order-summary-container
-          header.order-summary-title
-            h2 Order Summary
-          section.order-summary-details
-            .row.order-summary
-              div Total
-                span.order-summary--total data-recurly="total_now" id="total_now" name="total-now"
-            .row
-              input.btn-submit id="subscribe" type="submit" value="Subscribe"
 
 
 javascript:
