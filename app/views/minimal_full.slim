@@ -13,7 +13,7 @@ head
   == partial(:'shared/meta')
   == partial(:'shared/scripts')
   == css :application
-  == css :minimal
+  == css :minimal-full
 
 body
 
@@ -59,7 +59,7 @@ body
           span.icon.icon-card.icon-card__generic
           span.icon.icon-lock
 
-      .row.customer-fields--card-details
+      .row.customer-fields--name
         .form-input.form-input__selection.customer-fields--card-expiry.form-input__month.form-input__year
           label for="month" Expiration
           input type="text" data-recurly="month" id="month" name="month" placeholder="MM" maxlength="2"
