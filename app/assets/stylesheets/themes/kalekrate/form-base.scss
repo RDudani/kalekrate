@@ -40,6 +40,44 @@ form {
   }
 }
 
+select {
+    padding:3px;
+    margin: 0;
+    @include border-radius(3px);
+    color:#818181;
+    border:1px solid #c6cfd2;
+    outline:none;
+    display: inline-block;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+    cursor:pointer;
+    height:40px
+}
+
+/* Targetting Webkit browsers only. FF will show the dropdown arrow with so much padding. */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    select {padding-right:18px}
+}
+
+.select-wrap {position:relative}
+.select-wrap:after {
+    content:url('/images/icons/select-arrow.png');  
+    right:8px; top:2px;
+    padding:0 0 2px;
+    border:0;
+    position:absolute;
+    pointer-events:none;
+}
+.select-wrap:before {
+    content:'';
+    right:5px; top:-4px;
+    width:20px; height:30px;
+    position:absolute;
+    pointer-events:none;
+    display:block;
+}
+
   .form__success {
     display: none;
   }

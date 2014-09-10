@@ -82,8 +82,9 @@ body
       .row.customer-fields--card-details
         .form-input
           label for="postal_code" State
-          select id="state" name="state"
-            == StatesList.to_options
+          .select-wrap
+            select id="state" name="state"
+              == StatesList.to_options
 
         .form-input
           label for="postal_code" Zip Code
