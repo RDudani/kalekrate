@@ -53,7 +53,7 @@ module KaleKrate
 
       css :minimal_full, '/css/minimal.css', [
         '/css/themes/kalekrate/form-base.css',
-        '/css/themes/kalekrate/form-minimal.css'
+        '/css/themes/kalekrate/form-minimal-full.css'
       ]
 
       css :advanced, '/css/advanced.css', [
