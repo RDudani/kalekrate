@@ -51,6 +51,11 @@ module KaleKrate
         '/css/themes/kalekrate/form-minimal.css'
       ]
 
+      css :minimal_full, '/css/minimal.css', [
+        '/css/themes/kalekrate/form-base.css',
+        '/css/themes/kalekrate/form-minimal.css'
+      ]
+
       css :advanced, '/css/advanced.css', [
         '/css/themes/kalekrate/form-base.css',
         '/css/themes/kalekrate/form-advanced.css'
@@ -64,7 +69,7 @@ module KaleKrate
     end
 
     get '/minimal-full' do
-      slim :minimal
+      slim :minimal_full
     end
 
     get '/advanced' do
