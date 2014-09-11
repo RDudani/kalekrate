@@ -39,26 +39,40 @@ module KaleKrate
 
     Sass.load_paths << File.join(root, 'app', 'assets', 'stylesheets')
     assets {
+
       serve '/css', from: 'app/assets/stylesheets'
 
-      css :application, '/css/application.css', [
+      css :application, '/application.css', [
         '/css/base.css',
         '/css/forms.css'
       ]
 
-      css :minimal, '/css/minimal.css', [
+      css :minimal, '/minimal.css', [
         '/css/themes/kalekrate/form-base.css',
         '/css/themes/kalekrate/form-minimal.css'
       ]
 
-      css :minimal_full, '/css/minimal_full.css', [
+      css :minimal_full, '/minimal_full.css', [
         '/css/themes/kalekrate/form-base.css',
         '/css/themes/kalekrate/form-minimal-full.css'
       ]
 
-      css :advanced, '/css/advanced.css', [
+      css :advanced, '/advanced.css', [
         '/css/themes/kalekrate/form-base.css',
         '/css/themes/kalekrate/form-advanced.css'
+      ]
+
+      serve '/js', from: 'app/assets/javascripts'
+
+      js :minimal_form, '/minimal_form.js', [
+        '/js/minimal_form.js'
+      ]
+
+      js :advanced_form, '/advanced_form.js', [
+        '/js/minimal_form.js',
+        '/js/addons.js',
+        '/js/pricing.js',
+        '/js/handlebars-latest.js'
       ]
 
       serve '/images', from: 'app/assets/images'
@@ -78,6 +92,10 @@ module KaleKrate
 
     get '/one-time' do
       slim :one_time
+    end
+
+    get '/advanced-v2' do
+      slim :advanced_v2
     end
 
     post '/api/subscriptions/new' do

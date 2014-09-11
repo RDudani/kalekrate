@@ -26,17 +26,17 @@
 }
 
 form {
-  float: left;
-  padding: 20px 14px 28px 14px;
+  // padding: 20px 14px 28px 14px;
   transition-delay: 0.2s;
   transition: height 0.3s;
 
   @include mq($small) {
-    padding: 20px 26px 28px 26px;
+    // padding: 20px 26px 28px 26px;
   }
 
   .row {
     width: 100%;
+    float: left;
   }
 }
 
@@ -124,5 +124,50 @@ select, .quantity {
 .customer-fields--card-number {
   input[type='text'] {
     padding: 5px 44px 5px 74px;
+  }
+}
+
+
+.customer-fields--card-expiry {
+  [id="month"],
+  [id="year"] {
+   text-align: center;
+
+    &::-webkit-input-placeholder {
+       text-align: center;
+    }
+
+    &:-moz-placeholder { /* Firefox 18- */
+       text-align: center;
+    }
+
+     ::-moz-placeholder {  /* Firefox 19+ */
+       text-align: center;
+    }
+
+    &:-ms-input-placeholder {
+       text-align: center;
+    }
+
+  }
+
+  [id="month"] {
+    @include border-top-right-radius(0px);
+    @include border-bottom-right-radius(0px);
+    float: left;
+    width: 50%;
+  }
+
+  [id="year"] {
+    @include border-top-left-radius(0px);
+    @include border-bottom-left-radius(0px);
+    float: left;
+    width: 50%;
+    margin-left: -1px;
+  }
+
+  [id="month"]:focus {
+    position: relative;
+    z-index: 10;
   }
 }
