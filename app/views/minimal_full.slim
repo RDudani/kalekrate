@@ -52,11 +52,6 @@ body
           label for="last_name" Last Name
           input type="text" data-recurly="last_name" id="last_name" name="last-name"
 
-      .row.customer-fields--email
-        .form-input.form-input__email
-          label for="email" Email
-          input type="text" data-recurly="email" id="email" name="email"
-
       .row.customer-fields--card-number
         .form-input.form-input__number
           label for="number" Credit Card Number
@@ -151,7 +146,7 @@ javascript:
           "recurly-token": $('input[name="recurly-token"]').val(),
           "first-name": $('input[name="first-name"]').val(),
           "last-name": $('input[name="last-name"]').val(),
-          "email": $('input[name="email"]').val()
+          //"email": $('input[name="email"]').val()
         };
 
         $.ajax({
