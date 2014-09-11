@@ -76,6 +76,10 @@ module KaleKrate
       slim :advanced
     end
 
+    get '/one-time' do
+      slim :one_time
+    end
+
     post '/api/subscriptions/new' do
       begin
         subscription = Recurly::Subscription.create plan_code: 'kale-fan',
@@ -103,6 +107,17 @@ module KaleKrate
         # redirect '/minimal'
       rescue Recurly::Resource::Invalid, Recurly::API::ResponseError => e
         redirect '/minimal'
+      end
+    end
+
+    post '/api/transactions' do
+      begin
+        Recurly::Account.create! account_code: SecureRandom.uuid,
+          billing_info: { token_id: params['recurly-token'] }
+        puts params
+        # redirect '/minimal'
+      rescue Recurly::Resource::Invalid, Recurly::API::ResponseError => e
+        redirect '/one-time'
       end
     end
 
