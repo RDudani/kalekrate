@@ -62,7 +62,11 @@ select, .quantity {
   color:#fff;
   width:15%;
   padding:8px;
-  height:40px;
+  height:41px;
+  position: relative;
+  right: 46px;
+  top: 17px;
+  width: 35%;
 }
 
 /* Targetting Webkit browsers only. FF will show the dropdown arrow with so much padding. */
