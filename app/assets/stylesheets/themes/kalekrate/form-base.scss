@@ -40,7 +40,7 @@ form {
   }
 }
 
-select {
+select, .quantity {
     padding:3px;
     margin: 0;
     @include border-radius(3px);
@@ -55,6 +55,14 @@ select {
     height:40px;
     width:98%;
     font-size:14px;
+}
+.quantity {
+  background:#91C11E;
+  border:1px solid #fff;
+  color:#fff;
+  width:15%;
+  padding:8px;
+  height:40px;
 }
 
 /* Targetting Webkit browsers only. FF will show the dropdown arrow with so much padding. */
