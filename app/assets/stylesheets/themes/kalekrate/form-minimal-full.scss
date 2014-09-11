@@ -78,11 +78,11 @@
 
     &:nth-child(2) {
       padding-right: 14px;
-      width: 30%;
+      width: 34%;
     }
 
     &:nth-child(3) {
-      width: 30%;
+      width: 36%;
     }
 
     @include mq($small) {
