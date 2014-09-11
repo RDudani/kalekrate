@@ -51,7 +51,7 @@ module KaleKrate
         '/css/themes/kalekrate/form-minimal.css'
       ]
 
-      css :minimal_full, '/css/minimal.css', [
+      css :minimal_full, '/css/minimal_full.css', [
         '/css/themes/kalekrate/form-base.css',
         '/css/themes/kalekrate/form-minimal-full.css'
       ]
