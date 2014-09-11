@@ -2,6 +2,7 @@ require 'sinatra/base'
 
 module StatesList
   @all = {
+    Select: '',
     AL: 'Alabama',
     AK: 'Alaska',
     AZ: 'Arizona',
