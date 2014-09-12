@@ -40,7 +40,7 @@ form {
   }
 }
 
-select, .quantity {
+select, input.quantity {
     padding:3px;
     margin: 0;
     @include border-radius(3px);
@@ -56,7 +56,7 @@ select, .quantity {
     width:98%;
     font-size:14px;
 }
-.quantity {
+input.quantity {
   background:#91C11E;
   border:1px solid #fff;
   color:#fff;
@@ -75,7 +75,8 @@ select, .quantity {
 }
 
 .select-wrap {position:relative}
-.select-wrap:after {
+.select-wrap:after,
+.quantity-wrap:after {
     content:url('/images/icons/select-arrow-small.png');  
     right:8px; top:10px;
     padding:0 0 2px;
@@ -83,7 +84,10 @@ select, .quantity {
     position:absolute;
     pointer-events:none;
 }
-.select-wrap:before {
+.quantity-wrap:after {
+  content:url('/images/icons/number-arrow-green.png'); 
+}
+.select-wrap:before, .quantity-wrap:before {
     content:'';
     right:3px; top:2px;
     width:26px; height:37px;
@@ -91,6 +95,9 @@ select, .quantity {
     pointer-events:none;
     display:block;
     background: #fff;
+}
+.quantity-wrap:before {
+    background: #91C11E;
 }
 
   .form__success {
