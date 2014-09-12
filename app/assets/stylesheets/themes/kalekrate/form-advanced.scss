@@ -5,6 +5,7 @@
 .customer-fields--card-details {
   .form-input {
     float: left;
+    margin: 7px 0;
 
     &:first-child {
       padding-right: 7px;
@@ -199,6 +200,7 @@ form {
     .billing-info-container {
       background-color: #fafafa;
       float: left;
+      padding: 20px 0;
 
       .row {
         padding: 0 25px;
@@ -242,11 +244,12 @@ form {
       float: left;
       padding: 10px 25px;
       width: 100%;
+      color:#666;
     }
 
   .subscription-name-container {
     width: 100%;
-    padding:37px 20px;
+    padding:20px;
   }
   .subscription-pricing {
     right:20px;
@@ -263,6 +266,9 @@ form {
 
   .subscription-name-container .select-wrap:before {
     border: 0;
+    height: 38px;
+    right: 5px;
+    top: 1px;
   }
 
   .subscription-name-container .select-wrap {
@@ -277,6 +283,10 @@ form {
     position:static;
     margin-top:20px;
     margin-left:5px;
+  }
+
+  .customer-fields--card-details .form-input:nth-child(2) {
+    padding-right:0;
   }
 
    
