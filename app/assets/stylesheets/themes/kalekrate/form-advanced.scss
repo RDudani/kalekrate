@@ -243,3 +243,10 @@ form {
       padding: 10px 25px;
       width: 100%;
     }
+
+.select-wrap:after {
+  background: #91C11E;
+  select {
+    color:#fff;
+  }
+}

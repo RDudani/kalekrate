@@ -7,7 +7,7 @@ $(document).ready(function() {
 
   function planHandler(plan) {
     console.log(plan);
-    $('.subscription-price').text(plan.price.USD.unit_amount);
+    $('.subscription-price').text('$'+plan.price.USD.unit_amount);
     showAddons(plan.addons);
     pricing.attach($('form'));
   }
@@ -17,6 +17,7 @@ $(document).ready(function() {
 
   function addonHandler(addon) {
     console.log(addon);
+    $('.addons-summary-container').empty();
     showAddonsSummary(addon);
   }
 
