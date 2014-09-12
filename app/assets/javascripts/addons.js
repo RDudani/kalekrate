@@ -14,20 +14,20 @@ function showAddons(addons) {
   $('.addons-container').html(template(data));
 }
 
-function showAddonsSummary(addons) {
+function showAddonsSummary(addon) {
   var source   = $("#addon-summary-template").html()
     , template = Handlebars.compile(source)
     , data = { list: [] };
 
-  $(addons).each(function(idx, value) {
+  //$(addon).each(function(idx, value) {
     data.list.push({
       name: value.name,
       code: value.code,
       quantity: value.quantity,
       price: value.price.USD.unit_amount,
-      symbol: value.price.USD.symbol
+      currency_symbol: value.price.USD.symbol
     });
-  });
+  //});
 
   $('.addons-summary-container').html(template(data));
 }
