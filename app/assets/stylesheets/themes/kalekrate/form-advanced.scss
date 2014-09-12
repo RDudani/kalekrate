@@ -283,8 +283,8 @@ form {
     top: 1px;
   }
 
-  .subscription-name-container .select-wrap {
-
+  .subscription-name-container .select-wrap:after {
+    content:url('/images/icons/select-arrow-green.png');
   }
 
   .subscription-name-container .quantity-wrap {
