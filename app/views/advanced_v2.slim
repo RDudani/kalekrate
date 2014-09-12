@@ -18,7 +18,10 @@ head
 
 body
 
-  .test
+  .confirmation
+      .confirmation-body
+        h2.confirmation-messaging Thank you for subscribing.
+        You will be billed every month.
 
   form
     input type="hidden" data-recurly="currency" id="plan_currency" name="plan-currency" value="USD"
@@ -100,7 +103,7 @@ body
           .row.order-summary
             div.addons-summary-container
               input type="text" data-recurly="coupon" placeholder="Enter coupon code"
-              button  class="btn-submit" id="apply-coupon" Apply
+              input type="button" class="btn-submit" id="apply-coupon" Apply
               div
                 | Tax
                 span data-recurly="tax_now"
