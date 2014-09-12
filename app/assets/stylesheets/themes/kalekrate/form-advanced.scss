@@ -244,7 +244,22 @@ form {
       width: 100%;
     }
 
-  .subscription-name-container select {
+  .subscription-name-container select, 
+  .subscription-name-container select:before {
     background:  #91C11E;
+    color:#fff;
   }
+
+  .subscription-name-container .select-wrap {
+
+  }
+
+  .subscription-name-container .quantity-wrap {
+
+  }
+
+  .subscription-name-container input.quantity {
+
+  }
+
    
