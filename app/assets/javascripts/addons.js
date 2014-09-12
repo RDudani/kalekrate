@@ -24,10 +24,9 @@ function showAddonsSummary(addon) {
       name: value.name,
       code: value.code,
       quantity: value.quantity,
-      price: value.price.USD.unit_amount,
-      currency_symbol: value.price.USD.symbol
+      price: value.price.USD.unit_amount
     });
   });
-  
+
   $('.addons-summary-container').append(template(data));
 }

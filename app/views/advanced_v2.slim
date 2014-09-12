@@ -100,12 +100,13 @@ body
           h2 Order Summary
         section.order-summary-details
           .row.order-summary
-            div.addons-summary-container
+            div
               input type="text" data-recurly="coupon" placeholder="Enter coupon code"
               input type="button" class="btn-submit" id="apply-coupon" value="Apply"
               div
                 | Tax
                 span data-recurly="tax_now"
+            div.addons-summary-container
             div
               | Total
               span data-recurly="total_now" id="total_now" name="total-now" class="order-summary--total"

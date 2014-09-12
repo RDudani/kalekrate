@@ -2,8 +2,6 @@ $(document).ready(function() {
   var pricing = recurly.Pricing();
   pricing.attach($('form'));
 
-  $('.addons-summary-container').empty();
-
   // Plans
   pricing.on('set.plan', planHandler);
 
