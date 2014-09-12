@@ -19,6 +19,6 @@ $(document).ready(function() {
     //data-recurly-addon
     console.log('hi');
     showAddonsSummary(plan.addons);
-    pricing.attach($('form'));
+    //pricing.attach($('form'));
   }
 });
