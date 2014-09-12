@@ -244,10 +244,19 @@ form {
       width: 100%;
     }
 
+  .subscription-name-container {
+    width: 100%;
+  }
+  .subscription-pricing {
+    right:0;
+  }
   .subscription-name-container select, 
-  .subscription-name-container select:before {
+  .subscription-name-container select-wrap:before,
+  .subscription-name-container input.quantity {
     background:  #91C11E;
     color:#fff;
+    border: 1px solid #fff;
+    font-size:20px;
   }
 
   .subscription-name-container .select-wrap {
@@ -255,7 +264,7 @@ form {
   }
 
   .subscription-name-container .quantity-wrap {
-
+    width:30%;
   }
 
   .subscription-name-container input.quantity {
