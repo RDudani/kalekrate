@@ -118,8 +118,9 @@
       color: #48626c;
     }
 
-    .addon-item--quantity {
-        float:right;
+    .addon-item--quantity-summary {
+        position:absolute;
+        top:50%;
     }
 
       input[data-recurly="addon"] {
