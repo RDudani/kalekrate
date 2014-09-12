@@ -17,7 +17,6 @@ $(document).ready(function() {
 
   function addonHandler(addon) {
     console.log(addon);
-    console.log('hi');
     showAddonsSummary(addon);
     //pricing.attach($('form'));
   }
