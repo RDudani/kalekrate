@@ -90,6 +90,7 @@ $(document).ready(function() {
 });
 
 function subscription_created(data) {
+  console.log(data);
   $('form').addClass('form__success');
 
   $('.confirmation').addClass('confirmation__show');
