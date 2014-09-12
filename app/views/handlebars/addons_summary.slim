@@ -1,7 +1,5 @@
-handlebar id="addon-template" type="text/x-handlebars-template"
+handlebar id="addon-summary-template" type="text/x-handlebars-template"
   | {{#if list}}
-  .row
-    h3.section-title--addons Add-on Items
   .row
     ul.addons-list
       | {{#list}}
@@ -13,7 +11,6 @@ handlebar id="addon-template" type="text/x-handlebars-template"
             span data-recurly="currency_symbol"
             span data-recurly="addon_price" data-recurly-addon='{{code}}'
               | {{price}}
-          .form-input.addon-item--quantity
-            input type="text" data-recurly="addon" name="addon" data-recurly-addon='{{code}}' value="0" min="0"
+        span data-recurly-addon='{{quantity}}'
       | {{/list}}
   | {{/if}}
