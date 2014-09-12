@@ -20,4 +20,11 @@ $(document).ready(function() {
     showAddonsSummary(addon);
     //pricing.attach($('form'));
   }
+
+  //coupon
+  pricing.on('set.coupon', couponHandler);
+
+  function couponHandler(coupon) {
+    console.log(coupon);
+  }
 });
