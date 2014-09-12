@@ -315,8 +315,10 @@ form {
     text-align:right;
     font-size: 22px;
     color: #48626c;
-    span.symbol {
-      padding-left:100px
+    span.total-amount {
+      width:30%;
+      position:absolute;
+      right:20px;
     }
   }
 

@@ -103,14 +103,11 @@ body
         section.order-summary-details
           .row.order-summary
             div.addons-summary-container
-            div.coupon-code
-              span Enter coupon code
-              input type="text" data-recurly="coupon" placeholder="Enter coupon code"
-              input type="button" class="btn-submit" id="apply-coupon" value="Apply"
             div.tax
               | Tax
-              span.symbol $
-              span data-recurly="tax_now"
+              span.total-amount
+                span.symbol $
+                span data-recurly="tax_now"
             div.total
               | Total
               span.total-amount
