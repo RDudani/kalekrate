@@ -28,11 +28,13 @@ body
       .subscription-details-container
         section.form-bar
           .subscription-name-container
-            select data-recurly="plan" id="plan" name="plan"
-              option value="kale-fan" Kale Fan
-              option value="kale-krazy" Kale Krazy
+            .select-wrap
+              select data-recurly="plan" id="plan" name="plan"
+                option value="kale-fan" Kale Fan
+                option value="kale-krazy" Kale Krazy
 
-            input type="text" data-recurly="plan_quantity" id="plan_quantity" name="plan-quantity" class="form-input__required" value="1"
+            .quantity-wrap
+            input type="number" data-recurly="plan_quantity" id="plan_quantity" name="plan-quantity" class="form-input__required" value="1"
 
           .subscription-pricing-container
             .subscription-pricing
