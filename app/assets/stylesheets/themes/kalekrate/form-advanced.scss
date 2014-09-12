@@ -251,7 +251,7 @@ form {
     right:0;
   }
   .subscription-name-container select, 
-  .subscription-name-container select-wrap:before,
+  .subscription-name-container .select-wrap:before,
   .subscription-name-container input.quantity {
     background:  #91C11E;
     color:#fff;
@@ -268,7 +268,8 @@ form {
   }
 
   .subscription-name-container input.quantity {
-
+    position:static;
+    margin-top:20px;
   }
 
    
