@@ -74,7 +74,7 @@ input.quantity {
     select {padding-right:18px}
 }
 
-.select-wrap {position:relative}
+.select-wrap, .quantity-wrap {position:relative}
 .select-wrap:after,
 .quantity-wrap:after {
     content:url('/images/icons/select-arrow-small.png');  
