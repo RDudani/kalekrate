@@ -276,6 +276,10 @@ form {
     font-size:20px;
   }
 
+  .select-wrap:before {
+    right:1px
+  }
+
   .subscription-name-container .select-wrap:before {
     border: 0;
     height: 38px;
