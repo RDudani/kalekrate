@@ -28,7 +28,6 @@ function showAddonsSummary(addon) {
     });
   });
 
-  console.log(data.list.quantity);
-
   $('.addons-summary-container').append(template(data));
+
 }
