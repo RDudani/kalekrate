@@ -29,5 +29,5 @@ function showAddonsSummary(addon) {
     });
   });
 
-  $('.addons-summary-container').append(template(data));
+  $('.addons-summary-container').empty().append(template(data));
 }
