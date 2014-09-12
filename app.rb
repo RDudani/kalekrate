@@ -59,6 +59,7 @@ module KaleKrate
 
       css :advanced, '/advanced.css', [
         '/css/themes/kalekrate/form-base.css',
+        '/css/themes/kalekrate/form-minimal.css',
         '/css/themes/kalekrate/form-advanced.css'
       ]
 
