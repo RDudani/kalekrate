@@ -106,14 +106,17 @@
   }
 
     .addon-item--name {
-      font-size: 14px;
+      font-size: 16px;
       color: #48626C;
       line-height: 66px;
+      display:inline-block;
+      width:60%;
     }
 
     .addon-item--pricing {
       @include verticalAlign();
       right: 0;
+      color: #48626c;
     }
 
       input[data-recurly="addon"] {
@@ -187,6 +190,10 @@ form {
       @include box-shadow(0px 2px 0px #CCCCCC);
     }
   }
+
+    .addons-summary-container .row {
+      border-bottom: 2px dashed #c6cfd2;
+    }
 
     .addons-container {
       background-color: #ffffff;
@@ -288,5 +295,12 @@ form {
   .customer-fields--card-details .form-input:nth-child(2) {
     padding-right:0;
   }
+
+  input[type="submit"] {
+    width:90%;
+    margin:20px;
+  }
+
+
 
    
