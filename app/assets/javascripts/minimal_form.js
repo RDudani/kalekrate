@@ -40,7 +40,17 @@ $(document).ready(function() {
           "recurly-token": $('input[name="recurly-token"]').val(),
           "first-name": $('input[name="first-name"]').val(),
           "last-name": $('input[name="last-name"]').val(),
-          "email": $('input[name="email"]').val()
+          "email": $('input[name="email"]').val(),
+          "address" : $('input[name="address"]').val(),
+          "city" : $('input[name="city"]').val(),
+          "state" : $('#state').val(),
+          "zip": $('input[name="postal-code"]').val(),
+          "number": $('input[name="number"]').val(),
+          "month": $('input[name="month"]').val(),
+          "year": $('input[name="year"]').val()
+
+
+
         };
 
         $.ajax({
