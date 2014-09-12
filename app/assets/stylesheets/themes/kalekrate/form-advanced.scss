@@ -306,7 +306,7 @@ form {
     margin:20px;
   }
 
-  .total {
+  .total, .tax {
     position:relative;
     padding: 20px;
     float:right;
@@ -315,8 +315,8 @@ form {
     text-align:right;
     font-size: 22px;
     color: #48626c;
-    span.total-amount {
-      position:absolute;
+    span.symbol {
+      padding-left:100px
     }
   }
 
