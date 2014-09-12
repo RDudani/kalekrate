@@ -15,11 +15,13 @@ function showAddons(addons) {
 }
 
 function showAddonsSummary(addons) {
+  console.log('showaddonsummary');
   var source   = $("#addon-summary-template").html()
     , template = Handlebars.compile(source)
     , data = { list: [] };
 
   $(addons).each(function(idx, value) {
+    console.log(data);
     data.list.push({
       name: value.name,
       code: value.code,
