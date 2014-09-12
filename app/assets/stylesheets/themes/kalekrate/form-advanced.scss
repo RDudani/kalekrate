@@ -112,6 +112,13 @@
       display:inline-block;
     }
 
+    input[type="checkbox"] {
+      position: relative;
+      top: -2px;
+      vertical-align: baseline;
+      margin-right:10px;
+    }
+
     .addon-item--pricing {
       @include verticalAlign();
       right: 0;
