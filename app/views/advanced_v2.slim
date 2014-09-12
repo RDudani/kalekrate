@@ -99,6 +99,11 @@ body
         section.order-summary-details
           .row.order-summary
             div.addons-summary-container
+              input type="text" data-recurly="coupon" placeholder="Enter coupon code"
+              button  class="btn-submit" id="apply-coupon" Apply
+              div
+                | Tax
+                span data-recurly="tax_now"
             div
               | Total
               span data-recurly="total_now" id="total_now" name="total-now" class="order-summary--total"
