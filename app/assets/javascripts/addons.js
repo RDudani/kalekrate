@@ -19,7 +19,7 @@ function showAddonsSummary(addon) {
     , template = Handlebars.compile(source)
     , data = { list: [] };
 
-  //$(addon).each(function(idx, value) {
+  $(addon).each(function(idx, value) {
     data.list.push({
       name: value.name,
       code: value.code,
@@ -27,7 +27,7 @@ function showAddonsSummary(addon) {
       price: value.price.USD.unit_amount,
       currency_symbol: value.price.USD.symbol
     });
-  //});
+  });
 
   $('.addons-summary-container').html(template(data));
 }
