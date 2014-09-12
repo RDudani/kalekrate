@@ -251,7 +251,7 @@ form {
       float: left;
       padding: 10px 25px;
       width: 100%;
-      color:#666;
+      color:#48626c;
     }
 
   .subscription-name-container {
@@ -299,6 +299,19 @@ form {
   input[type="submit"] {
     width:90%;
     margin:20px;
+  }
+
+  .total {
+    padding: 20px;
+    float:right;
+    border-top:1px solid #48626c;
+    width:100%;
+    text-align:right;
+    font-size: 22px;
+    color: #48626c;
+    span {
+      padding-left:100px;
+    }
   }
 
 

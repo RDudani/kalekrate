@@ -102,14 +102,15 @@ body
           h2 Order Summary
         section.order-summary-details
           .row.order-summary
-            div
+            div.addons-summary-container
+            div.coupon-code
+              span Enter coupon code
               input type="text" data-recurly="coupon" placeholder="Enter coupon code"
               input type="button" class="btn-submit" id="apply-coupon" value="Apply"
-              div
-                | Tax
-                span $
-                span data-recurly="tax_now"
-            div.addons-summary-container
+            div
+              | Tax
+              span $
+              span data-recurly="tax_now"
             div.total
               | Total
               span $
