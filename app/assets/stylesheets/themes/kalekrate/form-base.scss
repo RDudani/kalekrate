@@ -98,6 +98,11 @@ input.quantity {
 }
 .quantity-wrap:before {
     background: #91C11E;
+    right:-2px;
+}
+.quantity-wrap:after {
+    top:7px;
+    right:8px;
 }
 
   .form__success {
