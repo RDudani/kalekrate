@@ -119,8 +119,9 @@
     }
 
     .addon-item--quantity-summary {
-        position:absolute;
-        top:50%;
+        position: absolute;
+        right: 20%;
+        top: 32%;
     }
 
       input[data-recurly="addon"] {
@@ -306,6 +307,7 @@ form {
   }
 
   .total {
+    position:relative;
     padding: 20px;
     float:right;
     border-top:1px solid #e2e7e9;
@@ -313,8 +315,8 @@ form {
     text-align:right;
     font-size: 22px;
     color: #48626c;
-    span.symbol {
-      padding-left:100px;
+    span.total-amount {
+      position:absolute;
     }
   }
 
