@@ -24,7 +24,7 @@ function showAddonsSummary(addons) {
       name: value.name,
       code: value.code,
       quantity: value.quantity,
-      price: value.price.USD.unit_amount
+      price: value.price.USD.symbol
     });
   });
 
