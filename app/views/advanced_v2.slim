@@ -107,10 +107,12 @@ body
               input type="button" class="btn-submit" id="apply-coupon" value="Apply"
               div
                 | Tax
+                span $
                 span data-recurly="tax_now"
             div.addons-summary-container
-            div
+            div.total
               | Total
+              span $
               span data-recurly="total_now" id="total_now" name="total-now" class="order-summary--total"
 
 
