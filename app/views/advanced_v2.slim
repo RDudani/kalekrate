@@ -86,17 +86,19 @@ body
 
           .row
             .form-input.form-input__state
-              select data-recurly="state" id="state" name="state" class="form-input__required"
-                option State
-                == StatesList.to_options
+              .select-wrap
+                select data-recurly="state" id="state" name="state" class="form-input__required"
+                  option State
+                  == StatesList.to_options
 
             .form-input.form-input__postal-code
               input type="text" data-recurly="postal_code" id="postal_code" name="postal-code" class="form-input__required" placeholder="Zip Code"
           .row
             .form-input.form-input__country
-              select data-recurly="country" id="country" name="country" class="form-input__required"
-                option Country
-                == StatesList.to_options
+              .select-wrap
+                select data-recurly="country" id="country" name="country" class="form-input__required"
+                  option Country
+                  == StatesList.to_options
 
       .order-summary-container
         header.order-summary-title
