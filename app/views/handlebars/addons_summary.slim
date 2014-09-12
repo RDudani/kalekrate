@@ -8,7 +8,7 @@ handlebar id="addon-summary-template" type="text/x-handlebars-template"
           | {{name}}
         .addon-item--pricing
           span.addon-item--price
-            span data-recurly="currency_symbol"
+            span data-recurly="currency_symbol" | {{symbol}}
             span data-recurly="addon_price" data-recurly-addon='{{code}}'
               | {{price}}
         span data-recurly-addon='{{quantity}}' | {{quantity}}
