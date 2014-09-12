@@ -246,9 +246,11 @@ form {
 
   .subscription-name-container {
     width: 100%;
+    padding:37px 20px;
   }
   .subscription-pricing {
-    right:0;
+    right:20px;
+    top:65%;
   }
   .subscription-name-container select, 
   .subscription-name-container .select-wrap:before,
@@ -257,6 +259,10 @@ form {
     color:#fff;
     border: 1px solid #fff;
     font-size:20px;
+  }
+
+  .subscription-name-container .select-wrap:before {
+    border: 0;
   }
 
   .subscription-name-container .select-wrap {
@@ -270,6 +276,7 @@ form {
   .subscription-name-container input.quantity {
     position:static;
     margin-top:20px;
+    margin-left:5px;
   }
 
    
