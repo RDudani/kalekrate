@@ -28,6 +28,6 @@ function showAddonsSummary(addon) {
       currency_symbol: value.price.USD.symbol
     });
   });
-
-  $('.addons-summary-container').empty().append(template(data));
+  
+  $('.addons-summary-container').append(template(data));
 }
