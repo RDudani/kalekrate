@@ -304,12 +304,12 @@ form {
   .total {
     padding: 20px;
     float:right;
-    border-top:1px solid #48626c;
+    border-top:1px solid #e2e7e9;
     width:100%;
     text-align:right;
     font-size: 22px;
     color: #48626c;
-    span {
+    span.symbol {
       padding-left:100px;
     }
   }

@@ -107,13 +107,13 @@ body
               span Enter coupon code
               input type="text" data-recurly="coupon" placeholder="Enter coupon code"
               input type="button" class="btn-submit" id="apply-coupon" value="Apply"
-            div
+            div.tax
               | Tax
-              span $
+              span.symbol $
               span data-recurly="tax_now"
             div.total
               | Total
-              span $
+              span.symbol $
               span data-recurly="total_now" id="total_now" name="total-now" class="order-summary--total"
 
 
