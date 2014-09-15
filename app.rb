@@ -76,6 +76,14 @@ module KaleKrate
         '/js/handlebars-latest.js'
       ]
 
+      js :amazon_form, '/amazon_form.js', [
+        '/js/minimal_form.js',
+        '/js/amazon_form.js',
+        '/js/addons.js',
+        '/js/pricing.js',
+        '/js/handlebars-latest.js'
+      ]
+
       serve '/images', from: 'app/assets/images'
     }
 
@@ -97,6 +105,10 @@ module KaleKrate
 
     get '/advanced-v2' do
       slim :advanced_v2
+    end
+
+    get '/amazon' do
+      slim :amazon
     end
 
     post '/api/subscriptions/new' do
