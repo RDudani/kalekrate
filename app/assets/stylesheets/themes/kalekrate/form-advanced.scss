@@ -229,6 +229,7 @@ form {
         margin-bottom: 20px;
         padding: 0 30px;
         float:left;
+        width:100%;
         a {
           padding: 10px 10px 0 10px;
           text-decoration:none;
@@ -330,6 +331,13 @@ form {
     width:98%;
   }
 
+  .subscription-name-container .curr {
+    width: 30%;
+    select {
+      width: 98%;
+    }
+  }
+
   .customer-fields--card-details .form-input:nth-child(2) {
     padding-right:0;
   }
@@ -357,6 +365,19 @@ form {
   .tax {
     font-size:16px;
     border-top:0;
+  }
+  .coupon {
+    .coupon-code {
+      display:inline-block;
+      margin-top: 20px;
+    }
+    .btn-submit {
+      float:left;
+      margin:0;
+    }
+  }
+  .coupon-text a {
+    color: #48626c;
   }
 
 
