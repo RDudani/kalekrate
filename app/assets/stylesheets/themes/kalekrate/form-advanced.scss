@@ -370,13 +370,20 @@ form {
     .coupon-code {
       display:inline-block;
       margin-top: 20px;
+      width:70%;
     }
     .btn-submit {
-      float:left;
-      margin:0;
+      display:inline-block;
+      background: #48626c;
+      color:#fff;
+      border: 0;
+      @include border-radius(3px);
+      margin: 0 0 0 2px;
+      padding: 6px 5px 8px;
+
     }
   }
-  .coupon-text a {
+  .coupon-text {
     color: #48626c;
   }
 
