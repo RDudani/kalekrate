@@ -66,10 +66,12 @@ module KaleKrate
       serve '/js', from: 'app/assets/javascripts'
 
       js :minimal_form, '/minimal_form.js', [
+        '/js/common_form.js',
         '/js/minimal_form.js'
       ]
 
       js :advanced_form, '/advanced_form.js', [
+        '/js/common_form.js',
         '/js/minimal_form.js',
         '/js/addons.js',
         '/js/pricing.js',
@@ -77,7 +79,7 @@ module KaleKrate
       ]
 
       js :amazon_form, '/amazon_form.js', [
-        '/js/minimal_form.js',
+        '/js/common_form.js',
         '/js/amazon_form.js',
         '/js/addons.js',
         '/js/pricing.js',

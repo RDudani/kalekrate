@@ -44,7 +44,7 @@ body
               | /month
 
         section.form-errors.form-errors__hidden
-          strong Oops! The following fields appear to be invalid:
+          strong Oops! The following errors occurred:
           ul
 
         section.addons-container
@@ -79,7 +79,7 @@ body
 
           .row
             input type="hidden" name="amazon-billing-agreement" value="" id="amazon-billing-agreement"
-            input type="submit" style="display:hidden;" id="subscribe" class="btn-submit" value="Subscribe"
+            input type="submit" id="subscribe" class="btn-submit" value="Subscribe"
 
   == partial(:'handlebars/addons')
   == partial(:'handlebars/addons_summary')

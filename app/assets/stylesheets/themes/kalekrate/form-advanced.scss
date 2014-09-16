@@ -158,9 +158,11 @@
   width: 100%;
   text-align: center;
   box-sizing: border-box;
+  margin: 0 auto;
+  text-align: center;
 
   .widget-container {
-    margin: 0 10px 10px !important;
+    display: inline-block !important;
   }
 }
 
