@@ -100,20 +100,21 @@ body
                   option Country
                   == StatesList.to_options
 
-          .row
-            ul
-              li 
-                input type="text" data-recurly="coupon" value="test"
-                span data-recurly="currency_symbol"
-                span data-recurly="discount_now"
-                span data-recurly="discount_next"
-
       .order-summary-container
         header.order-summary-title
           h2 Order Summary
         section.order-summary-details
           .row.order-summary
             div.addons-summary-container
+            div.coupon
+              a.coupon-text href="#" Enter coupon code
+                span.coupon-blank &mdash;
+              span.hidden  
+                input type="text" data-recurly="coupon" value="test"
+                input type="button" id="enter-coupon" value="Apply" class="btn-submit"
+              span data-recurly="currency_symbol"
+              span data-recurly="discount_now"
+              span data-recurly="discount_next"
             div.tax
               | Tax
               span.total-amount

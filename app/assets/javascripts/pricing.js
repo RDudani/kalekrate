@@ -22,9 +22,20 @@ $(document).ready(function() {
   }
 
   //coupon
-  pricing.on('set.coupon', couponHandler);
+  $('#enter-coupon').click(function() {
+     pricing.on('set.coupon', couponHandler);
+  });
+ 
 
   function couponHandler(coupon) {
     console.log(coupon);
+    $('.coupon').html('<span class="coupon-code">'+coupon.code + '</span><span class="coupon-amount-off">- $'+coupon.discount.amount.USD+'</span>')
   }
+
+  $('.coupon-text').click(function() {
+    $('this').hide();
+    $('.toggle').show();
+    return false;
+  });
+
 });

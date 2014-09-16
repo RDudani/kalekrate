@@ -39,6 +39,9 @@ form {
     float: left;
   }
 }
+.hidden {
+  display:none;
+}
 
 select, input.quantity {
     padding:3px;
