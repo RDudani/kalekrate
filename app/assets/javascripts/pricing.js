@@ -13,7 +13,7 @@ $(document).ready(function() {
   }
 
   // Addons
-  $('.addons-list .checkbox').click(function() {
+  $('.addons-list .checkbox').change(function() {
     pricing.on('set.addon', addonHandler);
   });
 
