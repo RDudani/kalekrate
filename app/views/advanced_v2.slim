@@ -36,6 +36,11 @@ body
             .quantity-wrap
               input type="number" data-recurly="plan_quantity" id="plan_quantity" name="plan-quantity" class="quantity form-input__required" value="1"
 
+            .select-wrap
+              select data-recurly="currency_code" id="currency_code" name="currency_code"
+                option value="USD"
+                option value="EUR"
+
           .subscription-pricing-container
             .subscription-pricing
               span.subscription-price $20.99
@@ -116,10 +121,10 @@ body
                     a.coupon-text href="#" Enter coupon code
                     span.hidden  
                         input type="text" data-recurly="coupon" value="Enter code"
+                        input type="button" id="enter-coupon" value="Apply" class="btn-submit"
                     span.addon-item--pricing
                       span.coupon-none --
-                      span.hidden
-                        input type="button" id="enter-coupon" value="Apply" class="btn-submit"
+                        
             div.tax
               | Tax
               span.total-amount

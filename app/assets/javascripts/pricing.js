@@ -19,7 +19,7 @@ $(document).ready(function() {
 
 
   function addonHandler(addon) {
-
+    console.log(addon);
     showAddonsSummary(addon);
   }
 

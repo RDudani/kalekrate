@@ -224,6 +224,15 @@ form {
       .row {
         padding: 5px 25px;
       }
+      .payment-type {
+        border-bottom: 1px solid #c6cfd2;
+        a {
+          padding: 10px;
+        }
+        a:focus {
+          color: #48626c;
+        }
+      }
     }
 
   .order-summary-container {
