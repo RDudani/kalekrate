@@ -33,8 +33,8 @@ $(document).ready(function() {
   }
 
   $('.coupon-text').click(function() {
-    $('this').hide();
-    $('.toggle').show();
+    $(this).hide();
+    $('.hidden').show();
     return false;
   });
 
