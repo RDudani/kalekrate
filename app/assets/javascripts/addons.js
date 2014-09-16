@@ -19,7 +19,6 @@ function showAddonsSummary(addon) {
     , template = Handlebars.compile(source)
     , data = { list: [] };
 
-    console.log(addon);
     if(addon.quantity != 0) {
         data.list.push({
         name: addon.name,

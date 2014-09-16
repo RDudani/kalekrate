@@ -19,8 +19,6 @@ $(document).ready(function() {
 
 
   function addonHandler(addon) {
-    console.log(addon);
-    //$('.addons-summary-container').empty();
 
     showAddonsSummary(addon);
   }

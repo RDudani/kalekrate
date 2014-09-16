@@ -51,6 +51,9 @@ body
         section.billing-info-container
           .row
             h3.section-title--billing Billing Information
+            div.payment-type
+              a href="#" id="payby-credit-card" Credit Card
+              a href="#" id="payby-paypal" PayPal
           .row.customer-fields--name
             .form-input.form-input__first_name
               input type="text" data-recurly="first_name" id="first_name" name="first-name" class="form-input__required" placeholder="First Name"
@@ -106,15 +109,16 @@ body
         section.order-summary-details
           .row.order-summary
             div.addons-summary-container
-            div.coupon
-              a.coupon-text href="#" Enter coupon code
-              span.coupon-none --
-              span.hidden  
-                input type="text" data-recurly="coupon" value="Enter code"
-                input type="button" id="enter-coupon" value="Apply" class="btn-submit"
-              span data-recurly="currency_symbol"
-              span data-recurly="discount_now"
-              span data-recurly="discount_next"
+            div.row
+              ul.addons-list
+                li.addons-list--item
+                  span.addon-item--name
+                    a.coupon-text href="#" Enter coupon code
+                    span.addon-item--pricing
+                      span.coupon-none --
+                      span.hidden  
+                        input type="text" data-recurly="coupon" value="Enter code"
+                        input type="button" id="enter-coupon" value="Apply" class="btn-submit"
             div.tax
               | Tax
               span.total-amount
@@ -123,7 +127,7 @@ body
             div.total
               | Total
               span.total-amount
-                span.symbol $
+                span data-recurly="currency_symbol"
                 span data-recurly="total_now" id="total_now" name="total-now" class="order-summary--total"
 
 
