@@ -38,7 +38,7 @@ $(document).ready(function() {
   }
 
   $('.coupon-text').click(function() {
-    $('coupon-none, .coupon-text').hide();
+    $('.coupon-none, .coupon-text').hide();
     $('.hidden').show();
     return false;
   });
