@@ -228,9 +228,12 @@ form {
         border-bottom: 1px solid #c6cfd2;
         a {
           padding: 10px;
+          text-decoration:none;
+          color: #818181;
         }
-        a:focus {
+        a.active {
           color: #48626c;
+          border-bottom: 3px solid #48626c;
         }
       }
     }

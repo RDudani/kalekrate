@@ -29,7 +29,6 @@ function showAddonsSummary(addon) {
       });
     }
 
-    console.log(data);
     
 
  /* $(addon).each(function(idx, value) {
