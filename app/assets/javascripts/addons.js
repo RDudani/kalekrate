@@ -40,6 +40,6 @@ function showAddonsSummary(addon) {
     });
   }); */
 
-  $('.addons-summary-container').html(template(data));
+  $('.addons-summary-container').append(template(data));
 
 }
