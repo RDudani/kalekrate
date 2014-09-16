@@ -29,11 +29,13 @@ $(document).ready(function() {
 
   function couponHandler(coupon) {
     console.log(coupon);
-    $('.coupon').html('<span class="coupon-code">'+coupon.code + '</span><span class="coupon-amount-off">- $'+coupon.discount.amount.USD+'</span>')
+    var num = (coupon.discount.amount.USD);
+    var n = num.toFixed(2);
+    $('.coupon').html('<span class="coupon-code">'+coupon.code + '</span><span class="coupon-amount-off">-$'+n+'</span>');
   }
 
   $('.coupon-text').click(function() {
-    $(this).hide();
+    $('coupon-none, .coupon-text').hide();
     $('.hidden').show();
     return false;
   });
