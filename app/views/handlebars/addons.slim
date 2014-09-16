@@ -6,7 +6,7 @@ handlebar id="addon-template" type="text/x-handlebars-template"
     ul.addons-list
       | {{#list}}
       li.addons-list--item
-        input type="checkbox" name="{{code}}"
+        input type="checkbox" name="{{code}}" class="checkbox"
         span.addon-item--name
           | {{name}}
         .addon-item--pricing
