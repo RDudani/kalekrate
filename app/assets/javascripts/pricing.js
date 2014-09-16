@@ -22,7 +22,7 @@ $(document).ready(function() {
     showAddonsSummary(addon);
   }
 
-  //coupon
+  //Coupon
   $('#enter-coupon').click(function() {
      pricing.on('set.coupon', couponHandler);
   });
@@ -38,6 +38,17 @@ $(document).ready(function() {
   $('.coupon-text').click(function() {
     $('.coupon-none, .coupon-text').hide();
     $('.hidden').show();
+    return false;
+  });
+
+  //Payment Option
+  $('.payment-type a').click(function() {
+    var tab = $(this).attr('href');
+    $('.payment-type a').removeClass('active');
+    $(this).addClass('active');
+    $('.panel').hide();
+    $(tab).show();
+
     return false;
   });
 
