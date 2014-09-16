@@ -114,10 +114,11 @@ body
                 li.addons-list--item
                   span.addon-item--name
                     a.coupon-text href="#" Enter coupon code
+                    span.hidden  
+                        input type="text" data-recurly="coupon" value="Enter code"
                     span.addon-item--pricing
                       span.coupon-none --
-                      span.hidden  
-                        input type="text" data-recurly="coupon" value="Enter code"
+                      span.hidden
                         input type="button" id="enter-coupon" value="Apply" class="btn-submit"
             div.tax
               | Tax
