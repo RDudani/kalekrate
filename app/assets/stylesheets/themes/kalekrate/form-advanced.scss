@@ -226,14 +226,23 @@ form {
       }
       .payment-type {
         border-bottom: 1px solid #c6cfd2;
+        margin-bottom: 20px;
+        padding: 0 30px;
+        float:left;
         a {
-          padding: 10px;
+          padding: 10px 10px 0 10px;
           text-decoration:none;
           color: #818181;
         }
         a.active {
           color: #48626c;
           border-bottom: 3px solid #48626c;
+        }
+        #payby-credit-card {
+          float:left;
+        }
+        #payby-paypal {
+          float:right;
         }
       }
     }
