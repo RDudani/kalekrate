@@ -115,16 +115,22 @@ module KaleKrate
 
     post '/api/subscriptions/new' do
       begin
-        subscription = Recurly::Subscription.create plan_code: 'kale-fan',
+        subscription = {
+          plan_code: 'kale-fan',
           account: {
-            account_code: SecureRandom.uuid,
-            first_name: params['first-name'],
-            last_name: params['last-name'],
-            email: params['email'],
-            billing_info: {
-              token_id: params['recurly-token']
-            }
+            account_code: SecureRandom.uuid
+            billing_info: {}
           }
+        }
+        subscription[:account][:first_name] = params['first-name'] if params['first-name']
+        subscription[:account][:first_name] = params['last-name'] if params['last-name']
+        subscription[:account][:email] = params['email'] if params['email']
+        if params['recurly-token']
+          subscription[:account][:billing_info][:token_id] = params['recurly-token']
+        elsif
+          subscription[:account][:billing_info][:amazon_billing_agreement_id] = params['amazon-billing-agreement']
+        end
+        Recurly::Subscription.create! 
         redirect '/minimal'
       rescue Recurly::Resource::Invalid, Recurly::API::ResponseError => e
         puts e
