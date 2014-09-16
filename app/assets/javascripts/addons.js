@@ -19,14 +19,22 @@ function showAddonsSummary(addon) {
     , template = Handlebars.compile(source)
     , data = { list: [] };
 
-  $(addon).each(function(idx, value) {
+    data.list.push({
+      name: addon.name,
+      code: addon.code,
+      quantity: addon.quantity,
+      price: addon.price.USD.unit_amount
+
+    });
+
+ /* $(addon).each(function(idx, value) {
     data.list.push({
       name: value.name,
       code: value.code,
       quantity: value.quantity,
       price: value.price.USD.unit_amount
     });
-  });
+  }); */
 
   $('.addons-summary-container').html(template(data));
 

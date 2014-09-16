@@ -14,7 +14,6 @@ $(document).ready(function() {
 
   // Addons
   $('body').on('change', '.addons-list .checkbox', function() {
-    console.log('hi');
     pricing.on('set.addon', addonHandler);
   });
 
