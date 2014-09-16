@@ -19,13 +19,17 @@ function showAddonsSummary(addon) {
     , template = Handlebars.compile(source)
     , data = { list: [] };
 
-    data.list.push({
-      name: addon.name,
-      code: addon.code,
-      quantity: addon.quantity,
-      price: addon.price.USD.unit_amount
+    console.log(addon);
+    if(addon.quantity != 0) {
+        data.list.push({
+        name: addon.name,
+        code: addon.code,
+        quantity: addon.quantity,
+        price: addon.price.USD.unit_amount
 
-    });
+      });
+    }
+    
 
  /* $(addon).each(function(idx, value) {
     data.list.push({
