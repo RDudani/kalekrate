@@ -17,7 +17,7 @@ $(document).ready(function() {
     $('.addons-summary-container').empty();
   });
 
-  /*$('body').on('change', '.addons-list .checkbox', function() {
+  $('body').on('change', '.addons-list .checkbox', function() {
     $('.addons-summary-container').empty();
     if ( ! this.checked) {
       $(this).parent().find('.addon-item--quantity input').val(0);
@@ -25,7 +25,7 @@ $(document).ready(function() {
     else {
       $(this).parent().find('.addon-item--quantity input').val(1);
     }
-  }); */
+  }); 
   pricing.on('set.addon', addonHandler);
 
 
