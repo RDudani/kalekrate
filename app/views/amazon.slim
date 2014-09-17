@@ -1,0 +1,85 @@
+doctype html
+/[if lt IE 7]
+  html.no-js.ie6.oldie lang="en"
+/[if IE 7]
+  html.no-js.ie7.oldie lang="en"
+/[if IE 8]
+  html.no-js.ie8.oldie lang="en"
+/[if gte IE 8]
+  html.no-js lang="en"
+
+head
+  title = "Kale Krate"
+  == partial(:'shared/meta')
+  == partial(:'shared/scripts')
+  == css :application
+  == css :advanced
+  script src="/pay-with-amazon.js"
+  == js :amazon_form
+
+body
+
+  .confirmation
+      .confirmation-body
+        h2.confirmation-messaging Thank you for subscribing.
+
+  form
+    input type="hidden" data-recurly="currency" id="plan_currency" name="plan-currency" value="USD"
+    .row
+      .subscription-details-container
+        section.form-bar
+          .subscription-name-container
+            .select-wrap
+              select data-recurly="plan" id="plan" name="plan"
+                option value="kale-fan" Kale Fan
+                option value="kale-krazy" Kale Krazy
+
+            .quantity-wrap
+              input type="number" data-recurly="plan_quantity" id="plan_quantity" name="plan-quantity" class="quantity form-input__required" value="1"
+
+          .subscription-pricing-container
+            .subscription-pricing
+              span.subscription-price $20.99
+              span.subscription-frequency
+              | /month
+
+        section.form-errors.form-errors__hidden
+          strong Oops! The following errors occurred:
+          ul
+
+        section.addons-container
+
+        section.pay-with-amazon-container
+          .row
+            #amazon-button
+          .row
+            #amazon-address-book
+          .row
+            #amazon-wallet
+          .row
+            #amazon-consent
+
+
+      .order-summary-container
+        header.order-summary-title
+          h2 Order Summary
+        section.order-summary-details
+          .row.order-summary
+            div.addons-summary-container
+            div.tax
+              | Tax
+              span.total-amount
+                span.symbol $
+                span data-recurly="tax_now"
+            div.total
+              | Total
+              span.total-amount
+                span.symbol $
+                span data-recurly="total_now" id="total_now" name="total-now" class="order-summary--total"
+
+          .row
+            input type="hidden" name="amazon-billing-agreement" value="" id="amazon-billing-agreement"
+            input type="submit" id="subscribe" class="btn-submit" value="Subscribe"
+
+  == partial(:'handlebars/addons')
+  == partial(:'handlebars/addons_summary')
