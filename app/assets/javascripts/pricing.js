@@ -9,6 +9,7 @@ $(document).ready(function() {
     console.log(plan);
     $('.subscription-price').text('$'+plan.price.USD.unit_amount);
     showAddons(plan.addons);
+    showAddonsSummary(plan.addons);
     pricing.attach($('form'));
   }
 
@@ -17,16 +18,7 @@ $(document).ready(function() {
     $('.addons-summary-container').empty();
   });
 
-  $('body').on('change', '.addons-list .checkbox', function() {
-    $('.addons-summary-container').empty();
-    if ( ! this.checked) {
-      $(this).parent().find('.addon-item--quantity input').val(0);
-    }
-    else {
-      $(this).parent().find('.addon-item--quantity input').val(1);
-    }
-  }); 
-  pricing.on('set.addon', addonHandler);
+  //pricing.on('set.addon', addonHandler);
 
 
   function addonHandler(addon) {
