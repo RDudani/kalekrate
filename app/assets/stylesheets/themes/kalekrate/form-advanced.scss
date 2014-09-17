@@ -220,6 +220,7 @@ form {
       background-color: #fafafa;
       float: left;
       padding: 20px 0;
+      width:100%;
 
       .row {
         padding: 5px 25px;
@@ -332,7 +333,8 @@ form {
   }
 
   .subscription-name-container .curr {
-    width: 30%;
+    width: 27%;
+    display:inline-block;
     select {
       width: 98%;
     }
