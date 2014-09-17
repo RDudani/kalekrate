@@ -198,6 +198,10 @@ form {
     @include mq($xlarge) {
       @include border-radius(5px);
       @include box-shadow(0px 2px 0px #CCCCCC);
+      width: grid-width(7);
+    }
+    @include mq($xxlarge) {
+      width: grid-width(7);
     }
   }
 
