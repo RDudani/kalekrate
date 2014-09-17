@@ -63,11 +63,6 @@ body
               a href="#credit-card" id="payby-credit-card" class="active" Credit Card
               a href="#paypal" id="payby-paypal" PayPal
           
-          div#paypal.hidden.panel
-            .row
-              button id="subscribe" Subscribe with PayPal
-              input type="hidden" id="recurly-token" name="recurly-token"
-          div#credit-card.panel
             .row.customer-fields--name
               .form-input.form-input__first_name
                 input type="text" data-recurly="first_name" id="first_name" name="first-name" class="form-input__required" placeholder="First Name"
@@ -75,6 +70,7 @@ body
               .form-input.form-input__last_name
                 input type="text" data-recurly="last_name" id="last_name" name="last-name" class="form-input__required" placeholder="Last Name"
 
+          div#credit-card.panel
             .row.customer-fields--email
               .form-input.form-input__email
                 input type="text" data-recurly="email" id="email" name="email" class="form-input__required" placeholder="Email"
@@ -144,6 +140,10 @@ body
               span.total-amount
                 span data-recurly="currency_symbol"
                 span data-recurly="total_now" id="total_now" name="total-now" class="order-summary--total"
+
+              div#paypal.hidden.panel
+                button id="subscribe" Subscribe with PayPal
+                input type="hidden" id="recurly-token" name="recurly-token"
 
 
 
