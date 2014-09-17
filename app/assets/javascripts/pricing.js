@@ -19,7 +19,10 @@ $(document).ready(function() {
 
   $('body').on('change', '.addons-list .checkbox', function() {
     if ( ! this.checked) {
-        $(this).parent().find('.addon-item--quantity input').val() == 0;
+      console.log('hi');
+      var quant = $(this).parent().find('.addon-item--quantity input').val()
+      console.log(quant);
+      quant = 0;
     }
   });
   pricing.on('set.addon', addonHandler);
