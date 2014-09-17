@@ -21,11 +21,11 @@ $(document).ready(function() {
     $('.addons-summary-container').empty();
     if ( ! this.checked) {
       $(this).parent().find('.addon-item--quantity input').val(0);
-      $(this).parent().find('.addon-item--quantity input').focus();
+      $(this).parent().find('.addon-item--quantity input').blur();
     }
     else {
       $(this).parent().find('.addon-item--quantity input').val(1);
-      $(this).parent().find('.addon-item--quantity input').focus();
+      $(this).parent().find('.addon-item--quantity input').blur();
     }
   });
   pricing.on('set.addon', addonHandler);
