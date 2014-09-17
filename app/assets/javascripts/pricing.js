@@ -21,7 +21,7 @@ $(document).ready(function() {
 
   function addonHandler(addon) {
     console.log(addon);
-    showAddonsSummary(addon);
+    //showAddonsSummary(addon);
     if (addon.quantity != 0) {
       $('.addons-summary-container').append(addon.name + addon.quantity+'x' + '$'+addon.price.USD.unit_amount);
     }
