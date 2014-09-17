@@ -45,7 +45,7 @@ function create_subscription () {
 
 function subscription_created(data) {
   console.log(data);
-  $('form').addClass('form__success');
+  //$('form').addClass('form__success');
 
   $('.confirmation').addClass('confirmation__show');
   $('.confirmation-messaging').addClass('animate');

@@ -18,13 +18,6 @@ head
 
 body
 
-  .confirmation
-      .confirmation-body
-        h2.confirmation-messaging Thank you for subscribing. br You will be billed 
-        span data-recurly="currency_symbol"
-        span data-recurly="total_next" 
-        span every month
-
   form
     input type="hidden" data-recurly="currency" id="plan_currency" name="plan-currency" value="USD"
     .row
@@ -53,6 +46,14 @@ body
         section.form-errors.form-errors__hidden
           strong Oops! The following fields appear to be invalid:
           ul
+
+        .confirmation
+          .confirmation-body
+            h2.confirmation-messaging Thank you for subscribing. 
+            br You will be billed 
+            span data-recurly="currency_symbol"
+            span data-recurly="total_next" name="total-next"
+            span every month
 
         section.addons-container
 
