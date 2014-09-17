@@ -346,9 +346,12 @@ form {
     padding-right:0;
   }
 
-  input[type="submit"] {
+  .btn-submit {
     margin: 0 12px 20px;
     width: 94%;
+  }
+  .paypal-submit {
+      background:url('/images/icons/paypal-button.jpg') no-repeat;
   }
 
   .total, .tax {
@@ -385,9 +388,6 @@ form {
       margin: 0 0 0 2px;
       padding: 6px 5px 8px;
 
-    }
-    .paypal-submit {
-      background:url('/images/icons/paypal-button.jpg') no-repeat;
     }
   }
   .coupon-text {

@@ -67,8 +67,19 @@ function check_required_fields() {
   });
 }
 
+$('.paypal-submit').click(function(event) {
 
-recurly.paypal({ description: 'test' }, function (err, token) {
+  event.preventDefault();
+   // Reset the errors display
+  $('#errors').text('');
+  $('input').removeClass('error');
+
+  // Disable the submit button
+  $('button').prop('disabled', true);
+
+  var form = this;
+
+  recurly.paypal({ description: 'test' }, function (err, token) {
     if (err) {
       // Let's handle any errors using the function below
       error(err);
@@ -80,6 +91,10 @@ recurly.paypal({ description: 'test' }, function (err, token) {
       form.submit();
     }
   });
+
+
+});
+
 
 // A simple error handling function to expose errors to the customer
 function error (err) {
