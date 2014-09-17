@@ -18,7 +18,6 @@ $(document).ready(function() {
   });
 
   $('body').on('change', '.addons-list .checkbox', function() {
-    pricing.on('set.addon', addonHandler);
     if ( ! this.checked) {
       $(this).parent().find('.addon-item--quantity input').val(0);
     }
