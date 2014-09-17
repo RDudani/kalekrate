@@ -269,13 +269,13 @@ form {
       @include border-radius(5px);
       @include box-shadow(0px 2px 0px #CCCCCC);
 
-      width: grid-width(4);
+      width: grid-width(5);
       float: right;
     }
 
     @include mq($xxlarge) {
       float: right;
-      width: grid-width(4);
+      width: grid-width(5);
     }
   }
 
