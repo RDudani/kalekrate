@@ -67,17 +67,6 @@ function check_required_fields() {
   });
 }
 
-recurly.paypal({ description: 'test' }, function (err, token) {
-if (err) {
-  // Let's handle any errors using the function below
-  error(err);
-} else {
-  // set the hidden field above to the token we get back from Recurly
-  $('#recurly-token').val(token.id);
-  // Now we submit the form!
-  form.submit();
-}
-
 // A simple error handling function to expose errors to the customer
 function error (err) {
 
