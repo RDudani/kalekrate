@@ -15,6 +15,8 @@ function showAddons(addons) {
 }
 
 function showAddonsSummary(addon) {
+    
+
   var source   = $("#addon-summary-template").html()
     , template = Handlebars.compile(source)
     , data = { list: [] };
@@ -27,8 +29,7 @@ function showAddonsSummary(addon) {
         price: addon.price.USD.unit_amount
 
       });
-    }
-
+    } 
     
 
  /* $(addon).each(function(idx, value) {

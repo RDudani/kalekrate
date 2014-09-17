@@ -14,17 +14,17 @@ $(document).ready(function() {
 
   // Addons
   $('body').on('change', '.addons-list .checkbox', function() {
-    $('.addons-summary-container').empty();
+    //$('.addons-summary-container').empty();
     pricing.on('set.addon', addonHandler);
   });
 
 
   function addonHandler(addon) {
     console.log(addon);
-    //showAddonsSummary(addon);
-    if (addon.quantity != 0) {
+    showAddonsSummary(addon);
+    /*if (addon.quantity != 0) {
       $('.addons-summary-container').append(addon.name + addon.quantity+'x' + '$'+addon.price.USD.unit_amount);
-    }
+    } */
     
   }
 
