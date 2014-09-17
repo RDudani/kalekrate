@@ -32,7 +32,7 @@ $(document).ready(function() {
     console.log(coupon);
     var num = (coupon.discount.amount.USD);
     var n = num.toFixed(2);
-    $('.coupon').html('<span class="coupon-code">'+coupon.code + '</span><span class="coupon-amount-off">-$'+n+'</span>');
+    $('.coupon li').html('<span class="coupon-code">'+coupon.code + '</span><span class="coupon-amount-off">-$'+n+'</span>');
   }
 
   $('.coupon-text').click(function() {
