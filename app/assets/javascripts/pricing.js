@@ -20,7 +20,7 @@ $(document).ready(function() {
   $('body').on('change', '.addons-list .checkbox', function() {
     if ( ! this.checked) {
       console.log('hi');
-      var quant = $(this).parent().find('.addon-item--quantity input').val()
+      var quant = $(this).parent().find('.addon-item--quantity input').val(0);
       console.log(quant);
       quant = 0;
     }
@@ -31,9 +31,6 @@ $(document).ready(function() {
   function addonHandler(addon) {
     console.log(addon);
     showAddonsSummary(addon);
-    /*if (addon.quantity != 0) {
-      $('.addons-summary-container').append(addon.name + addon.quantity+'x' + '$'+addon.price.USD.unit_amount);
-    } */
     
   }
 
