@@ -71,35 +71,30 @@ function check_required_fields() {
   });
 }
 
-$('.paypal-submit').click(function(event) {
+function paypalError (err) {
 
-  event.preventDefault();
-   // Reset the errors display
-  $('#errors').text('');
-  $('input').removeClass('error');
+    if (err.niceMessage) {
+      errors_markup = '<li class="form-errors--invalid-field">' + err.niceMessage + '</li>';
+      } else {
+        $.each(err.fields, function(i, field) {
+          if(typeof invalid_fields[field] == undefined) {
+            invalid_fields.push(field);
+          }
+        });
 
-  // Disable the submit button
-  $('button').prop('disabled', true);
+        var errors_markup = $.map(invalid_fields, function (field) {
+          $('.form-input__' + field).addClass('form-input__error');
+          return '<li class="form-errors--invalid-field">' + paypal_error_fields[field] || field + '</li>';
+        }).join('');
+      }
 
-  var form = this;
+      $('.form-errors').removeClass('form-errors__hidden');
+      $('.form-errors ul')
+        .empty()
+        .append(errors_markup);
 
-  recurly.paypal({ description: 'test' }, function (err, token) {
-    if (err) {
-      console.log(err);
-      // Let's handle any errors using the function below
-      //paypalError(err);
-    } else {
-      // set the hidden field above to the token we get back from Recurly
-      $('#recurly-token').val(token.id);
-
-      // Now we submit the form!
-      form.submit();
-    }
-  });
-
-
-});
-
+      $('input[type="submit"]').prop('disabled', false);
+}
 
 // A simple error handling function to expose errors to the customer
 function error (err) {
