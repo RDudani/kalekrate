@@ -15,8 +15,12 @@ $(document).ready(function() {
   // Addons
   $('body').on('focus', '.addons-list .addon-item--quantity', function() {
     $('.addons-summary-container').empty();
-    
+  });
 
+  $('body').on('change', '.addons-list .checkbox', function() {
+    if ( ! this.checked) {
+        $(this).parent().find('.addon-item--quantity input').val() == 0;
+    }
   });
   pricing.on('set.addon', addonHandler);
 
