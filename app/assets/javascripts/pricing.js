@@ -9,16 +9,16 @@ $(document).ready(function() {
     console.log(plan);
     $('.subscription-price').text('$'+plan.price.USD.unit_amount);
     showAddons(plan.addons);
-    showAddonsSummary(plan.addons);
     pricing.attach($('form'));
   }
 
   // Addons
   $('body').on('focus', '.addons-list .addon-item--quantity', function() {
-   // $('.addons-summary-container').empty();
+    $('.addons-summary-container').empty();
   });
 
-  //pricing.on('set.addon', addonHandler);
+
+  pricing.on('set.addon', addonHandler);
 
 
   function addonHandler(addon) {
