@@ -11,6 +11,10 @@ var error_fields = {
   address: 'Street address',
   city: 'City'
 };
+var paypal_error_fields = {
+  first_name: 'First name',
+  last_name: 'Last name'
+};
 
 // Configure recurly.js
 recurly.configure('sc-Hw20ERMh8bzGFiWKO7NvDB');
@@ -82,7 +86,7 @@ $('.paypal-submit').click(function(event) {
   recurly.paypal({ description: 'test' }, function (err, token) {
     if (err) {
       // Let's handle any errors using the function below
-      error(err);
+      paypalError(err);
     } else {
       // set the hidden field above to the token we get back from Recurly
       $('#recurly-token').val(token.id);
@@ -95,6 +99,30 @@ $('.paypal-submit').click(function(event) {
 
 });
 
+function paypalError (err) {
+
+    if (err.niceMessage) {
+      errors_markup = '<li class="form-errors--invalid-field">' + err.niceMessage + '</li>';
+      } else {
+        $.each(err.fields, function(i, field) {
+          if(typeof invalid_fields[field] == undefined) {
+            invalid_fields.push(field);
+          }
+        });
+
+        var errors_markup = $.map(invalid_fields, function (field) {
+          $('.form-input__' + field).addClass('form-input__error');
+          return '<li class="form-errors--invalid-field">' + paypal_error_fields[field] || field + '</li>';
+        }).join('');
+      }
+
+      $('.form-errors').removeClass('form-errors__hidden');
+      $('.form-errors ul')
+        .empty()
+        .append(errors_markup);
+
+      $('input[type="submit"]').prop('disabled', false);
+}
 
 // A simple error handling function to expose errors to the customer
 function error (err) {

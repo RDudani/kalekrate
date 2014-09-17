@@ -346,11 +346,11 @@ form {
     padding-right:0;
   }
 
-  .btn-submit {
+ input[type="submit"] {
     margin: 0 12px 20px;
     width: 94%;
   }
-  .paypal-submit {
+ input.paypal-submit {
       background:url('/images/icons/paypal-button.jpg') no-repeat;
   }
 
