@@ -21,7 +21,10 @@ $(document).ready(function() {
   function addonHandler(addon) {
     console.log(addon);
     showAddonsSummary(addon);
-    $('.addons-summary-container').append(addon.name + addon.quantity+'x' + '$'+addon.price.USD.unit_amount);
+    if (addon.quantity != 0) {
+      $('.addons-summary-container').html(addon.name + addon.quantity+'x' + '$'+addon.price.USD.unit_amount);
+    }
+    
   }
 
   //Coupon
