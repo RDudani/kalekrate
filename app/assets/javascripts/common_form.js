@@ -43,9 +43,44 @@ function create_subscription () {
   });
 }
 
+//NOTE: made this new function because the subscription_created function was too specific, didn't work for the advanced mobile version.
+// if you change 'form' .addClass('form__success') to something more generic, this function can be consolidated.  
+function create_subscription_advanced () {
+  var data = {
+    "recurly-token": $('input[name="recurly-token"]').val(),
+    "first-name": $('input[name="first-name"]').val(),
+    "last-name": $('input[name="last-name"]').val(),
+    "email": $('input[name="email"]').val(),
+    "address" : $('input[name="address"]').val(),
+    "city" : $('input[name="city"]').val(),
+    "state" : $('#state').val(),
+    "zip": $('input[name="postal-code"]').val(),
+    "number": $('input[name="number"]').val(),
+    "month": $('input[name="month"]').val(),
+    "year": $('input[name="year"]').val()
+  };
+
+  $.ajax({
+    type: "POST",
+    url: '/api/subscriptions/new',
+    data: data,
+    success: subscription_created_advanced(data),
+    dataType: 'json'
+  });
+}
+
 function subscription_created(data) {
   console.log(data);
-  //$('form').addClass('form__success');
+  $('form').addClass('form__success');
+
+  $('.confirmation').addClass('confirmation__show');
+  $('.confirmation-messaging').addClass('animate');
+}
+//this is mostly redundant, see note above.  I just didn't want to touch all the forms, didn't know what else would
+//be affected.
+function subscription_created_advanced(data) {
+  console.log(data);
+  $('.hide-form-onsuccess').addClass('form__success');
 
   $('.confirmation').addClass('confirmation__show');
   $('.confirmation-messaging').addClass('animate');

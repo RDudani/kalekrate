@@ -14,7 +14,7 @@ head
   == partial(:'shared/scripts')
   == css :application
   == css :advanced
-  == js :advanced_form
+  == js :advanced_form_v2
 
 body
 
@@ -49,15 +49,16 @@ body
 
         .confirmation
           .confirmation-body
-            h2.confirmation-messaging Thank you for subscribing. 
-            br You will be billed 
+            h2.confirmation-messaging 
+              span Thank you for subscribing. 
+              br You will be billed 
             span data-recurly="currency_symbol"
             span data-recurly="total_next" name="total-next"
-            span every month
+            span  every month
 
-        section.addons-container
+        section.addons-container.hide-form-onsuccess
 
-        section.billing-info-container
+        section.billing-info-container.hide-form-onsuccess
           .row
             h3.section-title--billing Billing Information
             div.payment-type

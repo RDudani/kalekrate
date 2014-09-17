@@ -78,6 +78,14 @@ module KaleKrate
         '/js/handlebars-latest.js'
       ]
 
+      js :advanced_form_v2, '/advanced_form.js', [
+        '/js/common_form.js',
+        '/js/minimal_form_v2.js',
+        '/js/addons.js',
+        '/js/pricing.js',
+        '/js/handlebars-latest.js'
+      ]
+
       js :amazon_form, '/amazon_form.js', [
         '/js/common_form.js',
         '/js/amazon_form.js',
