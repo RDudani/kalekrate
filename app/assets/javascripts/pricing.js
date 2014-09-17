@@ -54,6 +54,13 @@ $(document).ready(function() {
     $('.panel').hide();
     $(tab).show();
 
+    if($(this).attr('id') == 'payby-paypal') {
+        $('#subscribe').attr('class', 'paypal-submit');
+    }
+    else {
+      $('#subscribe').attr('class', 'btn-submit');
+    }
+    
     return false;
   });
 

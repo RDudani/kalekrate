@@ -152,20 +152,6 @@
         width: 30px;
       }
 
-.pay-with-amazon-container {
-  display: inline-block;
-  padding: 25px 0 20px;
-  width: 100%;
-  text-align: center;
-  box-sizing: border-box;
-  margin: 0 auto;
-  text-align: center;
-
-  .widget-container {
-    display: inline-block !important;
-  }
-}
-
 form {
   display: block;
   margin: 0 auto;
@@ -308,8 +294,8 @@ form {
     padding:20px;
   }
   .subscription-pricing {
-    right:20px;
-    top:70%;
+    right:24px;
+    top:55%;
   }
   .subscription-name-container select, 
   .subscription-name-container .select-wrap:before,
@@ -347,10 +333,12 @@ form {
   }
 
   .subscription-name-container .curr {
-    width: 27%;
+    width: 33%;
     display:inline-block;
+    position:relative;
+    top:-41px;
     select {
-      width: 98%;
+      width: 94%;
     }
   }
 
@@ -397,6 +385,9 @@ form {
       margin: 0 0 0 2px;
       padding: 6px 5px 8px;
 
+    }
+    .paypal-submit {
+      background:url('/images/icons/paypal-button.jpg') no-repeat;
     }
   }
   .coupon-text {
