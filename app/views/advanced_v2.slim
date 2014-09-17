@@ -20,7 +20,10 @@ body
 
   .confirmation
       .confirmation-body
-        h2.confirmation-messaging Thank you for subscribing.
+        h2.confirmation-messaging Thank you for subscribing. br You will be billed 
+        span data-recurly="currency_symbol"
+        span data-recurly="total_next" 
+        span every month
 
   form
     input type="hidden" data-recurly="currency" id="plan_currency" name="plan-currency" value="USD"
