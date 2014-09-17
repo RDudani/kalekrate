@@ -13,11 +13,12 @@ $(document).ready(function() {
   }
 
   // Addons
-  $('body').on('change', '.addons-list .checkbox', function() {
+  $('body').on('focus', '.addons-list .addon-item--quantity', function() {
     $('.addons-summary-container').empty();
-    pricing.on('set.addon', addonHandler);
+    
 
   });
+  pricing.on('set.addon', addonHandler);
 
 
   function addonHandler(addon) {
