@@ -47,15 +47,6 @@ body
           strong Oops! The following fields appear to be invalid:
           ul
 
-        .confirmation
-          .confirmation-body
-            h2.confirmation-messaging 
-              span Thank you for subscribing. 
-              br You will be billed 
-            span data-recurly="currency_symbol"
-            span data-recurly="total_next" name="total-next"
-            span  every month
-
         section.addons-container.hide-form-onsuccess
 
         section.billing-info-container.hide-form-onsuccess
@@ -143,9 +134,19 @@ body
                 span data-recurly="currency_symbol"
                 span data-recurly="total_now" id="total_now" name="total-now" class="order-summary--total"
 
-          .row
+            .confirmation
+              .confirmation-body
+                h2.confirmation-messaging 
+                  span Thank you for subscribing. 
+                  br You will be billed 
+                  span data-recurly="currency_symbol"
+                  span data-recurly="total_next" name="total-next"
+                  span  every month.
+
+          .row.hide-form-onsuccess
             input type='submit' id="subscribe" class="btn-submit" value="Subscribe"
             input type="hidden" id="recurly-token" name="recurly-token"
+
 
   == partial(:'handlebars/addons')
   == partial(:'handlebars/addons_summary')
