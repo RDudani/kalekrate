@@ -350,8 +350,12 @@ form {
     margin: 0 12px 20px;
     width: 94%;
   }
- input.paypal-submit {
+ input.paypal-submit, input.paypal-submit:hover {
       background:url('/images/icons/paypal-button.jpg') no-repeat;
+      width: 564px;
+      height: 164px;
+      font-size:0;
+      box-shadow:none;
   }
 
   .total, .tax {
