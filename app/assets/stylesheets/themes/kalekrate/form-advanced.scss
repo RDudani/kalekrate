@@ -293,8 +293,11 @@ form {
 
   .subscription-name-container {
     width: 100%;
-    padding:20px;
+    padding:0px;
     float:none;
+  }
+  .form-bar {
+    padding: 20px;
   }
 
   .select-wrap:before {
@@ -303,9 +306,10 @@ form {
 
   .subscription-details-container {
       .subscription-pricing {
-      position:static;
+        position:static;
+        transform: translateY(0%);
     }
-    select.curr, select.plan, input.quantity, .select-wrap:before {
+    select.curr, select.plan, .select-wrap:before, .select-wrap input {
       background:  #91C11E;
       color:#fff;
       border: 1px solid #fff;
