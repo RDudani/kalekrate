@@ -332,6 +332,9 @@ form {
       width: 25%;
       float:left;
     }
+    .select-wrap.curr:before {
+      right:2px;
+    }
     .select-wrap:before {
       border: 0;
       height: 42px;
