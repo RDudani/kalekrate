@@ -313,12 +313,14 @@ form {
     }
     .select-wrap.quantity {
       width: 15%;
+      float:left;
     }
     .select-wrap.quantity:after {
       content: url('/images/icons/number-arrow-green.png');
     }
     .select-wrap.curr {
       width: 20%;
+      float:left;
     }
     .select-wrap:before {
       border: 0;
