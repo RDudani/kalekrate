@@ -295,52 +295,47 @@ form {
     width: 100%;
     padding:20px;
   }
-  .subscription-pricing {
-    right:24px;
-    top:55%;
-  }
-  .subscription-name-container select, 
-  .subscription-name-container .select-wrap:before,
-  .subscription-name-container input.quantity {
-    background:  #91C11E;
-    color:#fff;
-    border: 1px solid #fff;
-    font-size:20px;
-  }
 
   .select-wrap:before {
     right:1px
   }
 
-  .subscription-name-container .select-wrap:before {
-    border: 0;
-    height: 38px;
-    right: 5px;
-    top: 1px;
-  }
-
-  .subscription-name-container .select-wrap:after {
-    content:url('/images/icons/select-arrow-green.png');
-  }
-
-  .subscription-name-container .quantity-wrap {
+  .subscription-details-container {
+      .subscription-pricing {
+      position:static;
+    }
+    select.curr, select.plan, input.quantity, .select-wrap:before {
+      background:  #91C11E;
+      color:#fff;
+      border: 1px solid #fff;
+      font-size:20px;
+    }
+    .quantity-wrap {
       width:30%;
       margin-top:20px;
-  }
-
-  .subscription-name-container input.quantity {
-    position:static;
-    margin-left:5px;
-    width:98%;
-  }
-
-  .subscription-name-container .curr {
-    width: 33%;
-    display:inline-block;
-    position:relative;
-    top:-41px;
-    select {
-      width: 94%;
+    }
+    input.quantity {
+      position:static;
+      margin-left:5px;
+      width:98%;
+    }
+    .curr {
+      width: 33%;
+      display:inline-block;
+      position:relative;
+      top:-41px;
+      select {
+        width: 94%;
+      }
+    }
+    .select-wrap:before {
+      border: 0;
+      height: 38px;
+      right: 5px;
+      top: 1px;
+    }
+    .select-wrap:after {
+      content:url('/images/icons/select-arrow-green.png');
     }
   }
 
