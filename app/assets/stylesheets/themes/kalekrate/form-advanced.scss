@@ -294,6 +294,7 @@ form {
   .subscription-name-container {
     width: 100%;
     padding:20px;
+    float:none;
   }
 
   .select-wrap:before {
@@ -310,11 +311,14 @@ form {
       border: 1px solid #fff;
       font-size:20px;
     }
+    .select-wrap.quantity {
+      width: 15%;
+    }
     .select-wrap.quantity:after {
       content: url('/images/icons/number-arrow-green.png');
     }
-    .curr {
-
+    .select-wrap.curr {
+      width: 20%;
     }
     .select-wrap:before {
       border: 0;
