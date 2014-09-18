@@ -310,11 +310,8 @@ form {
       border: 1px solid #fff;
       font-size:20px;
     }
-    .quantity-wrap {
-
-    }
-    input.quantity {
-
+    .select-wrap.quantity:after {
+      content: "url(/images/icons/number-arrow-green.png)";
     }
     .curr {
 
