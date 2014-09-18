@@ -311,7 +311,7 @@ form {
       font-size:20px;
     }
     .select-wrap.quantity:after {
-      content: "url(/images/icons/number-arrow-green.png)";
+      content: url('/images/icons/number-arrow-green.png');
     }
     .curr {
 
