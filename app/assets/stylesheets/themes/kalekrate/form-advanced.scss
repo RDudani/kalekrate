@@ -295,6 +295,7 @@ form {
     width: 100%;
     padding:0px;
     float:none;
+    margin-bottom:20px;
   }
   .form-bar {
     padding: 20px;
@@ -317,8 +318,9 @@ form {
       height:44px;
     }
     .select-wrap.quantity {
-      width: 15%;
+      width: 20%;
       float:left;
+      margin: 0 10px 0 3px;
     }
     .select-wrap.quantity:after {
       content: url('/images/icons/number-arrow-green.png');
@@ -327,7 +329,7 @@ form {
       
     }
     .select-wrap.curr {
-      width: 20%;
+      width: 25%;
       float:left;
     }
     .select-wrap:before {
