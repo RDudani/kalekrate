@@ -304,6 +304,9 @@ form {
   .select-wrap:before {
     right:1px
   }
+  .select-wrap:after {
+    top: 8px;
+  }
 
   .form-bar {
       .subscription-pricing {
@@ -343,6 +346,7 @@ form {
     }
     .select-wrap:after {
       content:url('/images/icons/select-arrow-green.png');
+      top:10px;
     }
   }
 
