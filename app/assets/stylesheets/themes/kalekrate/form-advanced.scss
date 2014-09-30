@@ -160,22 +160,27 @@ form {
 
   @include mq($small) {
     width: grid-width(5);
+    border:1px solid red;
   }
 
   @include mq($medium) {
     width: grid-width(6);
+    border:1px solid gold;
   }
 
   @include mq($large) {
     width: grid-width(8);
+    border:1px solid green;
   }
 
   @include mq($xlarge) {
     width: grid-width(12);
+    border:1px solid gray;
   }
 
   @include mq($xxlarge) {
     width: grid-width(12);
+    border:1px solid black;
   }
 }
 
