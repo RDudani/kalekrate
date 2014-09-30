@@ -320,8 +320,10 @@ form {
       font-size:20px;
       height:44px;
     }
-    .plan select {
-      margin-right:3px;
+    @include mq($large) {
+      .plan select {
+        margin-right:-2px;
+      }
     }
     .select-wrap.quantity {
       width: 20%;
