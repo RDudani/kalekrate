@@ -64,6 +64,10 @@
     width: 50%;
     padding-left: 7px;
   }
+  @include mq($medium) {
+    margin-top:5px;
+  }
+
 }
 
   [id="country"] {
@@ -232,11 +236,6 @@ form {
       .row {
         padding: 5px 25px;
       }
-      @include mq($medium) {
-        .form-input form-input__country {
-          padding-top:5px;
-        }
-      }
       .payment-type {
         border-bottom: 1px solid #c6cfd2;
         margin-bottom: 20px;
@@ -330,8 +329,8 @@ form {
       font-size:20px;
       height:44px;
     }
-    @include mq($xlarge) {
-      .plan select {
+    @include mq($large) {
+      select.plan {
         margin-right:-2px;
       }
     }
