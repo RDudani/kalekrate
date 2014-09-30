@@ -17,7 +17,7 @@ $(document).ready(function() {
     //$('.addons-summary-container').empty();
   });
 
-
+  $('.addons-summary-container').empty();
   pricing.on('set.addon', addonHandler);
 
 

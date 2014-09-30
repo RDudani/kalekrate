@@ -320,6 +320,9 @@ form {
       font-size:20px;
       height:44px;
     }
+    .plan select {
+      margin-right:3px;
+    }
     .select-wrap.quantity {
       width: 20%;
       float:left;
@@ -360,7 +363,7 @@ form {
   }
  input.paypal-submit, input.paypal-submit:hover {
       background:url('/images/icons/paypal-button.jpg') no-repeat;
-      width: 315px;
+      width: 250px;
       height: 72px;
       font-size:0;
       box-shadow:none;
