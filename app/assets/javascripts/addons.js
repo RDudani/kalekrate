@@ -31,6 +31,7 @@ if(addon.quantity != 0) {
     });
   }); 
 }
-  $('.addons-summary-container').append(template(data));
+
+  $('.addons-summary-container').empty().append(template(data));
 
 }

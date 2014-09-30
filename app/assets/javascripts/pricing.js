@@ -14,7 +14,7 @@ $(document).ready(function() {
 
   // Addons
   $('body').on('focus', '.addons-list .addon-item--quantity', function() {
-    $('.addons-summary-container').empty();
+    //$('.addons-summary-container').empty();
   });
 
 
@@ -60,7 +60,7 @@ $(document).ready(function() {
     else {
       $('#subscribe').attr('class', 'btn-submit');
     }
-    
+
     return false;
   });
 
