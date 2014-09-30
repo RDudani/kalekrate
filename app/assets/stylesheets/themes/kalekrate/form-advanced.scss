@@ -227,6 +227,11 @@ form {
       .row {
         padding: 5px 25px;
       }
+      @include mq($medium) {
+        .form-input form-input__country {
+          padding-top:5px;
+        }
+      }
       .payment-type {
         border-bottom: 1px solid #c6cfd2;
         margin-bottom: 20px;
@@ -320,7 +325,7 @@ form {
       font-size:20px;
       height:44px;
     }
-    @include mq($large) {
+    @include mq($xlarge) {
       .plan select {
         margin-right:-2px;
       }
@@ -370,7 +375,7 @@ form {
       font-size:0;
       box-shadow:none;
       display:block;
-      margin: 20px auto;
+      margin: 0px auto;
   }
 
   .total, .tax {
