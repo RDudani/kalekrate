@@ -82,7 +82,7 @@
     }
 
     &:nth-child(3) {
-      width: 29.99%;
+      width: 29.9%;
     }
 
     @include mq($small) {
@@ -93,7 +93,7 @@
 
       &:nth-child(2) {
         padding-right: 14px;
-        width: 29.99%;
+        width: 29.9%;
       }
 
       &:nth-child(3) {
