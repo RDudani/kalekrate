@@ -64,9 +64,6 @@
     width: 50%;
     padding-left: 7px;
   }
-  @include mq($medium) {
-    margin-top:5px;
-  }
 
 }
 
@@ -330,6 +327,11 @@ form {
       height:44px;
     }
     @include mq($large) {
+      select.plan {
+        margin-right:-4px;
+      }
+    }
+    @include mq($xlarge) {
       select.plan {
         margin-right:-2px;
       }
