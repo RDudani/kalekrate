@@ -22,6 +22,10 @@
 }
 .subscription-pricing-container.one-time {
   width: auto;
+  @include mq($small) {
+    width: auto;
+    float:left;
+  }
 }
 
 
