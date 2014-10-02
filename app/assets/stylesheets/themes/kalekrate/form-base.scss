@@ -100,12 +100,21 @@ input.quantity {
 }
 .quantity-wrap {
   width:40%;
-  right:-40px;
   top:17px;
+}
+@include mq($large) {
+    .quantity-wrap {
+      right:-40px;
+    }
 }
 @include mq($medium) {
     .quantity-wrap {
       right: 0;
+    }
+}
+@include mq($small) {
+    .quantity-wrap {
+      right: 5px;
     }
 }
 .quantity-wrap:after {
