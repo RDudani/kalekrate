@@ -83,7 +83,8 @@
       width: 90%;
       right:0;
      }
-    @include mq($large) {
+    @include mq($medium) {
+        margin: 0;
         width:40%;
         right:-40px;
         top:21px;
@@ -94,7 +95,7 @@
      @include mq($xsmall) {
       float:none;
      }
-     @include mq($large) {
+     @include mq($medium) {
       float:right;
      }
   }
