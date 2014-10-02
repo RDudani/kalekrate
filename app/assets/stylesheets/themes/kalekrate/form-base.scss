@@ -63,13 +63,14 @@ input.quantity {
   background:#91C11E;
   border:1px solid #fff;
   color:#fff;
-  width:15%;
+  width:100%;
   padding:8px;
   height:41px;
-  position: relative;
-  right: 46px;
+  right: 55px;
   top: 17px;
-  width: 100%;
+}
+.quantity-wrap {
+  width:55%;
 }
 
 /* Targetting Webkit browsers only. FF will show the dropdown arrow with so much padding. */
