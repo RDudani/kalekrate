@@ -86,35 +86,6 @@ select, input.quantity {
     display:block;
     background: #fff;
 }
-input.quantity {
-  background:#91C11E;
-  border:1px solid #fff;
-  color:#fff;
-  width:100%;
-  padding:8px;
-  height:41px;
-  font-size:18px;
-  &:focus {
-    border:1px solid #fff;
-  }
-}
-.quantity-wrap {
-  width:40%;
-  top:17px;
-  right: -40px;
-  @include mq($medium) {
-    right:0;
-  }
-}
-.quantity-wrap:after {
-  content:url('/images/icons/number-arrow-green.png'); 
-  top:7px;
-  right:8px;
-}
-.quantity-wrap:before {
-    background: #91C11E;
-    right:1px;
-}
 
 .form__success {
   display: none;
