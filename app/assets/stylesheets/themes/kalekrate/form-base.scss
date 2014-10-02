@@ -66,12 +66,16 @@ input.quantity {
   width:100%;
   padding:8px;
   height:41px;
+  font-size:18px;
  /* right: 55px;
   top: 17px; */
+  &:focus {
+    border:1px solid #fff;
+  }
 }
 .quantity-wrap {
-  width:55%;
-  right:22px;
+  width:40%;
+  right:-40px;
   top:17px;
 }
 

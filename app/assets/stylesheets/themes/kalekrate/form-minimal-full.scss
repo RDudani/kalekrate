@@ -73,7 +73,7 @@
   .form-input {
     &:nth-child(1) {
       padding-right: 14px;
-      width: 32.9%;
+      width: 32.8%;
     }
 
     &:nth-child(2) {
@@ -82,7 +82,7 @@
     }
 
     &:nth-child(3) {
-      width: 32.9%;
+      width: 32.8%;
     }
 
     @include mq($small) {
@@ -97,7 +97,7 @@
       }
 
       &:nth-child(3) {
-        width: 29.9%;
+        width: 29.99%;
       }
     }
   }
