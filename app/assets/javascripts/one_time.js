@@ -7,7 +7,7 @@ $(document).ready(function() {
     // Disable the submit button
     $('#subscribe').prop('disabled', true);
     clear_errors();
-    //check_required_fields();
+    check_required_fields();
 
     var form = this;
 
@@ -16,6 +16,7 @@ $(document).ready(function() {
       // to tokenize the credit card information, then injects the token into the
       // data-recurly="token" field above
       recurly.token(form, function (err, token) {
+        create_subscription_onetime();
         if (err) {
           error(err);
         } else {
