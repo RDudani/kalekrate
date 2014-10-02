@@ -77,7 +77,7 @@
     width: auto;
   }
   .quantity-wrap {
-  @include mq($large) {
+  @include mq($medium) {
     width:40%;
     right:-40px;
     top:21px;
