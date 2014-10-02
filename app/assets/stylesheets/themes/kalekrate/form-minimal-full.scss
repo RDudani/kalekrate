@@ -70,18 +70,17 @@
 }
 
 .subscription-pricing-container.one-time {
-  width: 100%;
+  width: auto;
   float:left;
-  padding: 0 25px;
-  @include mq($small) {
+  @include mq($large) {
     float:right;
-    width: auto;
+    width: 100%;
   }
   .quantity-wrap {
-    margin-top:5px;
+
   }
   .subscription-pricing {
-    float:none;
+  
   }
 }
 
