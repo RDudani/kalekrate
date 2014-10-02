@@ -24,6 +24,7 @@
   width: auto;
   float:left;
   @include mq($small) {
+    float:right;
     width: auto;
   }
 }
