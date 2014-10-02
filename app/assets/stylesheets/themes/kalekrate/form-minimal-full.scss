@@ -77,13 +77,13 @@
     width: auto;
   }
   .quantity-wrap {
-    @include mq($small) {
+    @include mq($xsmall) {
       top:5px;
       margin: 10px auto;
       width: 90%;
       right:0;
      }
-    @include mq($medium) {
+    @include mq($small) {
         margin: 0;
         width:40%;
         right:-40px;
@@ -92,10 +92,10 @@
   }
   .subscription-pricing {
     float:right;
-     @include mq($small) {
+     @include mq($xsmall) {
       float:none;
      }
-     @include mq($medium) {
+     @include mq($small) {
       float:right;
      }
   }
