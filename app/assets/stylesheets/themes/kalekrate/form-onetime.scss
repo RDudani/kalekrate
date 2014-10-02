@@ -30,3 +30,19 @@ input.quantity {
   position:relative;
   float:right;
 }
+.subscription-name-container.update-billing {
+  with:100%;
+  .subscription-name {
+    width:100%;
+    text-align:center;
+    position:static;
+  }
+}
+
+.subscription-pricing-container.update-billing {
+  width:100%;
+  .subscription-pricing {
+    position:static;
+    float:none;
+  }
+}
