@@ -132,6 +132,10 @@ module KaleKrate
       slim :amazon
     end
 
+    get '/update-billing' do
+      slim :update_billing
+    end
+
     post '/api/subscriptions/new' do
       begin
         subscription = Recurly::Subscription.create plan_code: 'kale-fan',
