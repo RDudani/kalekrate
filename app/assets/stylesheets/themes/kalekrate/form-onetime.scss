@@ -31,11 +31,5 @@ input.quantity {
   float:right;
 }
 .subscription-pricing-container {
-  height: 100%;
-  float: right;
-  width: auto;
   padding: 0 25px;
-  @include mq($small) {
-    width: auto;
-  }
 }
