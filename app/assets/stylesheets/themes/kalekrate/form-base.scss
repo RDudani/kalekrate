@@ -108,14 +108,12 @@ input.quantity {
 }
 .quantity-wrap:after {
   content:url('/images/icons/number-arrow-green.png'); 
+  top:7px;
+  right:8px;
 }
 .quantity-wrap:before {
     background: #91C11E;
     right:1px;
-}
-.quantity-wrap:after {
-    top:7px;
-    right:8px;
 }
 
 .form__success {
