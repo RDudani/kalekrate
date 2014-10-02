@@ -77,7 +77,10 @@
     width: auto;
   }
   .quantity-wrap {
-     @include mq($small) {
+    width:40%;
+    right:-40px;
+    top:21px;
+    @include mq($small) {
       top:5px;
       margin: 10px auto;
       width: 90%;

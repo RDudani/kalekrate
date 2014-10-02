@@ -10,12 +10,7 @@ input.quantity {
     border:1px solid #fff;
   }
 }
-.quantity-wrap {
-  width:40%;
-  right:-40px;
-  top:21px;
-}
-.quantity-wrap:after {
+quantity-wrap:after {
   content:url('/images/icons/number-arrow-green.png'); 
 }
 .quantity-wrap:before {
