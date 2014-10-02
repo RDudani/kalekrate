@@ -57,7 +57,7 @@ module KaleKrate
         '/css/themes/kalekrate/form-minimal-full.css'
       ]
 
-      css :one_time, 'one_time.css', [
+      css :one_time, '/one_time.css', [
         '/css/themes/kalekrate/form-base.css',
         '/css/themes/kalekrate/form-minimal-full.css',
         '/css/themes/kalekrate/form-onetime.css'
