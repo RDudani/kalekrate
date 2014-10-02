@@ -92,6 +92,11 @@ module KaleKrate
         '/js/handlebars-latest.js'
       ]
 
+      js :one_time, '/one_time.js', [
+        '/js/common_form.js',
+        '/js/one_time.js',
+      ]
+
       js :amazon_form, '/amazon_form.js', [
         '/js/common_form.js',
         '/js/amazon_form.js',
