@@ -77,13 +77,16 @@
     width: auto;
   }
   .quantity-wrap {
+  @include mq($large) {
     width:40%;
     right:-40px;
     top:21px;
+    }
     @include mq($xsmall) {
       top:5px;
       margin: 10px auto;
       width: 90%;
+      right:0;
      }
   }
   .subscription-pricing {
