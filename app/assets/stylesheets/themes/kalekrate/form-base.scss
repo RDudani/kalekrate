@@ -66,11 +66,13 @@ input.quantity {
   width:100%;
   padding:8px;
   height:41px;
-  right: 55px;
-  top: 17px;
+ /* right: 55px;
+  top: 17px; */
 }
 .quantity-wrap {
   width:55%;
+  right:22px;
+  top:17px;
 }
 
 /* Targetting Webkit browsers only. FF will show the dropdown arrow with so much padding. */
@@ -102,7 +104,7 @@ input.quantity {
 }
 .quantity-wrap:before {
     background: #91C11E;
-    right:-2px;
+    right:1px;
 }
 .quantity-wrap:after {
     top:7px;
