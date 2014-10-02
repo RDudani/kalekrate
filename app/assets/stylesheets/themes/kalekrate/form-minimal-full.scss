@@ -80,14 +80,15 @@
     width:40%;
     right:-40px;
     top:21px;
-    @include mq($medium) {
+    @include mq($large) {
       top:5px;
       margin: 10px auto;
       width: 90%;
      }
   }
   .subscription-pricing {
-     @include mq($medium) {
+    float:right;
+     @include mq($large) {
       float:none;
      }
   }
