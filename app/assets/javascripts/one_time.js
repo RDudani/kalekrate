@@ -7,7 +7,7 @@ $(document).ready(function() {
     // Disable the submit button
     $('#subscribe').prop('disabled', true);
     clear_errors();
-    check_required_fields()
+    //check_required_fields();
 
     var form = this;
 
