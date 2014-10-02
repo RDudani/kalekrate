@@ -70,11 +70,11 @@
 }
 
 .subscription-pricing-container.one-time {
-  width: auto;
+  width: 100%;
   float:left;
   @include mq($large) {
     float:right;
-    width: 100%;
+    width: auto;
   }
   .quantity-wrap {
 
