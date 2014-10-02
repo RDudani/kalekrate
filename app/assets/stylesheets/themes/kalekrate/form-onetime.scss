@@ -13,7 +13,7 @@ input.quantity {
 .quantity-wrap {
   width:40%;
   right:-40px;
-  top:17px;
+  top:21px;
 }
 .quantity-wrap:after {
   content:url('/images/icons/number-arrow-green.png'); 
@@ -29,4 +29,13 @@ input.quantity {
 .subscription-pricing {
   position:relative;
   float:right;
+}
+.subscription-pricing-container {
+  height: 100%;
+  float: right;
+  width: auto;
+  padding: 0 25px;
+  @include mq($small) {
+    width: auto;
+  }
 }
