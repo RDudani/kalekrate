@@ -20,6 +20,10 @@
     width: auto;
   }
 }
+.subscription-pricing-container.one-time {
+  width: auto;
+}
+
 
 .subscription-pricing {
   @include border-radius(5px);
