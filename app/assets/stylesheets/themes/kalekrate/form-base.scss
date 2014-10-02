@@ -86,10 +86,43 @@ select, input.quantity {
     display:block;
     background: #fff;
 }
-
-  .form__success {
-    display: none;
+input.quantity {
+  background:#91C11E;
+  border:1px solid #fff;
+  color:#fff;
+  width:100%;
+  padding:8px;
+  height:41px;
+  font-size:18px;
+  &:focus {
+    border:1px solid #fff;
   }
+}
+.quantity-wrap {
+  width:40%;
+  right:-40px;
+  top:17px;
+}
+@include mq($medium) {
+    .quantity-wrap {
+      right: 0;
+    }
+}
+.quantity-wrap:after {
+  content:url('/images/icons/number-arrow-green.png'); 
+}
+.quantity-wrap:before {
+    background: #91C11E;
+    right:1px;
+}
+.quantity-wrap:after {
+    top:7px;
+    right:8px;
+}
+
+.form__success {
+  display: none;
+}
 
 .form-bar {
   background-color: #91C11E;
