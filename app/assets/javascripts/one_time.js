@@ -16,7 +16,6 @@ $(document).ready(function() {
       // to tokenize the credit card information, then injects the token into the
       // data-recurly="token" field above
       recurly.token(form, function (err, token) {
-        create_subscription_onetime();
         if (err) {
           error(err);
         } else {
