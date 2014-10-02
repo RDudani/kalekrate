@@ -15,6 +15,11 @@ input.quantity {
   right:-40px;
   top:17px;
 }
+@include mq($medium) {
+    .quantity-wrap {
+      right: 0;
+    }
+}
 .quantity-wrap:after {
   content:url('/images/icons/number-arrow-green.png'); 
 }
