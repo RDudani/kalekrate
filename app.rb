@@ -97,6 +97,11 @@ module KaleKrate
         '/js/one_time.js',
       ]
 
+      js :update_billing, '/update_billing.js', [
+        '/js/common_form.js',
+        '/js/update_billing.js',
+      ]
+
       js :amazon_form, '/amazon_form.js', [
         '/js/common_form.js',
         '/js/amazon_form.js',
