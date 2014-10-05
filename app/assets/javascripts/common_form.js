@@ -115,9 +115,9 @@ function subscription_created_advanced(data) {
 
   var billingInfo = $('<h3 class="section-title--addons"> Billing Information</h3><p></p>');
   console.log(billingInfo);
-  var info = addonsList+billingInfo
+  var info = addonsList+billingInfo;
 
-  $('.subscription-details-container').append(info);
+  $('.subscription-details-container').append(billingInfo);
 }
 
 function clear_errors() {
