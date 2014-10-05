@@ -9,6 +9,7 @@ form {
   padding: 0;
 
   @include mq($xsmall) {
+    width: grid-width(14);
   }
 
   @include mq($small) {
@@ -37,7 +38,7 @@ form {
     background-color: #FAFAFA;
     margin: 0 auto;
     overflow: hidden;
-    width: 100%;
+    width: grid-width(9);
 
     @include mq($small) {
       border: 1px solid #D1DBDF;
@@ -84,10 +85,11 @@ form {
 
 .subscription-name-container {
     float:left;
-    width: 50%;
+    width: 45%;
 }
 .form-bar .select-wrap.quantity {
     width:12%;
+    margin: 0 15px;
 }
 .form-bar .select-wrap.curr {
     width:15%;

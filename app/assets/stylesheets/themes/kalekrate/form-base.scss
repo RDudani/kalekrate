@@ -42,7 +42,9 @@ form {
 .hidden {
   display:none;
 }
-
+select {
+  background:#fff;
+}
 select, input.quantity {
     padding:3px;
     margin: 0;
