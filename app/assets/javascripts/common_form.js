@@ -57,7 +57,8 @@ function create_subscription_advanced () {
     "zip": $('input[name="postal-code"]').val(),
     "number": $('input[name="number"]').val(),
     "month": $('input[name="month"]').val(),
-    "year": $('input[name="year"]').val()
+    "year": $('input[name="year"]').val(),
+    "addons": $('.addons-list').html()
   };
 
   $.ajax({
