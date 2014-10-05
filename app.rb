@@ -85,7 +85,7 @@ module KaleKrate
 
       js :advanced_form, '/advanced_form.js', [
         '/js/common_form.js',
-        '/js/minimal_form.js',
+        '/js/minimal_form_v2.js',
         '/js/addons.js',
         '/js/pricing.js',
         '/js/handlebars-latest.js'
