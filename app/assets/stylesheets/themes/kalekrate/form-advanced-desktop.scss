@@ -61,7 +61,8 @@ form {
 
     .order-summary-container {
   
-
+    width: 100%;
+    
     @include mq($medium) {
       width: grid-width(3);
     }
