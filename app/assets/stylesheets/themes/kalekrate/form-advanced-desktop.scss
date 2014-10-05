@@ -12,23 +12,23 @@ form {
   }
 
   @include mq($small) {
-    width: grid-width(12);
+    width: grid-width(14);
   }
 
   @include mq($medium) {
-    width: grid-width(12);
+    width: grid-width(14);
   }
 
   @include mq($large) {
-    width: grid-width(12);
+    width: grid-width(14);
   }
 
   @include mq($xlarge) {
-    width: grid-width(12);
+    width: grid-width(14);
   }
 
   @include mq($xxlarge) {
-    width: grid-width(12);
+    width: grid-width(14);
   }
 }
 
@@ -45,16 +45,16 @@ form {
 
     @include mq($large) {
       float: left;
-      width: grid-width(8);
+      width: grid-width(10);
     }
 
     @include mq($xlarge) {
       @include border-radius(5px);
       @include box-shadow(0px 2px 0px #CCCCCC);
-      width: grid-width(8);
+      width: grid-width(10);
     }
     @include mq($xxlarge) {
-      width: grid-width8);
+      width: grid-width10);
     }
   }
 
@@ -81,4 +81,15 @@ form {
     }
   }
 
+
+.subscription-name-container {
+    float:left;
+    width: 50%;
+}
+.form-bar .select-wrap.quantity {
+    width:17%;
+}
+.form-bar .select-wrap.curr {
+    width:17%;
+}
   
