@@ -110,11 +110,13 @@ function subscription_created_advanced(data) {
   $('.confirmation-messaging').addClass('animate');
 
   var addons = $('<h3 class="section-title--addons"> Add-on Items</h3><p>'+data.addons+'</p>');
+  console.log(addons);
   var customerData = $('<div class="customer-data">'+data["first-name"]+data["last-name"]+'</div>');
 
   var billingInfo = $('<h3 class="section-title--addons"> Billing Information</h3><p>'+data.customerData+'</p>');
+  console.log(billingInfo)
 
-  $('.subscription-details-container').append(addons+billingInfo);
+  $('.subscription-details-container').html(addons+billingInfo);
 }
 
 function clear_errors() {
