@@ -108,6 +108,13 @@ function subscription_created_advanced(data) {
 
   $('.confirmation').addClass('confirmation__show');
   $('.confirmation-messaging').addClass('animate');
+
+  var addons = $('<h3 class="section-title--addons"> Add-on Items</h3>'+data.addons);
+  var customerData = $('<div class="customer-data">'+data[first-name]+data[last-name]'</div>');
+
+  var billingInfo = $('<h3 class="section-title--addons"> Billing Information</h3>'+data.customerData);
+
+  $('.subscription-details-container').append(addons+billingInfo);
 }
 
 function clear_errors() {
