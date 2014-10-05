@@ -72,7 +72,7 @@ module KaleKrate
       css :advanced_desktop, '/advanced_desktop.css', [
         '/css/themes/kalekrate/form-base.css',
         '/css/themes/kalekrate/form-minimal.css',
-        '/css/themes/kalekrate/form-advanced.css'
+        '/css/themes/kalekrate/form-advanced.css',
         '/css/themes/kalekrate/form-advanced-desktop.css'
       ]
 
