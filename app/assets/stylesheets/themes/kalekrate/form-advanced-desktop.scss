@@ -45,16 +45,16 @@ form {
 
     @include mq($large) {
       float: left;
-      width: grid-width(10);
+      width: grid-width(9);
     }
 
     @include mq($xlarge) {
       @include border-radius(5px);
       @include box-shadow(0px 2px 0px #CCCCCC);
-      width: grid-width(10);
+      width: grid-width(9);
     }
     @include mq($xxlarge) {
-      width: grid-width(10);
+      width: grid-width(9);
     }
   }
 
@@ -64,20 +64,20 @@ form {
     width: 100%;
 
     @include mq($medium) {
-      width: grid-width(4);
+      width: grid-width(5);
     }
 
     @include mq($large) {
-      width: grid-width(4);
+      width: grid-width(5);
     }
 
     @include mq($xlarge) {
-      width: grid-width(4);
+      width: grid-width(5);
     }
 
     @include mq($xxlarge) {
       float: right;
-      width: grid-width(4);
+      width: grid-width(5);
     }
   }
 
