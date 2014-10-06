@@ -1,10 +1,12 @@
 handlebar id="advanced-confirmation-template" type="text/x-handlebars-template"
 	| {{#list}} 
 	.row
-		.addons-container.addons-confirmation
-	    	h3.section-title--addons Add-on Items
-	    	ul.addons-list
-	    	| {{{addons}}}
+	| {{#if addons}} 
+	.addons-container.addons-confirmation
+    	h3.section-title--addons Add-on Items
+    	ul.addons-list
+    	| {{{addons}}}
+	 | {{/if}}
 	.row
   		h3.section-title--addons Billing Information
 	.row
