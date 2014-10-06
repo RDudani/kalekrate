@@ -16,6 +16,8 @@ handlebar id="advanced-confirmation-template" type="text/x-handlebars-template"
 		  	span 
 		  	| {{city}}, {{state}} {{zip}} {{country}}
 	.confirmation-payment
+		span.number
+		| {{number}}
 		span Expiration:
 		| {{month}}/{{year}}
 	| {{/list}}

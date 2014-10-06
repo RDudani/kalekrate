@@ -58,7 +58,8 @@ function create_subscription_advanced () {
     "number": $('input[name="number"]').val(),
     "month": $('input[name="month"]').val(),
     "year": $('input[name="year"]').val(),
-    "addons": $('.addons-items-summary').html()
+    "addons": $('.addons-items-summary').html(),
+    "number": $('input[name="number"]').val()
   };
 
   $.ajax({

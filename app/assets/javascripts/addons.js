@@ -41,11 +41,15 @@ function advancedConfirmation(x) {
   var source   = $("#advanced-confirmation-template").html()
     , template = Handlebars.compile(source)
     , data = { list: [] };
+
+    var num = data.number;
+    num.split();
+    var n = num.slice(3);
     
   $(x).each(function(idx, value) {
     data.list.push({
       firstName:value['first-name'],
-      lastNAme: value['last-name'],
+      lastName: value['last-name'],
       addons: value.addons,
       address: value.address,
       city: value.city,
@@ -53,7 +57,8 @@ function advancedConfirmation(x) {
       month: value.month,
       year: value.year,
       zip: value.zip,
-      country: value.country
+      country: value.country,
+      number: n
     }); 
   });
     
