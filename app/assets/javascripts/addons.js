@@ -42,7 +42,6 @@ function advancedConfirmation(x) {
     , template = Handlebars.compile(source)
     , data = { list: [] };
     
-    console.log(data);
   $(x).each(function(idx, value) {
     data.list.push({
       first_name:value['first-name']
@@ -52,7 +51,8 @@ function advancedConfirmation(x) {
  //$(addon).each(function(idx, value) {
 
   //}); 
-  console.log(list);
+console.log(data);
+
   $('.subscription-details-container').append(template(data));
 
 }
