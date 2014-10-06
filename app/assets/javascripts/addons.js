@@ -43,10 +43,13 @@ function advancedConfirmation(data) {
     //, data = { list: [] };
     
     console.log(data);
+   /* data.list.push({
+      addons: data.addons
+    });*/
  //$(addon).each(function(idx, value) {
 
   //}); 
-  console.log(data);
+ // console.log(list);
   $('.subscription-details-container').append(template(data));
 
 }
