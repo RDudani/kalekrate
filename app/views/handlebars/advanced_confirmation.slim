@@ -7,7 +7,13 @@ handlebar id="advanced-confirmation-template" type="text/x-handlebars-template"
   .row
   	h3.section-title--addons Billing Information
   .row
-  	span 
-  	| {{address}} 
-  	span 
-  	| {{city}} | {{state}} | {{zip}} | {{country}}
+  	.confirmation-address
+  		span 
+	  	| {{first_name}} 
+	  	span 
+	  	| {{address}} 
+	  	span 
+	  	| {{city}}, {{state}} {{zip}} {{country}}
+	.confirmation-payment
+		span Expiration:
+		| {{month}}/{{year}}
