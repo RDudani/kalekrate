@@ -35,7 +35,7 @@ if(addon.quantity != 0) {
 
 }
 
-function advancedConfirmation(data) {
+function advancedConfirmation(x) {
     
 
   var source   = $("#advanced-confirmation-template").html()
@@ -43,9 +43,11 @@ function advancedConfirmation(data) {
     , data = { list: [] };
     
     console.log(data);
+  $(x).each(function(idx, value) {
     data.list.push({
-      first_name:'first-name'
+      first_name:value['first-name']
     }); 
+  });
     
  //$(addon).each(function(idx, value) {
 
