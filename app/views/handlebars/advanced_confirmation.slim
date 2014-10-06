@@ -9,17 +9,18 @@ handlebar id="advanced-confirmation-template" type="text/x-handlebars-template"
   		h3.section-title--addons Billing Information
 	.row
   		.confirmation-address
-	  		span 
+	  		span.item 
 		  	| {{firstName}} {{lastName}}
-		  	span 
+		  	span.item 
 		  	| {{address}} 
-		  	span 
+		  	span.item 
 		  	| {{city}}, {{state}} {{zip}} {{country}}
-	.confirmation-payment
-		span.number
-		| {{number}}
-		span Expiration:
-		| {{month}}/{{year}}
+		.confirmation-payment
+			span.item
+			| XXX-XXX-XXX-{{number}}
+			span.item 
+				em Expiration:
+			| {{month}}/{{year}}
 	| {{/list}}
 
 

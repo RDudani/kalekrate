@@ -43,11 +43,8 @@ function advancedConfirmation(x) {
     , data = { list: [] };
 
     var num = x.number;
-    console.log(num);
     var nu = num.split('');
-    console.log(nu);
     var n = nu.slice(-4);  
-    console.log(n); 
     var number = n.join('');
     console.log(number);
 
