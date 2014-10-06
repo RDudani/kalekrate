@@ -52,10 +52,12 @@ function advancedConfirmation(x) {
  //$(addon).each(function(idx, value) {
 
   //}); 
- // console.log(list);
+  console.log(list);
   $('.subscription-details-container').append(template(data));
 
 }
+
+
 
 
 
