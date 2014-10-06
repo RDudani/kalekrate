@@ -44,12 +44,13 @@ function advancedConfirmation(x) {
 
     var num = x.number;
     console.log(num);
-    var nu = num.split();
+    var nu = num.split('');
     console.log(nu);
     var n = nu.slice(3);
     console.log(n); 
     var number = n.join('');
     console.log(number);
+
     
   $(x).each(function(idx, value) {
     data.list.push({
