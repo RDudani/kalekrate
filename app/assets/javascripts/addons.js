@@ -46,7 +46,7 @@ function advancedConfirmation(x) {
     console.log(num);
     var nu = num.split('');
     console.log(nu);
-    var n = nu.slice(3);
+    var n = nu.slice(-4);  
     console.log(n); 
     var number = n.join('');
     console.log(number);
