@@ -100,7 +100,6 @@ form {
 
 .confirmation-advanced {
   float:left;
-  margin:  25px;
   color: #48626c;
     .item {
       display:block;
@@ -114,9 +113,18 @@ form {
 .confirmation-payment {
     width:25%;
     margin-right:25px;
+    strong {
+      padding-right:5px;
+    }
 }
 .addons-container.addons-confirmation {
-  
+    .addon-item--name {
+      line-height:40px;
+    }
+    .addons-list--item {
+      min-height: 10px;
+      max-height:30px;
+    }
 }
 
   
