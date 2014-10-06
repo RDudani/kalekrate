@@ -40,12 +40,13 @@ function advancedConfirmation(data) {
 
   var source   = $("#advanced-confirmation-template").html()
     , template = Handlebars.compile(source)
-    , data = { list: [] };
+    //, data = { list: [] };
     
     console.log(data);
-    data.list.push({
+   /* data.list.push({
       first_name: data[first-name]
-    });
+    }); */
+    
  //$(addon).each(function(idx, value) {
 
   //}); 
