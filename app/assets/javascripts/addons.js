@@ -44,7 +44,7 @@ function advancedConfirmation(x) {
     
   $(x).each(function(idx, value) {
     data.list.push({
-      first_name:value['first-name'],
+      firstName:value['first-name'],
       addons: value.addons,
       address: value.address
     }); 

@@ -1,19 +1,23 @@
 handlebar id="advanced-confirmation-template" type="text/x-handlebars-template"
-  .row
-    h3.section-title--addons Add-on Items
-  .row
-    ul.addons-list
-    	| {{{addons}}}
-  .row
-  	h3.section-title--addons Billing Information
-  .row
-  	.confirmation-address
-  		span 
-	  	| {{first_name}} 
-	  	span 
-	  	| {{address}} 
-	  	span 
-	  	| {{city}}, {{state}} {{zip}} {{country}}
-	.confirmation-payment
-		span Expiration:
-		| {{month}}/{{year}}
+	| {{#if list}}
+		| {{#list}}
+		 	.row
+			   h3.section-title--addons Add-on Items
+			  .row
+			    ul.addons-list
+			    	| {{{addons}}}
+			  .row
+			  	h3.section-title--addons Billing Information
+			  .row
+			  	.confirmation-address
+			  		span 
+				  	| {{firstName}} 
+				  	span 
+				  	| {{address}} 
+				  	span 
+				  	| {{city}}, {{state}} {{zip}} {{country}}
+				.confirmation-payment
+					span Expiration:
+					| {{month}}/{{year}}
+		| {{/list}}
+	| {{/if}}
