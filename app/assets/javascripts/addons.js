@@ -43,8 +43,8 @@ function advancedConfirmation(x) {
     , data = { list: [] };
 
     var num = data.number;
-    num.split();
-    var n = num.slice(3);
+    var nu = num.split();
+    var n = nu.slice(3);
     
   $(x).each(function(idx, value) {
     data.list.push({
