@@ -45,8 +45,15 @@ function advancedConfirmation(x) {
   $(x).each(function(idx, value) {
     data.list.push({
       firstName:value['first-name'],
+      lastNAme: value['last-name'],
       addons: value.addons,
-      address: value.address
+      address: value.address,
+      city: value.city,
+      state: value.state,
+      month: value.month,
+      year: value.year,
+      zip: value.zip,
+      country: value.country
     }); 
   });
     
