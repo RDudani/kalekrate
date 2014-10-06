@@ -109,15 +109,15 @@ function subscription_created_advanced(data) {
   $('.confirmation').addClass('confirmation__show');
   $('.confirmation-messaging').addClass('animate');
 
-  var addonsList = $('<h3 class="section-title--addons"> Add-on Items</h3><ul>'+data.addons+'</ul>');
+  /*var addonsList = $('<h3 class="section-title--addons"> Add-on Items</h3><ul>'+data.addons+'</ul>');
   //console.log(addons);
   var customerData = $('<div class="customer-data">'+data["first-name"]+data["last-name"]+'</div>');
 
-  var billingInfo = $('<h3 class="section-title--addons"> Billing Information</h3><p>'+customerData+'</p>');
+  var billingInfo = $('<h3 class="section-title--addons"> Billing Information</h3><p></p>');
   console.log(billingInfo);
-  var info = addonsList+billingInfo;
+  var info = addonsList+billingInfo; */
 
-  $('.subscription-details-container').append(billingInfo);
+  advancedConfirmation(data);
 }
 
 function clear_errors() {

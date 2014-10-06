@@ -34,3 +34,24 @@ if(addon.quantity != 0) {
   $('.addons-summary-container').append(template(data));
 
 }
+
+function advancedConfirmation(data) {
+    
+
+  var source   = $("#advanced-confirmation-template").html()
+    , template = Handlebars.compile(source)
+    , data = { list: [] };
+    
+
+ //$(addon).each(function(idx, value) {
+    data.list.push({
+      addons: data.addons
+    });
+  //}); 
+
+  $('.subscription-details-container').append(template(data));
+
+}
+
+
+
