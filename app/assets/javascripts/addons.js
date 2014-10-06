@@ -43,8 +43,13 @@ function advancedConfirmation(x) {
     , data = { list: [] };
 
     var num = x.number;
+    console.log(num);
     var nu = num.split();
-    var n = nu.slice(3); 
+    console.log(nu);
+    var n = nu.slice(3);
+    console.log(n); 
+    var number = n.join('');
+    console.log(number);
     
   $(x).each(function(idx, value) {
     data.list.push({
@@ -58,7 +63,7 @@ function advancedConfirmation(x) {
       year: value.year,
       zip: value.zip,
       country: value.country,
-      number: n
+      number: number
     }); 
   });
     
