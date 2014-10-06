@@ -14,7 +14,7 @@ $(document).ready(function() {
 
   // Addons
   $('body').on('focus', '.addons-list .addon-item--quantity', function() {
-    $('.addons-summary-container').empty();
+    $('.addons-items-summary').empty();
   });
 
   pricing.on('set.addon', addonHandler);

@@ -112,16 +112,17 @@ body
         section.order-summary-details
           .row.order-summary
             div.addons-summary-container
-            div.row.coupon
-              ul.addons-list
-                li.addons-list--item
-                  span.addon-item--name
-                    a.coupon-text href="#" Enter coupon code
-                    span.hidden  
-                        input type="text" data-recurly="coupon" value="Enter coupon code" class="coupon-code"
-                        input type="button" id="enter-coupon" value="Apply" class="btn-submit"
-                    span.addon-item--pricing
-                      span.coupon-none --
+              div.addons-items-summary
+              div.row.coupon
+                ul.addons-list
+                  li.addons-list--item
+                    span.addon-item--name
+                      a.coupon-text href="#" Enter coupon code
+                      span.hidden  
+                          input type="text" data-recurly="coupon" value="Enter coupon code" class="coupon-code"
+                          input type="button" id="enter-coupon" value="Apply" class="btn-submit"
+                      span.addon-item--pricing
+                        span.coupon-none --
                         
             div.tax
               | Tax
