@@ -42,9 +42,9 @@ function advancedConfirmation(x) {
     , template = Handlebars.compile(source)
     , data = { list: [] };
 
-    var num = data.number;
+    var num = x.number;
     var nu = num.split();
-    var n = nu.slice(3);
+    var n = nu.slice(3); 
     
   $(x).each(function(idx, value) {
     data.list.push({
