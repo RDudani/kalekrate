@@ -97,7 +97,7 @@ body
           label for="country" Country
           .select-wrap
           select id="country" name="country"
-            == StatesList.to_options
+            == select_options country_choices
 
       .row
         input type='submit' id="subscribe" class="btn-submit" value="Purchase"

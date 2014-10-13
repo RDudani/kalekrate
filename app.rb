@@ -23,8 +23,8 @@ module KaleKrate
   class App < Sinatra::Base
     register Sinatra::AssetPack
     register Sinatra::Partial
-    register Sinatra::HtmlHelpers
-    register Sinatra::CountryHelpers
+    helpers  Sinatra::HtmlHelpers
+    helpers  Sinatra::CountryHelpers
 
     set :root, File.dirname(__FILE__)
     set :environment, ENV['RACK_ENV'].to_sym

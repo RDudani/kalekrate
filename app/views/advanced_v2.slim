@@ -104,7 +104,7 @@ body
                 .select-wrap
                   select data-recurly="country" id="country" name="country" class="form-input__required"
                     option Country
-                    == StatesList.to_options
+                    == select_options country_choices
 
       .order-summary-container
         header.order-summary-title
