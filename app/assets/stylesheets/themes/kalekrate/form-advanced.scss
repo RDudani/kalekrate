@@ -413,20 +413,14 @@ form {
     border-top:0;
   }
   .coupon {
+    margin-top: 20px;
     .coupon-code {
-      display:inline-block;
-      margin-top: 20px;
-      width:70%;
+      display: inline-block;
+      width: 80%;
     }
-    .btn-submit {
-      display:inline-block;
-      background: #48626c;
-      color:#fff;
-      border: 0;
-      @include border-radius(3px);
-      margin: 0 0 0 2px;
-      padding: 6px 5px 8px;
-
+    .coupon-amount-off {
+      display: inline-block;
+      float: right;
     }
   }
   .coupon-text {
