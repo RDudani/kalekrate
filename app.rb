@@ -120,28 +120,28 @@ module KaleKrate
       serve '/images', from: 'app/assets/images'
     }
 
-    get '/minimal' do
+    get '/subscribe-minimal' do
       slim :minimal
     end
 
-    get '/minimal-full' do
-      slim :minimal_full
+    get '/subscribe-full' do
+      slim :full
     end
 
-    get '/advanced' do
+    get '/subscribe-advanced' do
       slim :advanced
     end
 
-    get '/one-time' do
-      slim :one_time
+    get '/subscribe-advanced-mobile' do
+      slim :advanced_mobile
     end
 
-    get '/advanced-v2' do
-      slim :advanced_v2
-    end
-
-    get '/amazon' do
+    get '/subscribe-amazon' do
       slim :amazon
+    end
+
+    get '/one-time-transaction' do
+      slim :one_time
     end
 
     get '/update-billing' do
@@ -160,10 +160,10 @@ module KaleKrate
               token_id: params['recurly-token']
             }
           }
-        redirect '/minimal'
       rescue Recurly::Resource::Invalid, Recurly::API::ResponseError => e
         puts e
-        redirect '/minimal'
+      ensure
+        redirect back
       end
     end
 
@@ -171,21 +171,27 @@ module KaleKrate
       begin
         Recurly::Account.create! account_code: SecureRandom.uuid,
           billing_info: { token_id: params['recurly-token'] }
-        puts params
-        # redirect '/minimal'
       rescue Recurly::Resource::Invalid, Recurly::API::ResponseError => e
-        redirect '/minimal'
+        puts e
+      ensure
+        redirect back
       end
     end
 
     post '/api/transactions' do
       begin
-        Recurly::Account.create! account_code: SecureRandom.uuid,
-          billing_info: { token_id: params['recurly-token'] }
-        puts params
-        # redirect '/minimal'
+        Recurly::Transaction.create!({
+          account: {
+            account_code: SecureRandom.uuid,
+            billing_info: { token_id: params['recurly-token'] }
+          },
+          amount_in_cents: 999,
+          currency: 'USD'
+        })
       rescue Recurly::Resource::Invalid, Recurly::API::ResponseError => e
-        redirect '/one-time'
+        puts e
+      ensure
+        redirect back
       end
     end
 
@@ -194,9 +200,10 @@ module KaleKrate
         account = Recurly::Account.find params[:account_code]
         account.billing_info = { token_id: params['recurly-token'] }
         account.save!
-        redirect '/minimal'
       rescue Recurly::Resource::Invalid, Recurly::API::ResponseError => e
-        redirect '/minimal'
+        puts e
+      ensure
+        redirect back
       end
     end
 
