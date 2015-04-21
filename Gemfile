@@ -15,5 +15,3 @@ gem 'sinatra-assetpack'
 gem 'dotenv'
 gem 'rake'
 gem 'recurly'
-
-ruby '2.1.2'
