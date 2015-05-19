@@ -1,4 +1,5 @@
 $(document).ready(function() {
+
   // On form submit, we stop submission to go get the token
   $('form').on('submit', function (event) {
     event.preventDefault();
@@ -9,20 +10,31 @@ $(document).ready(function() {
 
     var form = this;
 
-    if( $('#subscribe').hasClass('btn-submit') ) {
-        // Now we call recurly.token with the form. It goes to Recurly servers
-      // to tokenize the credit card information, then injects the token into the
-      // data-recurly="token" field above
-      recurly.token(form, function (err, token) {
-        if (err) {
-          error(err);
-        } else {
-          create_subscription();
-        };
-      });
-    }//end if
-
+    // for payments with a review step, the token will already be present
+    if ($('#recurly-token').val()) {
+      create_subscription();
+    }
     else {
+      getToken(form, create_subscription);
+    }
+  });
+
+  $('#continue').on('click', function() {
+    var form = $("form")[0];
+
+    clear_errors();
+
+    getToken(form, review);
+  });
+
+  function getToken (form, next) {
+    var paymentType = $('#payment_type').val() || 'card';
+    var paymentTokens = {
+      card: recurly,
+      'bank-account': recurly.bankAccount
+    };
+
+    if (paymentType === 'paypal') {
 
       recurly.paypal({ description: 'test' }, function (err, token) {
         if (err) {
@@ -37,15 +49,24 @@ $(document).ready(function() {
           form.submit();
         }
       });
-
     }
 
+    else {
 
+      // Now we call appropriate recurly.token function with the form. It goes to Recurly servers
+      // to tokenize the credit card information, then injects the token into the
+      // data-recurly="token" field above
 
-  });
-
-
-
+      paymentTokens[paymentType].token(form, function (err, token) {
+        if (err) {
+          error(err);
+        } else {
+          $('#recurly-token').val(token.id);
+          next();
+        }
+      });
+    }
+  }
 
 
 

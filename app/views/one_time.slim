@@ -72,33 +72,7 @@ body
           label for="cvv" CVC
           input type="text" data-recurly="cvv" id="cvv" name="cvv" maxlength="4"
 
-      .row.customer-fields--address
-        .form-input
-          label for="address" Address
-          input type="text" data-recurly="address" id="address" name="address"
-
-      .row.customer-fields--city
-        .form-input
-          label for="city" City
-          input type="text" data-recurly="city" id="city" name="city"
-
-      .row.customer-fields--card-details
-        .form-input
-          label for="postal_code" State
-          .select-wrap
-            select id="state" name="state"
-              == StatesList.to_options
-
-        .form-input
-          label for="postal_code" Zip Code
-          input type="text" data-recurly="postal_code" id="postal_code" name="postal-code" maxlength="5"
-
-        .form-input
-          label for="country" Country
-          .select-wrap
-          select id="country" name="country"
-            option
-            == select_options country_choices
+      == partial(:'shared/one_time/address_info')
 
       .row
         input type='submit' id="subscribe" class="btn-submit" value="Purchase"

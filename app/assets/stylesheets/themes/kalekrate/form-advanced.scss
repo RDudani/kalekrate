@@ -2,7 +2,7 @@
 @import 'grid';
 @import 'mixins';
 
-.customer-fields--card-details {
+.customer-fields--card-details, .customer-fields--account-details {
   .form-input {
     float: left;
     margin: 7px 0;
@@ -16,6 +16,14 @@
       padding-left: 7px;
       width: 50%;
     }
+  }
+}
+
+.panel {
+  display:none;
+
+  &.card {
+    display:block;
   }
 }
 
@@ -123,6 +131,16 @@
         padding: 0px 10px;
       }
 
+      .addon-item--quantity {
+        input[type=number] {
+          -moz-appearance:textfield;
+        }
+        input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+      }
+
       .addon-item--price {
         color: #48626C;
         display: block;
@@ -156,16 +174,14 @@ form {
   display: block;
   margin: 0 auto;
   padding: 0;
-
-  @include mq($xsmall) {
-  }
+  width: grid-width(5);
 
   @include mq($small) {
-    width: grid-width(5);
+    width: grid-width(6);
   }
 
   @include mq($medium) {
-    width: grid-width(6);
+    width: grid-width(8);
   }
 
   @include mq($large) {
@@ -185,7 +201,6 @@ form {
     float: left;
     background-color: #FAFAFA;
     margin: 0 auto;
-    overflow: hidden;
     width: 100%;
 
     @include mq($small) {
@@ -232,23 +247,27 @@ form {
       .payment-type {
         border-bottom: 1px solid #c6cfd2;
         margin-bottom: 20px;
-        padding: 0 30px;
+        padding: 10px 0px 0px;
         float:left;
         width:100%;
         a {
-          padding: 10px 10px 0 10px;
+          padding: 0px;
+          margin: 0 60px 0px;
           text-decoration:none;
           color: #818181;
+          display: inline-block;
+          width: 125px;
+          text-align: center;
+          &:first-child {
+            margin-left: 15px;
+          }
+          &:last-child {
+            margin-right: 15px;
+          }
         }
         a.active {
           color: #48626c;
           border-bottom: 3px solid #48626c;
-        }
-        #payby-credit-card {
-          float:left;
-        }
-        #payby-paypal {
-          float:right;
         }
       }
     }
@@ -297,54 +316,32 @@ form {
     width: 100%;
     padding:0px;
     float:none;
-    margin-bottom:20px;
+    margin-bottom:0px;
+    min-height: 40px;
   }
   .form-bar {
     padding: 20px;
   }
 
-  .select-wrap:before {
-    // right:1px
-  }
-  .select-wrap:after {
-    top: 8px;
-  }
-
   .form-bar {
-      .subscription-pricing {
+    .subscription-pricing {
         position:static;
         transform: translateY(0%);
     }
-    select.curr, select.plan, .select-wrap:before, .select-wrap input {
+    select.curr, select.plan, .select-wrap:before, .select-wrap input, .quantity-wrap input {
       background:  #91C11E;
       color:#fff;
       border: 1px solid #fff;
       font-size:20px;
       height:44px;
     }
-    @include mq($large) {
-      select.plan {
-        margin-right:-4px;
-      }
-    }
-    @include mq($xlarge) {
-      select.plan {
-        margin-right:-2px;
-      }
-    }
-    .select-wrap.quantity {
+    .quantity-wrap {
       width: 20%;
       float:left;
       margin: 0 10px 0 3px;
-    }
-    .select-wrap.quantity:after {
-      background: url('/images/icons/number-arrow-green.png');
-      top: 8px;
-      width: 19px;
-      height: 28px;
-    }
-    .select-wrap.quantity:before {
-
+      input {
+        padding-left: 10px;
+      }
     }
     .select-wrap.curr {
       width: 25%;
@@ -356,15 +353,23 @@ form {
     .select-wrap:before {
       border: 0;
       height: 42px;
-      right: 5px;
+      right: 10px;
       top: 1px;
     }
     .select-wrap:after {
       background: url('/images/icons/select-arrow-green.png');
       top: 15px;
-      right: 10px;
+      right: 15px;
       width: 19px;
       height: 12px;
+    }
+    .select-wrap.disabled {
+      input, select {
+        cursor: default;
+      }
+      &:after {
+        background: none;
+      }
     }
   }
 
@@ -372,7 +377,7 @@ form {
     padding-right:0;
   }
 
- input[type="submit"] {
+ input[type="submit"], a.btn-submit {
     margin: 0 12px 20px;
     width: 94%;
   }

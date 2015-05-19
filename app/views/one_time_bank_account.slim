@@ -1,0 +1,64 @@
+doctype html
+/[if lt IE 7]
+  html.no-js.ie6.oldie lang="en"
+/[if IE 7]
+  html.no-js.ie7.oldie lang="en"
+/[if IE 8]
+  html.no-js.ie8.oldie lang="en"
+/[if gte IE 8]
+  html.no-js lang="en"
+
+head
+  title = "Kale Krate"
+  == partial(:'shared/meta')
+  == partial(:'shared/scripts')
+  == css :application
+  == css :one_time
+  == js :one_time_bank_account
+
+body
+
+  .form
+    .form-header
+      h1 Kale Krate
+
+    .form-bar
+      .subscription-name-container
+        strong.subscription-name Salad Spinner
+
+      .subscription-pricing-container.one-time
+        .quantity-wrap
+          input#quantity type="number" value="1" min="1" class="quantity"
+          input#price-each type="hidden" value="9.99"
+        .subscription-pricing
+          span.subscription-price#amount
+          span.subscription-frequency
+
+    .confirmation
+      .confirmation-body
+        h2.confirmation-messaging Thank you for your purchase!
+
+
+    form method="post" action="/api/transactions"
+      input type="hidden" data-recurly="token" name="recurly-token"
+
+      .form-container
+        .row
+          .form-errors.form-errors__hidden
+            strong Oops! The following fields appear to be invalid:
+            ul
+
+        == partial(:'shared/bank_account/input_fields_with_labels')
+
+        hr
+
+        == partial(:'shared/one_time/address_info')
+
+        .row
+          a#continue.btn-submit Continue
+
+      .review-container
+        == partial(:'shared/bank_account/review_info', locals: {action: :purchase})
+
+        .row
+          input type='submit' id="subscribe" class="btn-submit" value="Purchase"

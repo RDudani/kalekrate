@@ -1,0 +1,27 @@
+.row.customer-fields--address
+  .form-input
+    label for="address1" Address
+    input type="text" data-recurly="address1" id="address1" name="address1"
+
+.row.customer-fields--city
+  .form-input
+    label for="city" City
+    input type="text" data-recurly="city" id="city" name="city"
+
+.row.customer-fields--card-details
+  .form-input
+    label for="postal_code" State
+    .select-wrap
+      select id="state" data-recurly="state" name="state"
+        == StatesList.to_options
+
+  .form-input
+    label for="postal_code" Zip Code
+    input type="text" data-recurly="postal_code" id="postal_code" name="postal-code" maxlength="5"
+
+  .form-input
+    label for="country" Country
+    .select-wrap
+    select id="country" data-recurly="country" name="country"
+      option
+      == select_options country_choices

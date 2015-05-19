@@ -1,0 +1,23 @@
+handlebar id="line-items-summary-template" type="text/x-handlebars-template"
+  .row
+    ul.addons-list
+      li.addons-list--item
+        span.addon-item--name
+          | {{plan_name}}
+        .addon-item--pricing
+          span.addon-item--price
+            span data-recurly="addon_price" data-recurly-addon='{{code}}'
+              | ${{plan_price}}
+        span.addon-item--quantity-summary data-recurly-addon='{{quantity}}' {{plan_quantity}}x
+      | {{#if addons}}
+      | {{#addons}}
+      li.addons-list--item
+        span.addon-item--name
+          | {{name}}
+        .addon-item--pricing
+          span.addon-item--price
+            span data-recurly="addon_price" data-recurly-addon='{{code}}'
+              | ${{price}}
+        span.addon-item--quantity-summary data-recurly-addon='{{quantity}}' {{quantity}}x
+      | {{/addons}}
+      | {{/if}}

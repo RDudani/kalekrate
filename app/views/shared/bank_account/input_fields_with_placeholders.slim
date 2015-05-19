@@ -1,0 +1,28 @@
+.row
+  .form-input__name_on_account
+    input type="text" data-recurly="name_on_account" id="name_on_account" name="name-on-account" class="form-input__required" placeholder="Name on Account"
+
+.row
+  .form-input__routing_number.input-tooltip
+    == partial(:'shared/tooltips/routing_number')
+    input type="text" data-recurly="routing_number" id="routing_number" name="routing-number" class="form-input__required" placeholder="Routing Number"
+    p.routing_number_bank
+
+.row
+  .form-input__account_number.input-tooltip
+    == partial(:'shared/tooltips/account_number')
+    input type="text" data-recurly="account_number" id="account_number" name="account-number" class="form-input__required" placeholder="Account Number"
+
+.row
+  .form-input__account_number_confirmation
+    input type="text" data-recurly="account_number_confirmation" id="account_number_confirmation" name="account-number-confirmation" class="form-input__required" placeholder="Confirm Account Number"
+
+.row.customer-fields--account-type.advanced
+  label Bank Account Type
+  .options
+    .option
+      input type="radio" data-recurly="account_type" id="account_type_checking" value="checking" name="account-type" checked="checked"
+      label for="account_type_checking" Checking
+    .option
+      input type="radio" data-recurly="account_type" id="account_type_savings" value="savings" name="account-type"
+      label for="account_type_savings" Savings

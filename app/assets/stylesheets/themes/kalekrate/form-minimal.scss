@@ -15,11 +15,6 @@
 .subscription-pricing-container {
   height: 100%;
   float: right;
-  width: 100%;
-
-  @include mq($small) {
-    width: auto;
-  }
 }
 
 .subscription-pricing {
@@ -32,11 +27,9 @@
   margin: 10px 0 20px 0;
   position: relative;
 
-  @include mq($small) {
-    @include verticalAlign();
-    margin: 0;
-    right: 26px;
-  }
+  @include verticalAlign();
+  margin: 0;
+  right: 26px;
 }
 
   .subscription-price {

@@ -1,0 +1,52 @@
+@import 'variables';
+@import 'grid';
+@import 'mixins';
+
+.review-container {
+  position: relative;
+  display: none;
+
+  h3 {
+    font-size: 16px;
+    color: #91C11E;
+    margin: 0;
+    font-weight: 600;
+  }
+
+  .cancel {
+    float: right;
+    color: $lightBlue;
+    font-size: 16px;
+    font-weight: normal;
+    cursor: pointer;
+  }
+
+  p {
+    color: $darkBlue;
+  }
+
+  dl, dt, dd {
+    padding: 0;
+    margin: 0;
+  }
+
+  dl {
+    margin-bottom: -10px;
+  }
+
+  dt, dd {
+    display: inline-block;
+    width: 49%;
+    margin-bottom: 10px;
+  }
+
+  dt {
+    color: $lightBlue;
+  }
+
+  dd {
+    text-align: right;
+    color: $darkBlue;
+  }
+
+}

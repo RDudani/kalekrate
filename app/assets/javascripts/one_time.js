@@ -10,23 +10,18 @@ $(document).ready(function() {
 
     var form = this;
 
+    // Now we call appropriate recurly.token function with the form. It goes to Recurly servers
+    // to tokenize the credit card information, then injects the token into the
+    // data-recurly="token" field above
 
-        // Now we call recurly.token with the form. It goes to Recurly servers
-      // to tokenize the credit card information, then injects the token into the
-      // data-recurly="token" field above
-      recurly.token(form, function (err, token) {
-        if (err) {
-          error(err);
-        } else {
-          create_subscription_onetime();
-        };
-      });
-
-
+    recurly.token(form, function (err, token) {
+      if (err) {
+        error(err);
+      } else {
+        create_subscription();
+      }
+    });
   });
-
-
-
 
 
 

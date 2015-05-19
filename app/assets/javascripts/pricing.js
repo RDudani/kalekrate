@@ -1,3 +1,5 @@
+var planDetails;
+
 $(document).ready(function() {
   var pricing = recurly.Pricing();
 
@@ -5,18 +7,15 @@ $(document).ready(function() {
 
   // Plans
   pricing.on('set.plan', function planHandler (plan) {
-    $('.subscription-price').text('$'+plan.price.USD.unit_amount);
+    planDetails = plan;
+    updateSubscriptionPrice();
     showAddons(plan.addons);
     pricing.attach($('form'));
-  });
-
-  // Addons
-  $('body').on('focus', '.addons-list .addon-item--quantity', function() {
-    $('.addons-items-summary').empty();
+    updateLineItemsSummary();
   });
 
   pricing.on('set.addon', function addonHandler (addon) {
-    showAddonsSummary(addon);
+    updateAddonForSummary(addon);
   });
 
   // Coupon
@@ -33,21 +32,48 @@ $(document).ready(function() {
     return false;
   });
 
+  $("#currency").on('change', updateSubscriptionPrice);
+
   // Payment Option
   $('.payment-type a').click(function() {
-    var tab = $(this).attr('href');
+    clear_errors();
+    var tab = $(this).attr('href').replace("#", "");
     $('.payment-type a').removeClass('active');
     $(this).addClass('active');
-    $('.panel').hide();
-    $(tab).show();
-
-    if ($(this).attr('id') == 'payby-paypal') {
-      $('#subscribe').attr('class', 'paypal-submit');
-    } else {
-      $('#subscribe').attr('class', 'btn-submit');
-    }
-
+    showPaymentTypePanels(tab);
+    $('#payment_type').val(tab);
     return false;
   });
 
+  $("#plan_quantity").on('change', function() {
+    // wait for next event loop so that planDetails gets updated
+    setTimeout(updateLineItemsSummary, 100);
+  });
+
+  function showPaymentTypePanels (type) {
+    $('.panel').hide();
+    $('.panel.'+type).show();
+  }
+
+  function updateSubscriptionPrice () {
+    $('.subscription-price').text('$'+subscriptionPrice());
+    updateLineItemsSummary();
+  }
 });
+
+function updateLineItemsSummary () {
+  var source   = $("#line-items-summary-template").html()
+    , template = Handlebars.compile(source);
+
+  $('.line-items-summary').html(template({
+    plan_name: planDetails.name,
+    plan_price: subscriptionPrice(),
+    plan_quantity: planDetails.quantity,
+    addons: addonsList
+  }));
+}
+
+function subscriptionPrice() {
+  var currency = $("#currency").val();
+  return planDetails.price[currency].unit_amount.toFixed(2);
+}

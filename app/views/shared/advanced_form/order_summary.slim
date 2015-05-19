@@ -1,0 +1,43 @@
+header.order-summary-title
+  h2 Order Summary
+section.order-summary-details
+  .row.order-summary
+    div.line-items-summary-container
+      div.line-items-summary
+      div.row.coupon
+        ul.addons-list
+          li.addons-list--item
+            span.addon-item--name
+              a.coupon-text href="#" Enter coupon code
+              span.hidden
+                  input type="text" data-recurly="coupon" placeholder="Enter coupon code" class="coupon-code"
+              span.addon-item--pricing
+                span.coupon-none --
+
+    div.tax
+      | Tax
+      span.total-amount
+        span.symbol data-recurly="currency_symbol"
+        span data-recurly="tax_now"
+    div.total
+      | Total
+      span.total-amount#amount
+        span data-recurly="currency_symbol"
+        span data-recurly="total_now" id="total_now" name="total-now" class="order-summary--total"
+
+      .confirmation
+        .confirmation-body
+          h2.confirmation-messaging
+            span Thank you for subscribing.
+            br You will be billed
+            span data-recurly="currency_symbol"
+            span data-recurly="total_next" name="total-next"
+            span  every month.
+
+  .row.hide-form-onsuccess
+    .panel.card.paypal
+      input type='submit' id="subscribe" class="btn-submit" value="Subscribe"
+    .panel.bank-account
+      a#continue.advanced.btn-submit Continue
+
+    input type="hidden" id="recurly-token" name="recurly-token"
