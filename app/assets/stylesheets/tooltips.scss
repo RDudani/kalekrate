@@ -1,0 +1,72 @@
+@import 'grid';
+@import 'mixins';
+@import 'variables';
+
+.tooltip-container {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+
+  &:hover .tooltip {
+    display: block;
+  }
+
+  .tooltip {
+    position: absolute;
+    display: none;
+    background-color: rgba(82, 82, 82, 0.95);
+    color: #fff;
+    border: 1px solid #525252;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px #f5f5f5;
+    padding: 8px 8px;
+    margin-left: -10px;
+    left: 100%;
+    top: -4px;
+    font-weight: 400;
+    text-align: left;
+    z-index: 1;
+    line-height: 0;
+
+    &:after, &:before {
+        right: 100%;
+        top: 16px;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        position: absolute;
+        pointer-events: none;
+    }
+
+    &:before {
+      border-right-color: #525252;
+      border-width: 6px;
+      margin-top: -6px;
+    }
+
+    &:after {
+        border-right-color: #525252;
+        border-width: 5px;
+        margin-top: -5px;
+    }
+  }
+
+  i {
+    padding: 0 0.5em;
+    color: #809CA6;
+  }
+}
+
+.input-tooltip {
+  position: relative;
+
+  .tooltip-container {
+    position: absolute;
+    top: 9px;
+    right: -7px;
+  }
+
+  &:first-child .tooltip-container {
+    right: 0px;
+  }
+}

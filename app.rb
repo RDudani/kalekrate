@@ -44,12 +44,14 @@ module KaleKrate
 
       css :application, '/application.css', [
         '/css/base.css',
-        '/css/forms.css'
+        '/css/forms.css',
+        '/css/tooltips.css'
       ]
 
       css :minimal, '/minimal.css', [
         '/css/themes/kalekrate/form-base.css',
-        '/css/themes/kalekrate/form-minimal.css'
+        '/css/themes/kalekrate/form-minimal.css',
+        '/css/themes/kalekrate/review-payment.css'
       ]
 
       css :minimal_full, '/minimal_full.css', [
@@ -60,20 +62,23 @@ module KaleKrate
       css :one_time, '/one_time.css', [
         '/css/themes/kalekrate/form-base.css',
         '/css/themes/kalekrate/form-minimal-full.css',
-        '/css/themes/kalekrate/form-onetime.css'
+        '/css/themes/kalekrate/form-onetime.css',
+        '/css/themes/kalekrate/review-payment.css'
       ]
 
       css :advanced, '/advanced.css', [
         '/css/themes/kalekrate/form-base.css',
         '/css/themes/kalekrate/form-minimal.css',
-        '/css/themes/kalekrate/form-advanced.css'
+        '/css/themes/kalekrate/form-advanced.css',
+        '/css/themes/kalekrate/review-payment.css'
       ]
 
       css :advanced_desktop, '/advanced_desktop.css', [
         '/css/themes/kalekrate/form-base.css',
         '/css/themes/kalekrate/form-minimal.css',
         '/css/themes/kalekrate/form-advanced.css',
-        '/css/themes/kalekrate/form-advanced-desktop.css'
+        '/css/themes/kalekrate/form-advanced-desktop.css',
+        '/css/themes/kalekrate/review-payment.css'
       ]
 
       css :mobile, '/mobile.css', [
@@ -89,15 +94,7 @@ module KaleKrate
 
       js :advanced_form, '/advanced_form.js', [
         '/js/common_form.js',
-        '/js/minimal_form_v2.js',
-        '/js/addons.js',
-        '/js/pricing.js',
-        '/js/handlebars-latest.js'
-      ]
-
-      js :advanced_form_v2, '/advanced_form_v2.js', [
-        '/js/common_form.js',
-        '/js/minimal_form_v2.js',
+        '/js/minimal_form.js',
         '/js/addons.js',
         '/js/pricing.js',
         '/js/handlebars-latest.js'
@@ -106,6 +103,11 @@ module KaleKrate
       js :one_time, '/one_time.js', [
         '/js/common_form.js',
         '/js/one_time.js',
+      ]
+
+      js :one_time_bank_account, '/one_time_bank_account.js', [
+        '/js/common_form.js',
+        '/js/one_time_bank_account.js',
       ]
 
       js :update_billing, '/update_billing.js', [
@@ -128,6 +130,10 @@ module KaleKrate
       slim :minimal
     end
 
+    get '/subscribe-minimal-bank-account' do
+      slim :minimal_bank_account
+    end
+
     get '/subscribe-more' do
       slim :more
     end
@@ -147,9 +153,16 @@ module KaleKrate
     get '/one-time-transaction' do
       slim :one_time
     end
+    get '/one-time-transaction-bank-account' do
+      slim :one_time_bank_account
+    end
 
     get '/update-billing' do
       slim :update_billing
+    end
+
+    get '/' do
+      slim :index
     end
 
     post '/api/subscriptions/new' do

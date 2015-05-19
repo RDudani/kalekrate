@@ -1,3 +1,5 @@
+var addonsList = [];
+
 function showAddons(addons) {
   var source   = $("#addon-template").html()
     , template = Handlebars.compile(source)
@@ -7,48 +9,37 @@ function showAddons(addons) {
     data.list.push({
       name: value.name,
       code: value.code,
-      price: value.price.USD.unit_amount
+      price: value.price.USD.unit_amount.toFixed(2)
     });
   });
 
   $('.addons-container').html(template(data));
 }
 
-function showAddonsSummary(addon) {
-    
-
-  var source   = $("#addon-summary-template").html()
-    , template = Handlebars.compile(source)
-    , data = { list: [] };
-    
-if(addon.quantity != 0) {
- $(addon).each(function(idx, value) {
-    data.list.push({
-      name: value.name,
-      code: value.code,
-      quantity: value.quantity,
-      price: value.price.USD.unit_amount
+function updateAddonForSummary(addon) {
+  removeAddon(addon.code);
+  if(addon.quantity > 0) {
+    addonsList.push({
+      name: addon.name,
+      code: addon.code,
+      quantity: addon.quantity,
+      price: (addon.quantity * addon.price.USD.unit_amount).toFixed(2)
     });
-  }); 
+  }
+  updateLineItemsSummary();
 }
-  $('.addons-items-summary').append(template(data));
 
+function removeAddon(addonCode) {
+  addonsList = addonsList.filter(function(addon) {
+    return addon.code !== addonCode;
+  });
 }
 
 function advancedConfirmation(x) {
-    
-
   var source   = $("#advanced-confirmation-template").html()
     , template = Handlebars.compile(source)
     , data = { list: [] };
 
-    var num = x.number;
-    var nu = num.split('');
-    var n = nu.slice(-4);  
-    var number = n.join('');
-    console.log(number);
-
-    
   $(x).each(function(idx, value) {
     data.list.push({
       firstName:value['first-name'],
@@ -61,20 +52,26 @@ function advancedConfirmation(x) {
       year: value.year,
       zip: value.zip,
       country: value.country,
-      number: number
-    }); 
+      number: masked(value.number),
+      account_number: masked(value.account_number),
+      routing_number: value.routing_number,
+      routing_number_bank: value.routing_number_bank
+    });
   });
-    
+
  //$(addon).each(function(idx, value) {
 
-  //}); 
-console.log(data);
-
+  //});
+  console.log(data);
   $('.subscription-details-container').append(template(data));
 
 }
 
-
-
-
-
+function masked(number) {
+  var maskedNumber = "";
+  for (var i = 0; i < number.length - 4; i++) {
+    if (number[i] === ' ') maskedNumber += ' ';
+    else maskedNumber += 'x';
+  }
+  return maskedNumber + number.slice(-4);
+}

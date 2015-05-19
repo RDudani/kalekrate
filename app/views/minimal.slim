@@ -38,6 +38,8 @@ body
 
     form method="post" action="/api/subscriptions/new"
       input type="hidden" data-recurly="token" name="recurly-token"
+      input type="hidden" id="payment_type" name="payment-type" value="card"
+      input type="hidden" data-recurly="country" name="country" value="US"
 
       .row
         .form-errors.form-errors__hidden

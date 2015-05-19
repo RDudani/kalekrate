@@ -37,7 +37,6 @@ form {
     float: left;
     background-color: #FAFAFA;
     margin: 0 auto;
-    overflow: hidden;
     width: grid-width(9);
 
     @include mq($small) {
@@ -87,7 +86,7 @@ form {
     float:left;
     width: 45%;
 }
-.form-bar .select-wrap.quantity {
+.form-bar .quantity-wrap {
     width:12%;
     margin: 0 15px;
 }

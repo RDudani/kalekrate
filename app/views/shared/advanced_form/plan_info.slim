@@ -1,0 +1,20 @@
+section.form-bar
+  .subscription-name-container
+    .select-wrap.plan
+      select data-recurly="plan" id="plan" name="plan" class="plan"
+        option value="kale-fan" Kale Fan
+        option value="kale-krazy" Kale Krazy
+
+  .quantity-wrap
+    input.quantity type="number" data-recurly="plan_quantity" id="plan_quantity" name="plan-quantity" class="form-input__required" min="1" value="1"
+
+  .select-wrap.curr
+    select data-recurly="currency" id="currency" name="currency" class="curr"
+      option value="USD" USD
+      option value="EUR" EUR
+
+  .subscription-pricing-container
+    .subscription-pricing
+      span.subscription-price
+      span.subscription-frequency
+      | /month

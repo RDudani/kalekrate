@@ -39,3 +39,68 @@
     padding-top: 0;
   }
 }
+
+.subscription-name-container {
+    margin-bottom: 10px;
+    min-height: 55px;
+  }
+
+
+.billing-info-container .payment-type a {
+  margin: 0 10px 0px;
+  width: 29%;
+
+  @include mq($large) {
+    margin: 0 6% 0px;
+    width: 22%;
+  }
+
+  &:first-child {
+    margin-left: 0px;
+
+    @include mq($large) {
+      margin-left: 15px;
+    }
+  }
+  &:last-child {
+    margin-right: 0px;
+
+    @include mq($large) {
+      margin-right: 15px;
+    }
+  }
+}
+
+
+.customer-fields--card-details, .customer-fields--account-details {
+  .form-input {
+
+    .tooltip-container {
+      display: none;
+
+      @include mq($large) {
+        display: inline-block;
+      }
+    }
+
+    &:first-child {
+      padding-right: 0;
+      width: 100%;
+
+      @include mq($large) {
+        padding-right: 7px;
+        width: 50%;
+      }
+    }
+
+    &:last-child {
+      padding-left: 0;
+      width: 100%;
+
+      @include mq($large) {
+        padding-left: 7px;
+        width: 50%;
+      }
+    }
+  }
+}

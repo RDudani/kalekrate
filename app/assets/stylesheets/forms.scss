@@ -76,7 +76,7 @@ select {
   }
 }
 
-input[type='submit'] {
+input[type='submit'], a.btn-submit {
   @include box-shadow(0 3px 0 #EB9909);
   @include border-radius(3px);
   display: inline-block;

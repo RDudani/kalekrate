@@ -1,0 +1,41 @@
+.row
+  h3
+    | Review and Pay
+    .cancel Back
+
+  hr.thick
+
+  dl
+    dt Name
+    dd.name_on_account_confirm
+
+  hr
+
+  dl
+    dt Bank
+    dd
+      span.routing_number_bank
+      | &nbsp;
+      span.account_type_confirm
+    dt Routing Number
+    dd.routing_number_confirm
+    dt Account Number
+    dd.account_number_confirm
+
+  hr
+
+  dl
+    dt Date
+    dd= Date.today.strftime "%m/%d/%Y"
+    dt Amount
+    dd.amount_confirm
+
+  - if action == :purchase
+    p By clicking Purchase, I authorize Kale Krate to charge my account for this purchase.
+  - else
+    p By clicking Subscribe, I authorize Kale Krate to charge my account for this purchase and future renewals.
+
+  p If my payment is returned unpaid, I authorize Kale Krate to attempt additional transactions.
+
+  - if action == :subscribe
+    p To cancel or revoke this authorization, you must contact us 7 days prior to the questioned debit being initiated. Please email kale@krate.com.

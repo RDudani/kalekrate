@@ -1,0 +1,66 @@
+doctype html
+/[if lt IE 7]
+  html.no-js.ie6.oldie lang="en"
+/[if IE 7]
+  html.no-js.ie7.oldie lang="en"
+/[if IE 8]
+  html.no-js.ie8.oldie lang="en"
+/[if gte IE 8]
+  html.no-js lang="en"
+
+head
+  title = "Kale Krate"
+  == partial(:'shared/meta')
+  == partial(:'shared/scripts')
+  == css :application
+  == css :minimal
+  == js :minimal_form
+
+body
+
+  .form
+    .form-header
+      h1 Kale Krate
+
+    .form-bar
+      .subscription-name-container
+        strong.subscription-name Kale Lover's Crate
+      .subscription-pricing-container
+        .subscription-pricing
+          span.subscription-price#amount $20.99
+          span.subscription-frequency
+          | / month
+
+    .confirmation
+      .confirmation-body
+        h2.confirmation-messaging Thank you for subscribing!
+
+
+    form method="post" action="/api/subscriptions/new"
+      input type="hidden" data-recurly="token" name="recurly-token"
+      input type="hidden" id="payment_type" name="payment-type" value="bank-account"
+      input type="hidden" data-recurly="country" name="country" value="US"
+
+      .form-container
+        .row
+          .form-errors.form-errors__hidden
+            strong Oops! The following fields appear to be invalid:
+            ul
+
+        == partial(:'shared/bank_account/input_fields_with_labels')
+
+        hr
+
+        .row
+          .form-input.customer-fields--card-postal-code.form-input__postal_code
+            label for="postal_code" Zip Code
+            input type="text" data-recurly="postal_code" id="postal_code" name="postal-code" maxlength="5" class="form-input__required"
+
+        .row
+          a#continue.btn-submit Continue
+
+      .review-container
+        == partial(:'shared/bank_account/review_info', locals: {action: :subscribe})
+
+        .row
+          input type='submit' id="subscribe" class="btn-submit" value="Subscribe"
