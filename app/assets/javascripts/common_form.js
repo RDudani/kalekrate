@@ -37,7 +37,7 @@ function create_subscription (recurring) {
     "city" : $('input[name="city"]').val(),
     "state" : $('#state').val(),
     "zip": $('input[name="postal-code"]').val(),
-    "number": $('input[name="number"]').val(),
+    "number": $('input[data-recurly="number"]').val(),
     "month": $('input[name="month"]').val(),
     "year": $('input[name="year"]').val(),
     "routing_number": $('input[name="routing-number"]').val(),

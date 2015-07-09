@@ -23,7 +23,7 @@ section.billing-info-container.hide-form-onsuccess
     .panel.card
       .row.customer-fields--card-number
         .form-input.form-input__number
-          input type="text" data-recurly="number" id="number" name="number" class="form-input__required" placeholder="4111 1111 1111 1111"
+          input type="text" data-recurly="number" id="number" class="form-input__required" placeholder="4111 1111 1111 1111"
           span.icon.icon-card.icon-card__generic
           span.icon.icon-lock
 
@@ -33,7 +33,7 @@ section.billing-info-container.hide-form-onsuccess
             input type="text" data-recurly="year" id="year" name="year" placeholder="YY" maxlength="2" class="form-input__required"
 
         .form-input.customer-fields--card-cvv.form-input__cvv
-          input type="text" data-recurly="cvv" id="cvv" name="cvv" class="form-input__required" placeholder="CVV"
+          input type="text" data-recurly="cvv" id="cvv" class="form-input__required" placeholder="CVV"
 
     .panel.bank-account
       == partial(:'shared/bank_account/input_fields_with_placeholders')
